@@ -72,6 +72,7 @@ Simulasi dilakukan secara real-time saat pembelian SBN.
 - IDE: Bebas (VS Code / IntelliJ)
 - Penyimpanan: In-memory (tanpa database)
 
+
 ================================================================================
 ||                            TAMPAKAN CLI MENU                              ||
 ================================================================================
@@ -87,4 +88,27 @@ Simulasi dilakukan secara real-time saat pembelian SBN.
 4. Simulasi SBN
 5. Portofolio
 6. Logout
+
+
+================================================================================
+||                         TUJUAN & MANFAAT PROYEK                           ||
+================================================================================
+
+✅ Tugas Mata Kuliah [Nama Mata Kuliah]
+✅ Latihan Pemrograman Berorientasi Objek
+✅ Simulasi Investasi Profesional Sederhana
+✅ Clean Code, Modular, & Scalable
+
+
+================================================================================
+||                          KOMITMEN & PENGEMBANGAN                          ||
+================================================================================
+
+- Progress dicatat harian via GitHub commit
+- Siap dikembangkan menjadi aplikasi berbasis web/API
+
+
+================================================================================
+||         📝 DIBUAT OLEH GERALD HIZKIA TURNIP & I PUTU DHARMA YOGA           ||
+================================================================================
 
