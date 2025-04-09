@@ -1,5 +1,5 @@
 ================================================================================
-||                           APLIKASI INVESTASI SAHAM & SBN                  ||
+||                       APLIKASI INVESTASI SAHAM & SBN                       ||
 ================================================================================
 
 Sebuah aplikasi berbasis Java yang memungkinkan pengguna melakukan simulasi investasi 
