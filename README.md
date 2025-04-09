@@ -41,3 +41,12 @@ struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 
 ✅ Kode utama hanya memanggil MainController → bebas logika bisnis langsung
 
+================================================================================
+||                        SIMULASI BUNGA SBN PER BULAN                       ||
+================================================================================
+
+💰 Rumus:
+(% bunga / 12 bulan) × 90% × nominal investasi
+
+Simulasi dilakukan secara real-time saat pembelian SBN.
+
