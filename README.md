@@ -6,6 +6,7 @@ Sebuah aplikasi berbasis Java yang memungkinkan pengguna melakukan simulasi inve
 pada instrumen SAHAM dan SURAT BERHARGA NEGARA (SBN). Proyek ini dirancang dengan 
 struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 
+
 ================================================================================
 ||                                FITUR UTAMA                                ||
 ================================================================================
@@ -25,6 +26,7 @@ struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 - Simulasi bunga bulanan SBN
 - Tampilkan portofolio investasi
 
+
 ================================================================================
 ||                           STRUKTUR DIREKTORI                              ||
 ================================================================================
@@ -41,6 +43,7 @@ struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 
 ✅ Kode utama hanya memanggil MainController → bebas logika bisnis langsung
 
+
 ================================================================================
 ||                        SIMULASI BUNGA SBN PER BULAN                       ||
 ================================================================================
@@ -49,4 +52,39 @@ struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 (% bunga / 12 bulan) × 90% × nominal investasi
 
 Simulasi dilakukan secara real-time saat pembelian SBN.
+
+
+================================================================================
+||                             AKUN LOGIN DEMO                               ||
+================================================================================
+
+| Role     | Username | Password |
+|----------|----------|----------|
+| Admin    | admin    | admin123 |
+| Customer | user1    | user123  |
+
+
+================================================================================
+||                         TEKNOLOGI & KONFIGURASI                           ||
+================================================================================
+
+- Bahasa: Java SE 17
+- IDE: Bebas (VS Code / IntelliJ)
+- Penyimpanan: In-memory (tanpa database)
+
+================================================================================
+||                            TAMPAKAN CLI MENU                              ||
+================================================================================
+
+=== Selamat Datang di Aplikasi Investasi ===
+1. Login
+2. Keluar
+
+=== Menu Customer ===
+1. Beli Saham
+2. Jual Saham
+3. Beli SBN
+4. Simulasi SBN
+5. Portofolio
+6. Logout
 
