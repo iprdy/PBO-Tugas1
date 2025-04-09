@@ -25,3 +25,19 @@ struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 - Simulasi bunga bulanan SBN
 - Tampilkan portofolio investasi
 
+================================================================================
+||                           STRUKTUR DIREKTORI                              ||
+================================================================================
+
+📂 investasi-app-java/
+├── App.java                  → Entry point aplikasi
+├── config/                   → Konfigurasi & data awal
+├── controller/               → Logika kontrol dan alur aplikasi
+├── model/                    → Class data (Saham, SBN, User, dll)
+├── repository/               → Penyimpanan data sementara (in-memory)
+├── service/                  → Logika bisnis utama
+├── util/                     → Utility & helper class
+├── view/                     → Tampilan CLI & menu
+
+✅ Kode utama hanya memanggil MainController → bebas logika bisnis langsung
+
