@@ -94,7 +94,7 @@ Simulasi dilakukan secara real-time saat pembelian SBN.
 ||                         TUJUAN & MANFAAT PROYEK                           ||
 ================================================================================
 
-✅ Tugas Mata Kuliah [Nama Mata Kuliah]
+✅ Tugas Mata Kuliah Pemrograman Berorientasi Objek
 ✅ Latihan Pemrograman Berorientasi Objek
 ✅ Simulasi Investasi Profesional Sederhana
 ✅ Clean Code, Modular, & Scalable
