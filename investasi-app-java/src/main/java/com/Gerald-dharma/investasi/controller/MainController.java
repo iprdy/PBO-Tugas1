@@ -6,3 +6,4 @@ public class MainController {
         // Panggil menu utama (nanti akan dibuat)
     }
 }
+
