@@ -22,3 +22,4 @@ public class Saham {
         return String.format("[%s] %s - Rp %.2f", kode, namaPerusahaan, harga);
     }
 }
+
