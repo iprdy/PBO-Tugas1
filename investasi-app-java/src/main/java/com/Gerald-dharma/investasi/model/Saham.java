@@ -1,4 +1,4 @@
-package com.yourname.investasi.model;
+package com.Gerald-dharma.investasi.model;
 
 public class Saham {
     private String kode;
