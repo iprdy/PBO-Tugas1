@@ -1,4 +1,4 @@
-package com.yourname.investasi;
+package com.Gerald-dharma.investasi;
 
 import com.yourname.investasi.controller.MainController;
 
