@@ -1,4 +1,4 @@
-package com.yourname.investasi.controller;
+package com.Gerald-dharma.investasi.controller;
 
 public class MainController {
     public void start() {
