@@ -1,6 +1,6 @@
-package com.Gerald-dharma.investasi;
+package com.investasi;
 
-import com.yourname.investasi.controller.MainController;
+import com.investasi.controller.MainController;
 
 public class App {
     public static void main(String[] args) {

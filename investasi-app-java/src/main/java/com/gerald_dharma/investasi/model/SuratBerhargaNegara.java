@@ -1,4 +1,4 @@
-package com.Gerald-dharma.investasi.model;
+package com.investasi.model;
 
 import java.time.LocalDate;
 
