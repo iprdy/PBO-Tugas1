@@ -23,5 +23,11 @@ public class MainMenu {
             }
         } while (user == null);
 
+        if(user instanceof Admin) {
+            MenuAdmin.show();
+        } else if (user instanceof Customer) {
+            MenuCustomer.show();
+        }
+
     }
 }
