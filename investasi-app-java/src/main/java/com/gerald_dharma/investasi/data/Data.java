@@ -13,6 +13,9 @@ public class Data {
     static {
         users.add(new Customer("user", "user"));
         users.add(new Admin("admin", "admin"));
+
+        Customer cust = (Customer) users.get(0);
+        cust.tambahSaham("BBCA", "Bank BCA", 100000);
     }
 
     public static User login(String username, String password) {
