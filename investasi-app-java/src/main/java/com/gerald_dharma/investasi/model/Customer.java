@@ -10,7 +10,7 @@ public class Customer extends User{
 
 
     public Customer(String username, String password) {
-        super(username, password, "customer");
+        super(username, password);
     }
 
     public void tambahSaham(String kode, String namaPerusahaan, double harga) {

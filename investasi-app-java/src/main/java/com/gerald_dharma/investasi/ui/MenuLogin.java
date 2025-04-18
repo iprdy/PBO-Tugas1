@@ -7,16 +7,15 @@ import com.investasi.model.User;
 
 import java.util.Scanner;
 
-public class MainMenu {
+public class MenuLogin {
     public static void show() {
         Scanner sc = new Scanner(System.in);
         User user = null;
 
         do {
-            System.out.print("Enter username : ");
-            String username = sc.nextLine();
-            System.out.print("Enter password : ");
-            String password = sc.nextLine();
+            System.out.print("Enter username : "); String username = sc.nextLine();
+            System.out.print("Enter password : "); String password = sc.nextLine();
+
             user = Data.login(username, password);
             if(user == null) {
                 System.out.println("username atau password salah!");
@@ -29,5 +28,6 @@ public class MainMenu {
             MenuCustomer.show();
         }
 
+        show();
     }
 }
