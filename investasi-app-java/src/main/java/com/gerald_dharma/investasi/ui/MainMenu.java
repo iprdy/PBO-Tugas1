@@ -10,18 +10,18 @@ import java.util.Scanner;
 public class MainMenu {
     public static void show() {
         Scanner sc = new Scanner(System.in);
+        User user = null;
 
-        System.out.print("Enter username : "); String username = sc.nextLine();
-        System.out.print("Enter password : "); String password = sc.nextLine();
+        do {
+            System.out.print("Enter username : ");
+            String username = sc.nextLine();
+            System.out.print("Enter password : ");
+            String password = sc.nextLine();
+            user = Data.login(username, password);
+            if(user == null) {
+                System.out.println("username atau password salah!");
+            }
+        } while (user == null);
 
-        User user = Data.login(username, password);
-
-        if(user == null) {
-            System.out.println("Gagal");
-        } else if (user instanceof Admin) {
-            System.out.println("Admin");
-        } else if (user instanceof Customer) {
-            System.out.println("Customer");
-        }
     }
 }
