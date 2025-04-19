@@ -1,10 +1,7 @@
 package com.investasi.ui;
 
-import com.investasi.controller.SahamController;
+import com.investasi.controller.CustomerController;
 import com.investasi.data.Data;
-import com.investasi.model.Customer;
-import com.investasi.model.SahamCustomer;
-import com.investasi.model.User;
 
 import java.util.Scanner;
 
@@ -28,7 +25,7 @@ public class MenuCustomer {
                     Data.getSaham();
                     System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
                     System.out.print("Masukkan banyak lembar yang ingin dibeli: "); int lembar = Integer.parseInt(sc.nextLine());
-                    SahamController.beliSaham(kode, lembar);
+                    CustomerController.beliSaham(kode, lembar);
                     break;
                 case 2:
                     //Jual Saham
