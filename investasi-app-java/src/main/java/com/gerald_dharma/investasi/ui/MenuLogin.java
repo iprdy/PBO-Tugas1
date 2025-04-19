@@ -8,12 +8,14 @@ import com.investasi.model.User;
 import java.util.Scanner;
 
 public class MenuLogin {
+    public static String username;
+
     public static void show() {
         Scanner sc = new Scanner(System.in);
         User user = null;
 
         do {
-            System.out.print("Enter username : "); String username = sc.nextLine();
+            System.out.print("Enter username : "); username = sc.nextLine();
             System.out.print("Enter password : "); String password = sc.nextLine();
 
             user = Data.login(username, password);

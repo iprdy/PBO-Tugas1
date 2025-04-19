@@ -1,11 +1,13 @@
 package com.investasi.model;
 
+import com.investasi.data.Data;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Customer extends User{
-    private List<Saham> daftarSaham = new ArrayList<>();
+    private List<SahamCustomer> daftarSaham = new ArrayList<>();
     private List<SuratBerhargaNegara> daftarSBN = new ArrayList<>();
 
 
@@ -13,11 +15,24 @@ public class Customer extends User{
         super(username, password);
     }
 
-    public void tambahSaham(String kode, String namaPerusahaan, double harga) {
-        daftarSaham.add(new Saham(kode, namaPerusahaan, harga));
+    public void tambahSaham(String kode, String namaPerusahaan, double harga, int lembar) {
+        daftarSaham.add(new SahamCustomer(kode, namaPerusahaan, harga, lembar));
     }
 
     public void tambahSBN(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
         daftarSBN.add(new SuratBerhargaNegara(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional));
+    }
+
+    public void portofolio() {
+        for (SahamCustomer saham : daftarSaham) {
+            System.out.println("Kode: " + saham.getKode());
+            System.out.println("Nama perusahaan: " + saham.getNamaPerusahaan());
+            System.out.println("Harga saat beli: " + saham.getHargaBeli());
+            System.out.println("Harga saat ini: " + Data.getHargaSaham(saham.getKode()));
+            System.out.println("Lembar: " + saham.getLembar());
+            System.out.println("Total pembelian: " + saham.getLembar() * saham.getHargaBeli());
+            System.out.println("Nilai pasar saat ini: " + saham.getLembar() * Data.getHargaSaham(saham.getKode()));
+
+        }
     }
 }
