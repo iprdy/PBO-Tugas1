@@ -34,7 +34,7 @@ public class MenuCustomer {
                     //Simulasi SBN
                     break;
                 case 5:
-                    Data.getPortofolio();
+                    CustomerController.getPortofolio();
                     break;
                 case 6:
                     break;

@@ -2,12 +2,22 @@ package com.investasi.controller;
 
 import com.investasi.data.Data;
 import com.investasi.model.Customer;
+import com.investasi.model.User;
 import com.investasi.ui.MenuLogin;
 
 import java.util.Scanner;
 
 public class CustomerController {
     static Scanner sc = new Scanner(System.in);
+
+    public static void getPortofolio() {
+        for (User user : Data.users) {
+            if(user.getUsername().equals(MenuLogin.username)) {
+                Customer cust = (Customer) user;
+                cust.portofolio();
+            }
+        }
+    }
 
     public static void beliSaham() {
         Data.getSaham();
