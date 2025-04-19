@@ -59,15 +59,6 @@ public class Data {
         return 0;
     }
 
-    public static void getPortofolio() {
-        for (User user : users) {
-            if(user.getUsername().equals(MenuLogin.username)) {
-                Customer cust = (Customer) user;
-                cust.portofolio();
-            }
-        }
-    }
-
     public static void ubahHargaSaham(String kode, double harga) {
         for (Saham saham : daftarSaham) {
             if(saham.getKode().equalsIgnoreCase(kode)) {
