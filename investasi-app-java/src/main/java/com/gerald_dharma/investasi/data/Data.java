@@ -13,6 +13,7 @@ public class Data {
     static {
         users.add(new Customer("user", "user"));
         users.add(new Admin("admin", "admin"));
+        daftarSaham.add(new Saham("BBCA", "Bank BCA", 100000));
 
         Customer cust = (Customer) users.get(0);
         cust.tambahSaham("BBCA", "Bank BCA", 100000);
@@ -34,6 +35,15 @@ public class Data {
     public static void getSaham() {
         for (Saham saham : daftarSaham) {
             System.out.println(saham);
+        }
+    }
+
+    public static void ubahHargaSaham(String kode, double harga) {
+        for (Saham saham : daftarSaham) {
+            if(saham.getKode().equalsIgnoreCase(kode)) {
+                saham.setHarga(harga);
+                break;
+            }
         }
     }
 }

@@ -39,9 +39,6 @@ public class MenuAdmin {
 
     private static void menuSaham() {
         int pilihan;
-        String kode;
-        String namaPerusahaan;
-        double harga;
 
         do {
             System.out.println("Menu Admin > Saham");
@@ -52,13 +49,16 @@ public class MenuAdmin {
 
             switch (pilihan) {
                 case 1:
-                    System.out.print("Masukkan kode perusahaan: "); kode = sc.nextLine();
-                    System.out.print("Masukkan nama perusahaan: "); namaPerusahaan = sc.nextLine();
-                    System.out.print("Masukkan harga saham: "); harga = Double.parseDouble(sc.nextLine());
+                    System.out.print("Masukkan kode perusahaan: "); String kode = sc.nextLine();
+                    System.out.print("Masukkan nama perusahaan: "); String namaPerusahaan = sc.nextLine();
+                    System.out.print("Masukkan harga saham: "); double harga = Double.parseDouble(sc.nextLine());
                     Data.tambahSaham(kode, namaPerusahaan, harga);
                     break;
                 case 2:
-                    //Ubah Harga Saham
+                    Data.getSaham();
+                    System.out.print("Masukkan kode perusahaan: "); String kodeUbah = sc.nextLine();
+                    System.out.print("Masukkan harga baru: "); double hargaBaru = Double.parseDouble(sc.nextLine());
+                    Data.ubahHargaSaham(kodeUbah, hargaBaru);
                     break;
                 case 3:
                     break;
@@ -75,7 +75,7 @@ public class MenuAdmin {
             System.out.println("Menu Admin > SBN");
             System.out.println("1. Tambah SBN");
             System.out.println("2. Kembali");
-            System.out.print("Masukkan angka: "); pilihan = sc.nextInt();
+            System.out.print("Masukkan angka: "); pilihan = Integer.parseInt(sc.nextLine());
 
             switch (pilihan) {
                 case 1:
