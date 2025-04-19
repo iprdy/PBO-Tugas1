@@ -76,13 +76,7 @@ public class MenuAdmin {
 
             switch (pilihan) {
                 case 1:
-                    System.out.print("Masukkan nama SBN: "); String nama = sc.nextLine();
-                    System.out.print("Masukkan bunga: "); double bunga = Double.parseDouble(sc.nextLine());
-                    System.out.print("Masukkan jangka waktu: "); int jangkaWaktu = Integer.parseInt(sc.nextLine());
-                    System.out.print("Masukkan tanggal jatuh tempo (yyyy-mm-dd): "); String temp = sc.nextLine(); LocalDate tanggalJatuhTempo = LocalDate.parse(temp);
-                    System.out.print("Masukkan kuota nasional: "); double kuotaNasional = Integer.parseInt(sc.nextLine());
-                    Data.tambahSBN(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional);
-                    Data.getSBN();
+                    AdminController.tambahSBN();
                     break;
                 case 2:
                     break;
