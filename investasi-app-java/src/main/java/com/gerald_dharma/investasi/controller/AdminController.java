@@ -14,5 +14,10 @@ public class AdminController {
         Data.tambahSaham(kode, namaPerusahaan, harga);
     }
 
-
+    public static void ubahHargaSaham() {
+        Data.getSaham();
+        System.out.print("Masukkan kode perusahaan: "); String kodeUbah = sc.nextLine();
+        System.out.print("Masukkan harga baru: "); double hargaBaru = Double.parseDouble(sc.nextLine());
+        Data.ubahHargaSaham(kodeUbah, hargaBaru);
+    }
 }
