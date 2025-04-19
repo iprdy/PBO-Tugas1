@@ -55,10 +55,7 @@ public class MenuAdmin {
                     AdminController.tambahSaham();
                     break;
                 case 2:
-                    Data.getSaham();
-                    System.out.print("Masukkan kode perusahaan: "); String kodeUbah = sc.nextLine();
-                    System.out.print("Masukkan harga baru: "); double hargaBaru = Double.parseDouble(sc.nextLine());
-                    Data.ubahHargaSaham(kodeUbah, hargaBaru);
+                    AdminController.ubahHargaSaham();
                     break;
                 case 3:
                     break;
