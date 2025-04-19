@@ -22,10 +22,7 @@ public class MenuCustomer {
 
             switch (pilihan) {
                 case 1:
-                    Data.getSaham();
-                    System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
-                    System.out.print("Masukkan banyak lembar yang ingin dibeli: "); int lembar = Integer.parseInt(sc.nextLine());
-                    CustomerController.beliSaham(kode, lembar);
+                    CustomerController.beliSaham();
                     break;
                 case 2:
                     //Jual Saham
