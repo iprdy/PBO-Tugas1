@@ -1,5 +1,7 @@
 package com.investasi.ui;
 
+import com.investasi.data.Data;
+
 import java.util.Scanner;
 
 public class MenuAdmin {
@@ -10,7 +12,7 @@ public class MenuAdmin {
 
         do {
             menuAdmin();
-            System.out.print("Masukkan angka: "); pilihan = sc.nextInt();
+            System.out.print("Masukkan angka: "); pilihan = Integer.parseInt(sc.nextLine());
 
             switch (pilihan) {
                 case 1:
@@ -37,17 +39,23 @@ public class MenuAdmin {
 
     private static void menuSaham() {
         int pilihan;
+        String kode;
+        String namaPerusahaan;
+        double harga;
 
         do {
             System.out.println("Menu Admin > Saham");
             System.out.println("1. Tambah Saham");
             System.out.println("2. Ubah Harga Saham");
             System.out.println("3. Kembali");
-            System.out.print("Masukkan angka: "); pilihan = sc.nextInt();
+            System.out.print("Masukkan angka: "); pilihan = Integer.parseInt(sc.nextLine());
 
             switch (pilihan) {
                 case 1:
-                    //Tambah Saham
+                    System.out.print("Masukkan kode perusahaan: "); kode = sc.nextLine();
+                    System.out.print("Masukkan nama perusahaan: "); namaPerusahaan = sc.nextLine();
+                    System.out.print("Masukkan harga saham: "); harga = Double.parseDouble(sc.nextLine());
+                    Data.tambahSaham(kode, namaPerusahaan, harga);
                     break;
                 case 2:
                     //Ubah Harga Saham

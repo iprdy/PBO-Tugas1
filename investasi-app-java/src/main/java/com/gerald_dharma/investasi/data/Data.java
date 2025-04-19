@@ -1,14 +1,14 @@
 package com.investasi.data;
 
-import com.investasi.model.Admin;
-import com.investasi.model.Customer;
-import com.investasi.model.User;
+import com.investasi.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Data {
-    public static List<User> users = new ArrayList<>();
+    private static List<User> users = new ArrayList<>();
+    private static List<Saham> daftarSaham = new ArrayList<>();
+    private static List <SuratBerhargaNegara> daftarSBN = new ArrayList<>();
 
     static {
         users.add(new Customer("user", "user"));
@@ -25,5 +25,15 @@ public class Data {
             }
         }
         return null;
+    }
+
+    public static void tambahSaham(String kode, String namaPerusahaan, double harga) {
+        daftarSaham.add(new Saham(kode, namaPerusahaan, harga));
+    }
+
+    public static void getSaham() {
+        for (Saham saham : daftarSaham) {
+            System.out.println(saham);
+        }
     }
 }
