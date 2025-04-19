@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class Data {
-    private static List<User> users = new ArrayList<>();
+    public static List<User> users = new ArrayList<>();
     private static List<Saham> daftarSaham = new ArrayList<>();
     private static List <SuratBerhargaNegara> daftarSBN = new ArrayList<>();
 
@@ -25,15 +25,6 @@ public class Data {
     public static User searchUser(String username) {
         for (User user : users) {
             if(user.getUsername().equals(username)) {
-                return user;
-            }
-        }
-        return null;
-    }
-
-    public static User login(String username, String password) {
-        for (User user : users) {
-            if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                 return user;
             }
         }
