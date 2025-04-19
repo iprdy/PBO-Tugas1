@@ -1,5 +1,6 @@
 package com.investasi.ui;
 
+import com.investasi.controller.LoginController;
 import com.investasi.data.Data;
 import com.investasi.model.Admin;
 import com.investasi.model.Customer;
@@ -18,7 +19,7 @@ public class MenuLogin {
             System.out.print("Enter username : "); username = sc.nextLine();
             System.out.print("Enter password : "); String password = sc.nextLine();
 
-            user = Data.login(username, password);
+            user = LoginController.login(username, password);
             if(user == null) {
                 System.out.println("username atau password salah!");
             }
