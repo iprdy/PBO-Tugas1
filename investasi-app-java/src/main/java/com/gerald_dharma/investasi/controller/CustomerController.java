@@ -7,7 +7,7 @@ import com.investasi.ui.MenuLogin;
 import java.util.Scanner;
 
 public class CustomerController {
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
     public static void beliSaham() {
         Data.getSaham();

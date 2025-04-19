@@ -1,6 +1,8 @@
 package com.investasi.ui;
 
+import com.investasi.controller.AdminController;
 import com.investasi.data.Data;
+import com.investasi.model.Admin;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -50,10 +52,7 @@ public class MenuAdmin {
 
             switch (pilihan) {
                 case 1:
-                    System.out.print("Masukkan kode perusahaan: "); String kode = sc.nextLine();
-                    System.out.print("Masukkan nama perusahaan: "); String namaPerusahaan = sc.nextLine();
-                    System.out.print("Masukkan harga saham: "); double harga = Double.parseDouble(sc.nextLine());
-                    Data.tambahSaham(kode, namaPerusahaan, harga);
+                    AdminController.tambahSaham();
                     break;
                 case 2:
                     Data.getSaham();
