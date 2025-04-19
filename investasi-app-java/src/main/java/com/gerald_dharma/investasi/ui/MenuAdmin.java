@@ -86,6 +86,7 @@ public class MenuAdmin {
                     System.out.print("Masukkan tanggal jatuh tempo (yyyy-mm-dd): "); String temp = sc.nextLine(); LocalDate tanggalJatuhTempo = LocalDate.parse(temp);
                     System.out.print("Masukkan kuota nasional: "); double kuotaNasional = Integer.parseInt(sc.nextLine());
                     Data.tambahSBN(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional);
+                    Data.getSBN();
                     break;
                 case 2:
                     break;
