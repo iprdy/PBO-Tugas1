@@ -1,6 +1,7 @@
 package com.investasi.model;
 
 import com.investasi.data.Data;
+import com.investasi.data.DataSaham;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -28,10 +29,10 @@ public class Customer extends User{
             System.out.println("Kode: " + saham.getKode());
             System.out.println("Nama perusahaan: " + saham.getNamaPerusahaan());
             System.out.println("Harga saat beli: " + saham.getHargaBeli());
-            System.out.println("Harga saat ini: " + Data.getHargaSaham(saham.getKode()));
+            System.out.println("Harga saat ini: " + DataSaham.getHarga(saham.getKode()));
             System.out.println("Lembar: " + saham.getLembar());
             System.out.println("Total pembelian: " + saham.getLembar() * saham.getHargaBeli());
-            System.out.println("Nilai pasar saat ini: " + saham.getLembar() * Data.getHargaSaham(saham.getKode()));
+            System.out.println("Nilai pasar saat ini: " + saham.getLembar() * DataSaham.getHarga(saham.getKode()));
 
         }
     }

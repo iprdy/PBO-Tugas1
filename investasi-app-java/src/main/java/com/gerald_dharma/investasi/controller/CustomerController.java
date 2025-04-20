@@ -1,6 +1,7 @@
 package com.investasi.controller;
 
 import com.investasi.data.Data;
+import com.investasi.data.DataSaham;
 import com.investasi.model.Customer;
 import com.investasi.model.User;
 import com.investasi.ui.MenuLogin;
@@ -20,12 +21,12 @@ public class CustomerController {
     }
 
     public static void beliSaham() {
-        Data.getSaham();
+        DataSaham.getSaham();
 
         System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
         System.out.print("Masukkan banyak lembar yang ingin dibeli: "); int lembar = Integer.parseInt(sc.nextLine());
 
         Customer cust = (Customer) Data.searchUser(MenuLogin.username);
-        cust.tambahSaham(kode, Data.getNamaPerusahaanSaham(kode), Data.getHargaSaham(kode), lembar);
+        cust.tambahSaham(kode, DataSaham.getNamaPerusahaan(kode), DataSaham.getHarga(kode), lembar);
     }
 }

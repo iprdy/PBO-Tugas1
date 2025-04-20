@@ -1,7 +1,6 @@
 package com.investasi.ui;
 
 import com.investasi.controller.LoginController;
-import com.investasi.data.Data;
 import com.investasi.model.Admin;
 import com.investasi.model.Customer;
 import com.investasi.model.User;
