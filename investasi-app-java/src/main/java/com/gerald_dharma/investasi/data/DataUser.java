@@ -1,12 +1,12 @@
 package com.investasi.data;
 
 import com.investasi.model.*;
+import com.investasi.ui.MenuLogin;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Data {
+public class DataUser {
     public static List<User> users = new ArrayList<>();
 
     static {
@@ -17,12 +17,12 @@ public class Data {
         cust.tambahSaham("BBCA", "Bank BCA", 100000, 10);
     }
 
-    public static User searchUser(String username) {
+    public static void beliSaham(String kode, int lembar) {
         for (User user : users) {
-            if(user.getUsername().equals(username)) {
-                return user;
+            if(user.getUsername().equals(MenuLogin.username)) {
+                Customer cust = (Customer) user;
+                cust.tambahSaham(kode, DataSaham.getNamaPerusahaanSaham(kode), DataSaham.getHargaSaham(kode), lembar);
             }
         }
-        return null;
     }
 }

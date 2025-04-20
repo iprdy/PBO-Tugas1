@@ -22,7 +22,7 @@ public class DataSaham {
         }
     }
 
-    public static String getNamaPerusahaan(String kode) {
+    public static String getNamaPerusahaanSaham(String kode) {
         for (Saham saham : daftarSaham) {
             if (saham.getKode().equalsIgnoreCase(kode)) {
                 return saham.getNamaPerusahaan();
@@ -31,7 +31,7 @@ public class DataSaham {
         return null;
     }
 
-    public static double getHarga(String kode) {
+    public static double getHargaSaham(String kode) {
         for (Saham saham : daftarSaham) {
             if (saham.getKode().equalsIgnoreCase(kode)) {
                 return saham.getHarga();

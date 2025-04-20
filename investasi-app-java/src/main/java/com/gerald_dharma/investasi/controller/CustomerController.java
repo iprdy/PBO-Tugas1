@@ -1,6 +1,6 @@
 package com.investasi.controller;
 
-import com.investasi.data.Data;
+import com.investasi.data.DataUser;
 import com.investasi.data.DataSaham;
 import com.investasi.model.Customer;
 import com.investasi.model.User;
@@ -12,7 +12,7 @@ public class CustomerController {
     static Scanner sc = new Scanner(System.in);
 
     public static void getPortofolio() {
-        for (User user : Data.users) {
+        for (User user : DataUser.users) {
             if(user.getUsername().equals(MenuLogin.username)) {
                 Customer cust = (Customer) user;
                 cust.portofolio();
@@ -26,7 +26,6 @@ public class CustomerController {
         System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
         System.out.print("Masukkan banyak lembar yang ingin dibeli: "); int lembar = Integer.parseInt(sc.nextLine());
 
-        Customer cust = (Customer) Data.searchUser(MenuLogin.username);
-        cust.tambahSaham(kode, DataSaham.getNamaPerusahaan(kode), DataSaham.getHarga(kode), lembar);
+        DataUser.beliSaham(kode, lembar);
     }
 }
