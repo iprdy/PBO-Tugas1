@@ -12,7 +12,7 @@ public class CustomerController {
     static Scanner sc = new Scanner(System.in);
 
     public static void getPortofolio() {
-        for (User user : DataUser.users) {
+        for (User user : DataUser.getUsers()) {
             if(user.getUsername().equals(MenuLogin.username)) {
                 Customer cust = (Customer) user;
                 cust.portofolio();
