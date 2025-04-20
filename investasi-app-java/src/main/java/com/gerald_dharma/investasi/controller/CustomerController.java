@@ -26,6 +26,15 @@ public class CustomerController {
         System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
         System.out.print("Masukkan banyak lembar yang ingin dibeli: "); int lembar = Integer.parseInt(sc.nextLine());
 
-        DataUser.beliSaham(kode, lembar);
+        beliSahamLogic(kode, lembar);
+    }
+
+    public static void beliSahamLogic(String kode, int lembar) {
+        for (User user : DataUser.getUsers()) {
+            if(user.getUsername().equals(MenuLogin.username)) {
+                Customer cust = (Customer) user;
+                cust.tambahSaham(kode, DataSaham.getNamaPerusahaanSaham(kode), DataSaham.getHargaSaham(kode), lembar);
+            }
+        }
     }
 }
