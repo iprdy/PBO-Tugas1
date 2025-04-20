@@ -8,7 +8,7 @@ import com.investasi.model.User;
 import java.util.Scanner;
 
 public class MenuLogin {
-    public static String username;
+    private static String username;
 
     public static void show() {
         Scanner sc = new Scanner(System.in);
@@ -31,5 +31,9 @@ public class MenuLogin {
         }
 
         show();
+    }
+
+    public static String getUsername() {
+        return username;
     }
 }
