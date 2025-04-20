@@ -23,6 +23,13 @@ public class Customer extends User{
         daftarSBN.add(new SuratBerhargaNegara(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional));
     }
 
+    public SahamCustomer getDataSaham() {
+        for (SahamCustomer saham : daftarSaham) {
+            return saham;
+        }
+        return null;
+    }
+
     public void portofolio() {
         for (SahamCustomer saham : daftarSaham) {
             System.out.println("Kode: " + saham.getKode());

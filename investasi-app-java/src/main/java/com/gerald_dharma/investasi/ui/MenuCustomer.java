@@ -24,7 +24,7 @@ public class MenuCustomer {
                     CustomerController.beliSaham();
                     break;
                 case 2:
-                    //Jual Saham
+                    CustomerController.jualSaham();
                     break;
                 case 3:
                     //Beli SBN

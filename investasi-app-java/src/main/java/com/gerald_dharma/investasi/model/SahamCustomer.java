@@ -28,4 +28,15 @@ public class SahamCustomer {
     public int getLembar() {
         return lembar;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Kode              : %s\n" +
+                "Nama Perusahaan   : %s\n" +
+                "Harga             : Rp %.2f\n" +
+                "Lembar            : %d\n",
+                kode, namaPerusahaan, hargaBeli, lembar
+        );
+    }
 }
