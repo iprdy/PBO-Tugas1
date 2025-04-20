@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataUser {
-    public static List<User> users = new ArrayList<>();
+    private static List<User> users = new ArrayList<>();
 
     static {
         users.add(new Customer("user", "user"));
@@ -15,6 +15,10 @@ public class DataUser {
 
         Customer cust = (Customer) users.get(0);
         cust.tambahSaham("BBCA", "Bank BCA", 100000, 10);
+    }
+
+    public static List<User> getUsers() {
+        return users;
     }
 
     public static void beliSaham(String kode, int lembar) {

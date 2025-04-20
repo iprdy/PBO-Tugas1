@@ -5,7 +5,7 @@ import com.investasi.model.User;
 
 public class LoginController {
     public static User login(String username, String password) {
-        for (User user : DataUser.users) {
+        for (User user : DataUser.getUsers()) {
             if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                 return user;
             }
