@@ -1,7 +1,6 @@
 package com.investasi.ui;
 
 import com.investasi.controller.CustomerController;
-import com.investasi.data.Data;
 
 import java.util.Scanner;
 

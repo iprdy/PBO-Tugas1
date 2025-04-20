@@ -1,10 +1,7 @@
 package com.investasi.ui;
 
 import com.investasi.controller.AdminController;
-import com.investasi.data.Data;
-import com.investasi.model.Admin;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MenuAdmin {
