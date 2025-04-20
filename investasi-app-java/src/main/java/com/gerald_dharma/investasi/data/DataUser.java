@@ -20,13 +20,4 @@ public class DataUser {
     public static List<User> getUsers() {
         return users;
     }
-
-    public static void beliSaham(String kode, int lembar) {
-        for (User user : users) {
-            if(user.getUsername().equals(MenuLogin.username)) {
-                Customer cust = (Customer) user;
-                cust.tambahSaham(kode, DataSaham.getNamaPerusahaanSaham(kode), DataSaham.getHargaSaham(kode), lembar);
-            }
-        }
-    }
 }
