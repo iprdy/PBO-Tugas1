@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Data {
     public static List<User> users = new ArrayList<>();
-    private static List <SuratBerhargaNegara> daftarSBN = new ArrayList<>();
 
     static {
         users.add(new Customer("user", "user"));
@@ -25,15 +24,5 @@ public class Data {
             }
         }
         return null;
-    }
-
-    public static void tambahSBN(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
-        daftarSBN.add(new SuratBerhargaNegara(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional));
-    }
-
-    public static void getSBN() {
-        for(SuratBerhargaNegara sbn : daftarSBN) {
-            System.out.println(sbn);
-        }
     }
 }
