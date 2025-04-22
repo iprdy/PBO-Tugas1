@@ -17,36 +17,33 @@ public class DataSaham {
         daftarSaham.add(new Saham(kode, namaPerusahaan, harga));
     }
 
-    public static void getSaham() {
+    private static Saham getSaham(String kode) {
+        for (Saham saham : daftarSaham) {
+            if (saham.getKode().equals(kode)) {
+                return saham;
+            }
+        }
+        return null;
+    }
+
+    public static void getDataSaham() {
         for (Saham saham : daftarSaham) {
             System.out.println(saham);
         }
     }
 
     public static String getNamaPerusahaanSaham(String kode) {
-        for (Saham saham : daftarSaham) {
-            if (saham.getKode().equalsIgnoreCase(kode)) {
-                return saham.getNamaPerusahaan();
-            }
-        }
-        return null;
+        Saham saham = getSaham(kode);
+        return saham.getNamaPerusahaan();
     }
 
     public static double getHargaSaham(String kode) {
-        for (Saham saham : daftarSaham) {
-            if (saham.getKode().equalsIgnoreCase(kode)) {
-                return saham.getHarga();
-            }
-        }
-        return 0;
+        Saham saham = getSaham(kode);
+        return saham.getHarga();
     }
 
     public static void ubahHarga(String kode, double harga) {
-        for (Saham saham : daftarSaham) {
-            if(saham.getKode().equalsIgnoreCase(kode)) {
-                saham.setHarga(harga);
-                break;
-            }
-        }
+        Saham saham = getSaham(kode);
+        saham.setHarga(harga);
     }
 }

@@ -17,7 +17,7 @@ public class CustomerController {
     }
 
     public static void beliSaham() {
-        DataSaham.getSaham();
+        DataSaham.getDataSaham();
 
         System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
         int lembar = InputValidation.inputInteger("Masukkan banyak lembar yang ingin dibeli: ");
