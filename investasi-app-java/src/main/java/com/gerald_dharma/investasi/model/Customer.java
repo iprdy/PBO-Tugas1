@@ -34,7 +34,7 @@ public class Customer extends User{
         daftarSBN.add(new SuratBerhargaNegara(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional));
     }
 
-    public List<SahamCustomer> getSaham() {
+    public List<SahamCustomer> getDataSahamCustomer() {
         return daftarSaham;
     }
 
