@@ -19,4 +19,8 @@ public class DataValidation {
         System.out.println("Saham dengan kode " + kode + " tidak ditemukan");
         return false;
     }
+
+    public static boolean kodeSahamCustomerCheck(String kode) {
+
+    }
 }
