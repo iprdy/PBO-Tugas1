@@ -19,7 +19,7 @@ public class AdminController {
     }
 
     public static void ubahHargaSaham() {
-        DataSaham.getDataSaham();
+        DataSaham.printDataSaham();
         System.out.print("Masukkan kode perusahaan: "); String kodeUbah = sc.nextLine();
         double hargaBaru = InputValidation.inputDouble("Masukkan harga baru: ");
 

@@ -13,6 +13,10 @@ public class DataSaham {
         daftarSaham.add(new Saham("BBNI", "Bank BNI", 50000));
     }
 
+    public static List<Saham> getDataSaham() {
+        return daftarSaham;
+    }
+
     public static void tambahSaham(String kode, String namaPerusahaan, double harga) {
         daftarSaham.add(new Saham(kode, namaPerusahaan, harga));
     }
@@ -26,7 +30,7 @@ public class DataSaham {
         return null;
     }
 
-    public static void getDataSaham() {
+    public static void printDataSaham() {
         for (Saham saham : daftarSaham) {
             System.out.println(saham);
         }
