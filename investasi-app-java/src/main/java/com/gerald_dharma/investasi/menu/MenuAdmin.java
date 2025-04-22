@@ -4,11 +4,7 @@ import com.investasi.controller.AdminController;
 import com.investasi.ui.AdminUI;
 import com.investasi.validator.InputValidation;
 
-import java.util.Scanner;
-
 public class MenuAdmin {
-    static Scanner sc = new Scanner(System.in);
-
     public static void show() {
         int pilihan;
 

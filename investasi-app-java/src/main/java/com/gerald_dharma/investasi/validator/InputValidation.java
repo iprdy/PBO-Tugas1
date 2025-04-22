@@ -1,7 +1,5 @@
 package com.investasi.validator;
 
-import com.investasi.ui.CustomerUI;
-
 import java.util.Scanner;
 
 public class InputValidation {
