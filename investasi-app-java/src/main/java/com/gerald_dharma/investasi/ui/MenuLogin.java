@@ -8,17 +8,18 @@ import com.investasi.model.User;
 import java.util.Scanner;
 
 public class MenuLogin {
-    private static String username;
+    private static String userLoggedIn;
+    private static Customer customerLoggedIn;
 
     public static void show() {
         Scanner sc = new Scanner(System.in);
         User user = null;
 
         do {
-            System.out.print("Enter username : "); username = sc.nextLine();
+            System.out.print("Enter username : "); userLoggedIn = sc.nextLine();
             System.out.print("Enter password : "); String password = sc.nextLine();
 
-            user = LoginController.login(username, password);
+            user = LoginController.login(userLoggedIn, password);
             if(user == null) {
                 System.out.println("username atau password salah!");
             }
@@ -27,6 +28,7 @@ public class MenuLogin {
         if(user instanceof Admin) {
             MenuAdmin.show();
         } else if (user instanceof Customer) {
+            customerLoggedIn = (Customer) user;
             MenuCustomer.show();
         }
 
@@ -34,6 +36,10 @@ public class MenuLogin {
     }
 
     public static String getUsername() {
-        return username;
+        return userLoggedIn;
+    }
+
+    public static Customer getCustomerLoggedIn() {
+        return customerLoggedIn;
     }
 }

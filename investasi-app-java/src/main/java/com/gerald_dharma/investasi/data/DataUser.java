@@ -14,7 +14,7 @@ public class DataUser {
         users.add(new Admin("admin", "admin"));
 
         Customer cust = (Customer) users.get(0);
-        cust.tambahSaham("BBCA", "Bank BCA", 100000, 10);
+        cust.tambahSaham("BBCA", 10);
     }
 
     public static List<User> getUsers() {

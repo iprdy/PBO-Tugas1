@@ -15,8 +15,8 @@ public class Customer extends User{
         super(username, password);
     }
 
-    public void tambahSaham(String kode, String namaPerusahaan, double harga, int lembar) {
-        daftarSaham.add(new SahamCustomer(kode, namaPerusahaan, harga, lembar));
+    public void tambahSaham(String kode, int lembar) {
+        daftarSaham.add(new SahamCustomer(kode, DataSaham.getNamaPerusahaanSaham(kode), DataSaham.getHargaSaham(kode), lembar));
     }
 
     public void tambahSBN(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
