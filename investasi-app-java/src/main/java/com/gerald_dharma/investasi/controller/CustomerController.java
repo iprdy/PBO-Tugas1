@@ -8,11 +8,11 @@ import com.investasi.ui.MenuLogin;
 import java.util.Scanner;
 
 public class CustomerController {
+    static Customer customer = MenuLogin.getCustomerLoggedIn();
     static Scanner sc = new Scanner(System.in);
 
     public static void getPortofolio() {
-        Customer cust = MenuLogin.getCustomerLoggedIn();
-        cust.portofolio();
+        customer.portofolio();
     }
 
     public static void beliSaham() {
@@ -21,41 +21,33 @@ public class CustomerController {
         System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
         System.out.print("Masukkan banyak lembar yang ingin dibeli: "); int lembar = Integer.parseInt(sc.nextLine());
 
-        beliSahamLogic(kode, lembar);
-    }
-
-    public static void beliSahamLogic(String kode, int lembar) {
-        Customer cust = MenuLogin.getCustomerLoggedIn();
-        cust.tambahSaham(kode, lembar);
+        customer.tambahSaham(kode, lembar);
     }
 
     public static void jualSaham() {
-        String kode;
+        String kode = null;
         int lembarSaham = 0, lembar = 0;
 
         do {
-            Customer cust = MenuLogin.getCustomerLoggedIn();
+            if(customer.getDataSaham() != null) {
+                System.out.println(customer.getDataSaham());
 
-            if(cust.getDataSaham() == null) {
+                System.out.print("Masukkan kode saham yang ingin dijual: "); kode = sc.nextLine();
+                lembarSaham = customer.getLembar(kode);
+
+                System.out.print("Masukkan banyaknya lembar yang ingin dijual: "); lembar = Integer.parseInt(sc.nextLine());
+
+                if(lembar > lembarSaham) {
+                    System.out.println("Lembar yang anda miliki kurang");
+                }
+
+            } else {
                 System.out.println("Anda tidak memiliki saham!");
                 MenuCustomer.show();
-            } else {
-                System.out.println(cust.getDataSaham());
             }
-
-            System.out.print("Masukkan kode saham yang ingin dijual: "); kode = sc.nextLine();
-            lembarSaham = cust.getLembar(kode);
-
-            System.out.print("Masukkan banyaknya lembar yang ingin dijual: "); lembar = Integer.parseInt(sc.nextLine());
-
-            if(lembar > lembarSaham) {
-                System.out.println("Lembar yang anda miliki kurang");
-            }
-
         } while(lembar > lembarSaham);
 
         System.out.println("Berhasil menjual saham sebanyak " + lembar + " lembar");
-        Customer cust = MenuLogin.getCustomerLoggedIn();
-        cust.jualSaham(kode, lembar);
+        customer.jualSaham(kode, lembar);
     }
 }

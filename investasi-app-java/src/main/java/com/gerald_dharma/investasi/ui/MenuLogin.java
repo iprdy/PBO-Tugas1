@@ -8,10 +8,10 @@ import com.investasi.model.User;
 import java.util.Scanner;
 
 public class MenuLogin {
-    private static String userLoggedIn;
     private static Customer customerLoggedIn;
 
     public static void show() {
+        String userLoggedIn;
         Scanner sc = new Scanner(System.in);
         User user = null;
 
@@ -20,9 +20,11 @@ public class MenuLogin {
             System.out.print("Enter password : "); String password = sc.nextLine();
 
             user = LoginController.login(userLoggedIn, password);
+
             if(user == null) {
                 System.out.println("username atau password salah!");
             }
+
         } while (user == null);
 
         if(user instanceof Admin) {
@@ -33,10 +35,6 @@ public class MenuLogin {
         }
 
         show();
-    }
-
-    public static String getUsername() {
-        return userLoggedIn;
     }
 
     public static Customer getCustomerLoggedIn() {
