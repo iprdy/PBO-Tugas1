@@ -2,6 +2,7 @@ package com.investasi.controller;
 
 import com.investasi.data.DataSBN;
 import com.investasi.data.DataSaham;
+import com.investasi.validator.DataValidation;
 import com.investasi.validator.InputValidation;
 
 import java.time.LocalDate;
@@ -20,10 +21,10 @@ public class AdminController {
 
     public static void ubahHargaSaham() {
         DataSaham.printDataSaham();
-        System.out.print("Masukkan kode perusahaan: "); String kodeUbah = sc.nextLine();
+        String kode = InputValidation.inputStringKodeSaham("Masukkan kode perusahaan: ");
         double hargaBaru = InputValidation.inputDouble("Masukkan harga baru: ");
 
-        DataSaham.ubahHarga(kodeUbah, hargaBaru);
+        DataSaham.ubahHarga(kode, hargaBaru);
     }
 
     public static void tambahSBN() {

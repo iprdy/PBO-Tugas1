@@ -1,6 +1,7 @@
 package com.investasi.model;
 
 import com.investasi.data.DataSaham;
+import com.investasi.menu.MenuCustomer;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -33,11 +34,15 @@ public class Customer extends User{
         daftarSBN.add(new SuratBerhargaNegara(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional));
     }
 
-    public SahamCustomer getDataSaham() {
-        for (SahamCustomer saham : daftarSaham) {
-            return saham;
+    public void printDataSahamCostumer() {
+        if (daftarSaham.isEmpty()) {
+            System.out.println("Anda tidak memiliki saham!");
+            MenuCustomer.show();
+            return;
         }
-        return null;
+        for (SahamCustomer saham : daftarSaham) {
+            System.out.println(saham);
+        }
     }
 
     public int getLembar(String kode) {
