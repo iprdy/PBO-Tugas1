@@ -2,8 +2,8 @@ package com.investasi.controller;
 
 import com.investasi.data.DataSaham;
 import com.investasi.model.Customer;
-import com.investasi.ui.MenuCustomer;
-import com.investasi.ui.MenuLogin;
+import com.investasi.menu.MenuCustomer;
+import com.investasi.menu.MenuLogin;
 
 import java.util.Scanner;
 

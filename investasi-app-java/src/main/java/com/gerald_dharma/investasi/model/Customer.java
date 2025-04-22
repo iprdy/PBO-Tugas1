@@ -69,6 +69,7 @@ public class Customer extends User{
 
     public void portofolio() {
         for (SahamCustomer saham : daftarSaham) {
+            System.out.println("-------------------------------------------------");
             System.out.println("Kode: " + saham.getKode());
             System.out.println("Nama perusahaan: " + saham.getNamaPerusahaan());
             System.out.println("Harga saat beli: " + saham.getHargaBeli());
@@ -78,5 +79,6 @@ public class Customer extends User{
             System.out.println("Nilai pasar saat ini: " + saham.getLembar() * DataSaham.getHargaSaham(saham.getKode()));
 
         }
+        System.out.println("-------------------------------------------------");
     }
 }

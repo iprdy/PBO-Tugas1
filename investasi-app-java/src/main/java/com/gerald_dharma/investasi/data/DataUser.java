@@ -1,7 +1,6 @@
 package com.investasi.data;
 
 import com.investasi.model.*;
-import com.investasi.ui.MenuLogin;
 
 import java.util.ArrayList;
 import java.util.List;

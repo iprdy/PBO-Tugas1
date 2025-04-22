@@ -1,6 +1,8 @@
-package com.investasi.ui;
+package com.investasi.menu;
 
 import com.investasi.controller.CustomerController;
+import com.investasi.ui.CustomerUI;
+import com.investasi.validator.InputValidation;
 
 import java.util.Scanner;
 
@@ -10,14 +12,8 @@ public class MenuCustomer {
         int pilihan;
 
         do {
-            System.out.println("Menu Customer");
-            System.out.println("1. Beli Saham");
-            System.out.println("2. Jual Saham");
-            System.out.println("3. Beli SBN");
-            System.out.println("4. Simulasi SBN");
-            System.out.println("5. Portofolio");
-            System.out.println("6. Logout");
-            System.out.print("Masukkan pilihan: "); pilihan = Integer.parseInt(sc.nextLine());
+            CustomerUI.mainMenu();
+            pilihan = InputValidation.inputInteger("Masukkan pilihan: ");
 
             switch (pilihan) {
                 case 1:

@@ -1,4 +1,4 @@
-package com.investasi.ui;
+package com.investasi.menu;
 
 import com.investasi.controller.AdminController;
 

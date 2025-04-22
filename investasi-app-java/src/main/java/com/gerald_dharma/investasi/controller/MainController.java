@@ -1,6 +1,6 @@
 package com.investasi.controller;
 
-import com.investasi.ui.MenuLogin;
+import com.investasi.menu.MenuLogin;
 
 public class MainController {
     public void start() {
