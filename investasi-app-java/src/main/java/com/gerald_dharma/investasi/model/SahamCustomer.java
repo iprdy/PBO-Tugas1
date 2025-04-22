@@ -29,6 +29,10 @@ public class SahamCustomer {
         return lembar;
     }
 
+    public void setLembar(int lembar) {
+        this.lembar += lembar;
+    }
+
     public void jualLembar(int jumlahLembar) {
         lembar -= jumlahLembar;
     }

@@ -16,7 +16,17 @@ public class Customer extends User{
     }
 
     public void tambahSaham(String kode, int lembar) {
-        daftarSaham.add(new SahamCustomer(kode, DataSaham.getNamaPerusahaanSaham(kode), DataSaham.getHargaSaham(kode), lembar));
+        int checkSaham = 0;
+        for (SahamCustomer sahamC : daftarSaham) {
+            if (sahamC.getKode().equals(kode)) {
+                sahamC.setLembar(lembar);
+                checkSaham = 1;
+                break;
+            }
+        }
+        if (checkSaham == 0) {
+            daftarSaham.add(new SahamCustomer(kode, DataSaham.getNamaPerusahaanSaham(kode), DataSaham.getHargaSaham(kode), lembar));
+        }
     }
 
     public void tambahSBN(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
