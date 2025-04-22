@@ -40,11 +40,26 @@ public class CustomerController {
     }
 
     public static void jualSaham() {
+        int lembarSaham = 0;
+
         for (User user : DataUser.getUsers()) {
             if(user.getUsername().equals(MenuLogin.getUsername())) {
                 Customer cust = (Customer) user;
                 System.out.println(cust.getDataSaham());
             }
+        }
+
+        System.out.print("Masukkan kode saham yang ingin dijual: "); String kode = sc.nextLine();
+        for (User user : DataUser.getUsers()) {
+            if(user.getUsername().equals(MenuLogin.getUsername())) {
+                Customer cust = (Customer) user;
+                lembarSaham = cust.getLembar(kode);
+            }
+        }
+
+        System.out.print("Masukkan banyaknya lembar yang ingin dijual: "); int lembar = Integer.parseInt(sc.nextLine());
+        if(lembar > lembarSaham) {
+            System.out.println("Lembar yang anda miliki kurang");
         }
     }
 }
