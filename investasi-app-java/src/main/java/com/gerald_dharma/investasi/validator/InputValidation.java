@@ -18,4 +18,16 @@ public class InputValidation {
             }
         }
     }
+
+    public static double inputDouble(String input) {
+        while (true) {
+            try {
+                System.out.print(input);
+                double x = Double.parseDouble(sc.nextLine());
+                return x;
+            } catch (NumberFormatException e) {
+                System.out.println("Input tidak valid, silahkan masukkan angka");
+            }
+        }
+    }
 }
