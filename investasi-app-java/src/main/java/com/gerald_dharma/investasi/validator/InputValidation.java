@@ -30,4 +30,15 @@ public class InputValidation {
             }
         }
     }
+
+    public static String inputStringKodeSaham(String input) {
+        while (true) {
+            System.out.print(input);
+            String x = sc.nextLine();
+
+            if (DataValidation.kodeSahamCheck(x)) {
+                return x;
+            }
+        }
+    }
 }
