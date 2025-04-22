@@ -29,6 +29,10 @@ public class SahamCustomer {
         return lembar;
     }
 
+    public void jualLembar(int jumlahLembar) {
+        lembar -= jumlahLembar;
+    }
+
     @Override
     public String toString() {
         return String.format(

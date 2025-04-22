@@ -4,6 +4,7 @@ import com.investasi.data.DataUser;
 import com.investasi.data.DataSaham;
 import com.investasi.model.Customer;
 import com.investasi.model.User;
+import com.investasi.ui.MenuCustomer;
 import com.investasi.ui.MenuLogin;
 
 import java.awt.*;
@@ -40,26 +41,42 @@ public class CustomerController {
     }
 
     public static void jualSaham() {
-        int lembarSaham = 0;
+        String kode;
+        int lembarSaham = 0, lembar = 0;
 
+        do {
+            for (User user : DataUser.getUsers()) {
+                if(user.getUsername().equals(MenuLogin.getUsername())) {
+                    Customer cust = (Customer) user;
+                    if(cust.getDataSaham() == null) {
+                        System.out.println("Anda tidak memiliki saham!");
+                        MenuCustomer.show();
+                        break;
+                    }
+                    System.out.println(cust.getDataSaham());
+                }
+            }
+
+            System.out.print("Masukkan kode saham yang ingin dijual: "); kode = sc.nextLine();
+            for (User user : DataUser.getUsers()) {
+                if(user.getUsername().equals(MenuLogin.getUsername())) {
+                    Customer cust = (Customer) user;
+                    lembarSaham = cust.getLembar(kode);
+                }
+            }
+
+            System.out.print("Masukkan banyaknya lembar yang ingin dijual: "); lembar = Integer.parseInt(sc.nextLine());
+            if(lembar > lembarSaham) {
+                System.out.println("Lembar yang anda miliki kurang");
+            }
+        } while(lembar > lembarSaham);
+
+        System.out.println("Berhasil menjual saham sebanyak " + lembar + " lembar");
         for (User user : DataUser.getUsers()) {
             if(user.getUsername().equals(MenuLogin.getUsername())) {
                 Customer cust = (Customer) user;
-                System.out.println(cust.getDataSaham());
+                cust.jualSaham(kode, lembar);
             }
-        }
-
-        System.out.print("Masukkan kode saham yang ingin dijual: "); String kode = sc.nextLine();
-        for (User user : DataUser.getUsers()) {
-            if(user.getUsername().equals(MenuLogin.getUsername())) {
-                Customer cust = (Customer) user;
-                lembarSaham = cust.getLembar(kode);
-            }
-        }
-
-        System.out.print("Masukkan banyaknya lembar yang ingin dijual: "); int lembar = Integer.parseInt(sc.nextLine());
-        if(lembar > lembarSaham) {
-            System.out.println("Lembar yang anda miliki kurang");
         }
     }
 }

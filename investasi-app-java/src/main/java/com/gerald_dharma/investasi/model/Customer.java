@@ -39,6 +39,24 @@ public class Customer extends User{
         return 0;
     }
 
+    public void jualSaham(String kode, int jumlahLembar) {
+        SahamCustomer sahamYangDihapus = null;
+
+        for (SahamCustomer saham : daftarSaham) {
+            if(kode.equals(saham.getKode())) {
+                if(saham.getLembar()-jumlahLembar == 0) {
+                    sahamYangDihapus = saham;
+                } else {
+                    saham.jualLembar(jumlahLembar);
+                }
+                break;
+            }
+        }
+        if (sahamYangDihapus != null) {
+            daftarSaham.remove(sahamYangDihapus);
+        }
+    }
+
     public void portofolio() {
         for (SahamCustomer saham : daftarSaham) {
             System.out.println("Kode: " + saham.getKode());
