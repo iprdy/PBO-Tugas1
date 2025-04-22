@@ -14,6 +14,7 @@ public class AdminController {
         System.out.print("Masukkan kode perusahaan: "); String kode = sc.nextLine();
         System.out.print("Masukkan nama perusahaan: "); String namaPerusahaan = sc.nextLine();
         double harga = InputValidation.inputDouble("Masukkan harga saham: ");
+
         DataSaham.tambahSaham(kode, namaPerusahaan, harga);
     }
 
@@ -21,6 +22,7 @@ public class AdminController {
         DataSaham.getSaham();
         System.out.print("Masukkan kode perusahaan: "); String kodeUbah = sc.nextLine();
         double hargaBaru = InputValidation.inputDouble("Masukkan harga baru: ");
+
         DataSaham.ubahHarga(kodeUbah, hargaBaru);
     }
 

@@ -4,6 +4,7 @@ import com.investasi.data.DataSaham;
 import com.investasi.model.Customer;
 import com.investasi.menu.MenuCustomer;
 import com.investasi.menu.MenuLogin;
+import com.investasi.validator.InputValidation;
 
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class CustomerController {
         DataSaham.getSaham();
 
         System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
-        System.out.print("Masukkan banyak lembar yang ingin dibeli: "); int lembar = Integer.parseInt(sc.nextLine());
+        int lembar = InputValidation.inputInteger("Masukkan banyak lembar yang ingin dibeli: ");
 
         customer.tambahSaham(kode, lembar);
     }
@@ -35,7 +36,7 @@ public class CustomerController {
                 System.out.print("Masukkan kode saham yang ingin dijual: "); kode = sc.nextLine();
                 lembarSaham = customer.getLembar(kode);
 
-                System.out.print("Masukkan banyaknya lembar yang ingin dijual: "); lembar = Integer.parseInt(sc.nextLine());
+                lembar = InputValidation.inputInteger("Masukkan banyaknya lembar yang ingin dijual: ");
 
                 if(lembar > lembarSaham) {
                     System.out.println("Lembar yang anda miliki kurang");
@@ -47,7 +48,8 @@ public class CustomerController {
             }
         } while(lembar > lembarSaham);
 
-        System.out.println("Berhasil menjual saham sebanyak " + lembar + " lembar");
+        System.out.println("Berhasil menjual saham dengan kode " + kode + " sebanyak " + lembar + " lembar");
+
         customer.jualSaham(kode, lembar);
     }
 }
