@@ -30,6 +30,15 @@ public class Customer extends User{
         return null;
     }
 
+    public int getLembar(String kode) {
+        for (SahamCustomer saham : daftarSaham) {
+            if(kode.equals(saham.getKode())) {
+                return saham.getLembar();
+            }
+        }
+        return 0;
+    }
+
     public void portofolio() {
         for (SahamCustomer saham : daftarSaham) {
             System.out.println("Kode: " + saham.getKode());

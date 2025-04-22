@@ -34,9 +34,8 @@ public class SahamCustomer {
         return String.format(
                 "Kode              : %s\n" +
                 "Nama Perusahaan   : %s\n" +
-                "Harga             : Rp %.2f\n" +
-                "Lembar            : %d\n",
-                kode, namaPerusahaan, hargaBeli, lembar
+                "Jumlah lembar     : %d\n",
+                kode, namaPerusahaan, lembar
         );
     }
 }
