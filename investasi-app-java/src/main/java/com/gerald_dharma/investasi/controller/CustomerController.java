@@ -2,15 +2,11 @@ package com.investasi.controller;
 
 import com.investasi.data.DataSaham;
 import com.investasi.model.Customer;
-import com.investasi.menu.MenuCustomer;
 import com.investasi.menu.MenuLogin;
 import com.investasi.validator.InputValidation;
 
-import java.util.Scanner;
-
 public class CustomerController {
     static Customer customer = MenuLogin.getCustomerLoggedIn();
-    static Scanner sc = new Scanner(System.in);
 
     public static void getPortofolio() {
         customer.portofolio();
@@ -32,10 +28,10 @@ public class CustomerController {
         do {
             customer.printDataSahamCostumer();
 
-            System.out.print("Masukkan kode saham yang ingin dijual: "); kode = sc.nextLine();
-            lembarSaham = customer.getLembar(kode);
-
+            kode = InputValidation.inputStringKodeSahamCustomer("Masukkan kode saham yang ingin dijual: ");
             lembar = InputValidation.inputInteger("Masukkan banyaknya lembar yang ingin dijual: ");
+
+            lembarSaham = customer.getLembar(kode);
 
             if(lembar > lembarSaham) {
                 System.out.println("Lembar yang anda miliki kurang");
