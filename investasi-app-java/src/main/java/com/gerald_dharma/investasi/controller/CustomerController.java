@@ -19,7 +19,7 @@ public class CustomerController {
     public static void beliSaham() {
         DataSaham.printDataSaham();
 
-        System.out.print("Masukkan kode saham yang ingin dibeli: "); String kode = sc.nextLine();
+        String kode = InputValidation.inputStringKodeSaham("Masukkan kode saham yang ingin dibeli: ");
         int lembar = InputValidation.inputInteger("Masukkan banyak lembar yang ingin dibeli: ");
 
         customer.tambahSaham(kode, lembar);
@@ -30,22 +30,17 @@ public class CustomerController {
         int lembarSaham = 0, lembar = 0;
 
         do {
-            if(customer.getDataSaham() != null) {
-                System.out.println(customer.getDataSaham());
+            customer.printDataSahamCostumer();
 
-                System.out.print("Masukkan kode saham yang ingin dijual: "); kode = sc.nextLine();
-                lembarSaham = customer.getLembar(kode);
+            System.out.print("Masukkan kode saham yang ingin dijual: "); kode = sc.nextLine();
+            lembarSaham = customer.getLembar(kode);
 
-                lembar = InputValidation.inputInteger("Masukkan banyaknya lembar yang ingin dijual: ");
+            lembar = InputValidation.inputInteger("Masukkan banyaknya lembar yang ingin dijual: ");
 
-                if(lembar > lembarSaham) {
-                    System.out.println("Lembar yang anda miliki kurang");
-                }
-
-            } else {
-                System.out.println("Anda tidak memiliki saham!");
-                MenuCustomer.show();
+            if(lembar > lembarSaham) {
+                System.out.println("Lembar yang anda miliki kurang");
             }
+
         } while(lembar > lembarSaham);
 
         System.out.println("Berhasil menjual saham dengan kode " + kode + " sebanyak " + lembar + " lembar");

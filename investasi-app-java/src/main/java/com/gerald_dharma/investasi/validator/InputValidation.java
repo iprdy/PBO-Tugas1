@@ -36,7 +36,9 @@ public class InputValidation {
             System.out.print(input);
             String x = sc.nextLine();
 
-            if (DataValidation.kodeSahamCheck(x)) {
+            if (x.isEmpty()) {
+                System.out.println("Input tidak boleh kosong!");
+            } else if (DataValidation.kodeSahamCheck(x)){
                 return x;
             }
         }
