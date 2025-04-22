@@ -7,14 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataValidation {
-    public static void kodeSahamCheck(String kode) {
+    public static boolean kodeSahamCheck(String kode) {
         List<Saham> daftarSaham = new ArrayList<>();
         daftarSaham = DataSaham.getDataSaham();
 
         for (Saham saham : daftarSaham) {
             if(kode.equals(saham.getKode())) {
-                System.out.println("Saham dengan kode " + kode + " tidak ditemukan");
+                return true;
             }
         }
+        System.out.println("Saham dengan kode " + kode + " tidak ditemukan");
+        return false;
     }
 }
