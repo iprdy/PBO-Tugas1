@@ -34,6 +34,10 @@ public class Customer extends User{
         daftarSBN.add(new SuratBerhargaNegara(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional));
     }
 
+    public List<SahamCustomer> getSaham() {
+        return daftarSaham;
+    }
+
     public void printDataSahamCostumer() {
         if (daftarSaham.isEmpty()) {
             System.out.println("Anda tidak memiliki saham!");
