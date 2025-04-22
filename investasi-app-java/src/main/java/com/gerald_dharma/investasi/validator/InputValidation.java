@@ -15,7 +15,6 @@ public class InputValidation {
                 return x;
             } catch (NumberFormatException e) {
                 System.out.println("Input tidak valid, silahkan masukkan angka");
-                CustomerUI.mainMenu();
             }
         }
     }

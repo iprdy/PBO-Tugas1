@@ -1,6 +1,8 @@
 package com.investasi.menu;
 
 import com.investasi.controller.AdminController;
+import com.investasi.ui.AdminUI;
+import com.investasi.validator.InputValidation;
 
 import java.util.Scanner;
 
@@ -11,7 +13,7 @@ public class MenuAdmin {
         int pilihan;
 
         do {
-            menuAdmin();
+            AdminUI.mainMenu();
             System.out.print("Masukkan angka: "); pilihan = Integer.parseInt(sc.nextLine());
 
             switch (pilihan) {
@@ -30,22 +32,12 @@ public class MenuAdmin {
         } while (pilihan != 3);
     }
 
-    private static void menuAdmin() {
-        System.out.println("Menu Admin");
-        System.out.println("1. Saham");
-        System.out.println("2. SBN");
-        System.out.println("3. Logout");
-    }
-
     private static void menuSaham() {
         int pilihan;
 
         do {
-            System.out.println("Menu Admin > Saham");
-            System.out.println("1. Tambah Saham");
-            System.out.println("2. Ubah Harga Saham");
-            System.out.println("3. Kembali");
-            System.out.print("Masukkan angka: "); pilihan = Integer.parseInt(sc.nextLine());
+            AdminUI.menuSaham();
+            pilihan = InputValidation.inputInteger("Masukkan angka: ");
 
             switch (pilihan) {
                 case 1:
@@ -66,10 +58,8 @@ public class MenuAdmin {
         int pilihan;
 
         do {
-            System.out.println("Menu Admin > SBN");
-            System.out.println("1. Tambah SBN");
-            System.out.println("2. Kembali");
-            System.out.print("Masukkan angka: "); pilihan = Integer.parseInt(sc.nextLine());
+            AdminUI.menuSBN();
+            pilihan = InputValidation.inputInteger("Masukkan angka: ");
 
             switch (pilihan) {
                 case 1:
