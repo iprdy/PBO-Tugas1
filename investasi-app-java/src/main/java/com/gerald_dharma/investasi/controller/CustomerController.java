@@ -32,12 +32,8 @@ public class CustomerController {
     }
 
     public static void beliSahamLogic(String kode, int lembar) {
-        for (User user : DataUser.getUsers()) {
-            if(user.getUsername().equals(MenuLogin.getUsername())) {
-                Customer cust = (Customer) user;
-                cust.tambahSaham(kode, DataSaham.getNamaPerusahaanSaham(kode), DataSaham.getHargaSaham(kode), lembar);
-            }
-        }
+        Customer cust = MenuLogin.getCustomerLoggedIn();
+        cust.tambahSaham(kode, lembar);
     }
 
     public static void jualSaham() {

@@ -1,9 +1,12 @@
 package com.investasi.controller;
 
 import com.investasi.data.DataUser;
+import com.investasi.model.Customer;
 import com.investasi.model.User;
 
 public class LoginController {
+    private static Customer customer = null;
+
     public static User login(String username, String password) {
         for (User user : DataUser.getUsers()) {
             if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
