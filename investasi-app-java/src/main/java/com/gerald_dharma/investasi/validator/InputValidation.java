@@ -43,4 +43,17 @@ public class InputValidation {
             }
         }
     }
+
+    public static String inputStringKodeSahamCustomer(String input) {
+        while (true) {
+            System.out.print(input);
+            String x = sc.nextLine();
+
+            if (x.isEmpty()) {
+                System.out.println("Input tidak boleh kosong!");
+            } else if (DataValidation.kodeSahamCustomerCheck(x)){
+                return x;
+            }
+        }
+    }
 }
