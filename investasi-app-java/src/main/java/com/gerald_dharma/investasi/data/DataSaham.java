@@ -10,6 +10,7 @@ public class DataSaham {
 
     static {
         daftarSaham.add(new Saham("BBCA", "Bank BCA", 100000));
+        daftarSaham.add(new Saham("BBNI", "Bank BNI", 50000));
     }
 
     public static void tambahSaham(String kode, String namaPerusahaan, double harga) {
