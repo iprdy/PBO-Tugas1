@@ -14,7 +14,7 @@ public class MenuAdmin {
 
         do {
             AdminUI.mainMenu();
-            System.out.print("Masukkan angka: "); pilihan = Integer.parseInt(sc.nextLine());
+            pilihan = InputValidation.inputInteger("Masukkan angka: ");
 
             switch (pilihan) {
                 case 1:
