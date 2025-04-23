@@ -1,5 +1,6 @@
 package com.investasi.controller;
 
+import com.investasi.data.DataSBN;
 import com.investasi.data.DataSaham;
 import com.investasi.model.Customer;
 import com.investasi.menu.MenuLogin;
@@ -7,11 +8,6 @@ import com.investasi.validator.InputValidation;
 
 public class CustomerController {
     static Customer customer = MenuLogin.getCustomerLoggedIn();
-
-    public static void getPortofolio() {
-        customer.portofolio();
-    }
-
     
     public static void beliSaham() {
         DataSaham.printDataSaham();
@@ -21,14 +17,15 @@ public class CustomerController {
 
         customer.tambahSaham(kode, lembar);
     }
-
     
     public static void jualSaham() {
-        String kode = null;
-        int lembarSaham = 0, lembar = 0;
+        String kode;
+        int lembarSaham, lembar;
 
         do {
-            customer.printDataSahamCostumer();
+            if(!customer.printDataSahamCostumer()) {
+                return;
+            }
 
             kode = InputValidation.inputStringKodeSahamCustomer("Masukkan kode saham yang ingin dijual: ");
             lembar = InputValidation.inputInteger("Masukkan banyaknya lembar yang ingin dijual: ");
@@ -49,26 +46,26 @@ public class CustomerController {
 
     public static void beliSBN() {
         System.out.println("=== Daftar SBN yang Tersedia ===");
-        DataSBN.getSBN();
-    
-        String namaSBN = InputValidation.inputString("Masukkan nama SBN yang ingin dibeli: ");
+        DataSBN.printDataSBN();
+
+        String namaSBN = InputValidation.inputStringNamaSBN("Masukkan nama SBN yang ingin dibeli: ");
         double jumlahBeli = InputValidation.inputDouble("Masukkan jumlah pembelian (dalam rupiah): ");
     
-        boolean berhasil = customer.beliSBN(namaSBN, jumlahBeli);
+        boolean berhasil = customer.tambahSBN(namaSBN, jumlahBeli);
     
         if (berhasil) {
             System.out.println("Pembelian SBN berhasil!");
             System.out.println("SBN: " + namaSBN);
             System.out.printf("Jumlah: Rp%,.2f\n", jumlahBeli);
         } else {
-            System.out.println("Pembelian gagal. Pastikan nama SBN valid dan kuota mencukupi.");
+            System.out.println("Pembelian gagal. Kuota tidak mencukupi.");
         }
     }
     
 
     public static void simulasiSBN() {
         System.out.println("=== Simulasi Investasi SBN ===");
-        DataSBN.getSBN();
+        DataSBN.printDataSBN();
     
         String namaSBN = InputValidation.inputString("Masukkan nama SBN yang ingin disimulasikan: ");
         double jumlahInvestasi = InputValidation.inputDouble("Masukkan jumlah investasi: ");
@@ -90,5 +87,9 @@ public class CustomerController {
         } else {
             System.out.println("SBN tidak valid atau data tidak tersedia.");
         }
+    }
+
+    public static void getPortofolio() {
+        customer.portofolio();
     }
 }
