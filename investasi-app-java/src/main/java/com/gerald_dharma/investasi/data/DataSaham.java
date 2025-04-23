@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataSaham {
-    private static List<Saham> daftarSaham = new ArrayList<>();
+    private static final List<Saham> daftarSaham = new ArrayList<>();
 
     static {
         daftarSaham.add(new Saham("BBCA", "Bank BCA", 100000));
@@ -38,16 +38,26 @@ public class DataSaham {
 
     public static String getNamaPerusahaanSaham(String kode) {
         Saham saham = getSaham(kode);
+        if(saham == null) {
+            return "Nama perusahaan tidak ditemukan";
+        }
         return saham.getNamaPerusahaan();
     }
 
     public static double getHargaSaham(String kode) {
         Saham saham = getSaham(kode);
+        if(saham == null) {
+            return 0;
+        }
         return saham.getHarga();
     }
 
     public static void ubahHarga(String kode, double harga) {
         Saham saham = getSaham(kode);
+        if(saham == null) {
+            System.out.println("Gagal mengubah harga saham dengan kode " + kode);
+            return;
+        }
         saham.setHarga(harga);
     }
 }

@@ -5,6 +5,18 @@ import java.util.Scanner;
 public class InputValidation {
     static Scanner sc = new Scanner(System.in);
 
+    public static String inputString(String input) {
+        while (true) {
+            System.out.print(input);
+            String x = sc.nextLine();
+            if (x.isEmpty()) {
+                System.out.println("Input tidak boleh kosong");
+            } else {
+                return x;
+            }
+        }
+    }
+
     public static int inputInteger(String input) {
         while (true) {
             try {
@@ -50,6 +62,19 @@ public class InputValidation {
             if (x.isEmpty()) {
                 System.out.println("Input tidak boleh kosong!");
             } else if (DataValidation.kodeSahamCustomerCheck(x)){
+                return x;
+            }
+        }
+    }
+
+    public static String inputStringNamaSBN(String input) {
+        while (true) {
+            System.out.print(input);
+            String x = sc.nextLine();
+
+            if (x.isEmpty()) {
+                System.out.println("Input tidak boleh kosong!");
+            } else if (DataValidation.namaSBNCheck(x)){
                 return x;
             }
         }

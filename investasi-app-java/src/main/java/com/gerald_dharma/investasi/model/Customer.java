@@ -4,45 +4,52 @@ import com.investasi.data.DataSaham;
 import com.investasi.data.DataSBN;
 import com.investasi.menu.MenuCustomer;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Customer extends User{
-    private List<SahamCustomer> daftarSaham = new ArrayList<>();
-    private List<SuratBerhargaNegara> daftarSBN = new ArrayList<>();
-
+    private final List<SahamCustomer> daftarSaham = new ArrayList<>();
+    private final List<SuratBerhargaNegara> daftarSBN = new ArrayList<>();
 
     public Customer(String username, String password) {
         super(username, password);
     }
 
-    
-    public void tambahSaham(String kode, int lembar) {
-        int checkSaham = 0;
+
+    public List<SahamCustomer> getDataSahamCustomer() {
+        return daftarSaham;
+    }
+
+
+    public List<SuratBerhargaNegara> getDataSBNCustomer() {
+        return daftarSBN;
+    }
+
+    public SahamCustomer getSahamCustomer(String kode) {
         for (SahamCustomer sahamC : daftarSaham) {
             if (sahamC.getKode().equals(kode)) {
-                sahamC.setLembar(lembar);
-                checkSaham = 1;
-                break;
+                return sahamC;
             }
         }
-        if (checkSaham == 0) {
+        return null;
+    }
+
+    public void tambahSaham(String kode, int lembar) {
+        SahamCustomer saham = getSahamCustomer(kode);
+
+        if (saham != null) {
+            saham.setLembar(lembar);
+        } else {
             daftarSaham.add(new SahamCustomer(kode, DataSaham.getNamaPerusahaanSaham(kode), DataSaham.getHargaSaham(kode), lembar));
         }
     }
 
     
-    public void tambahSBN(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
-        daftarSBN.add(new SuratBerhargaNegara(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional));
-    }
-
-    
-    public boolean beliSBN(String namaSBN, double jumlah) {
-        SuratBerhargaNegara sbn = DataSBN.cariSBN(namaSBN);
+    public boolean tambahSBN(String namaSBN, double jumlah) {
+        SuratBerhargaNegara sbn = DataSBN.getSBN(namaSBN);
 
         if (sbn != null && DataSBN.prosesPembelian(namaSBN, jumlah)) {
-            this.daftarSBN.add(new SuratBerhargaNegara(
+            daftarSBN.add(new SuratBerhargaNegara(
                     sbn.getNama(),
                     sbn.getBunga(),
                     sbn.getJangkaWaktu(),
@@ -52,80 +59,43 @@ public class Customer extends User{
             return true;
         }
         return false;
-    }   
-
-
-    public void simulasiSBN(String namaSBN, double jumlah) {
-        SuratBerhargaNegara sbn = DataSBN.cariSBN(namaSBN);
-
-        if (sbn == null) {
-            System.out.println("SBN dengan nama \"" + namaSBN + "\" tidak ditemukan.");
-            return;
-        }
-
-        double bunga = sbn.getBunga();
-        int tahun = sbn.getJangkaWaktu();
-        double totalBunga = jumlah * (bunga / 100) * tahun;
-        double totalAkhir = jumlah + totalBunga;
-
-        System.out.println("Simulasi Investasi SBN: " + namaSBN);
-        System.out.println("Jumlah Investasi Awal : Rp " + jumlah);
-        System.out.println("Bunga Tahunan         : " + bunga + "%");
-        System.out.println("Jangka Waktu          : " + tahun + " tahun");
-        System.out.println("Total Bunga           : Rp " + String.format("%.2f", totalBunga));
-        System.out.println("Total Nilai Akhir     : Rp " + String.format("%.2f", totalAkhir));
     }
 
     
-    public List<SahamCustomer> getDataSahamCustomer() {
-        return daftarSaham;
-    }
-
-    
-    public void printDataSahamCostumer() {
+    public boolean printDataSahamCostumer() {
         if (daftarSaham.isEmpty()) {
             System.out.println("Anda tidak memiliki saham!");
-            MenuCustomer.show();
-            return;
+            return false;
         }
         for (SahamCustomer saham : daftarSaham) {
             System.out.println(saham);
         }
+        return true;
     }
 
     
     public int getLembar(String kode) {
-        for (SahamCustomer saham : daftarSaham) {
-            if(kode.equals(saham.getKode())) {
-                return saham.getLembar();
-            }
-        }
-        return 0;
+        SahamCustomer saham = getSahamCustomer(kode);
+        return saham.getLembar();
     }
 
     
     public void jualSaham(String kode, int jumlahLembar) {
-        SahamCustomer sahamYangDihapus = null;
+        SahamCustomer saham = getSahamCustomer(kode);
 
-        for (SahamCustomer saham : daftarSaham) {
-            if(kode.equals(saham.getKode())) {
-                if(saham.getLembar()-jumlahLembar == 0) {
-                    sahamYangDihapus = saham;
-                } else {
-                    saham.jualLembar(jumlahLembar);
-                }
-                break;
-            }
-        }
-        if (sahamYangDihapus != null) {
-            daftarSaham.remove(sahamYangDihapus);
+        if(saham.getLembar()-jumlahLembar == 0) {
+            daftarSaham.remove(saham);
+        } else {
+            saham.jualLembar(jumlahLembar);
         }
     }
 
     
     public void portofolio() {
+        System.out.println("----------------------------------------------------");
+        System.out.println("|                       Saham                      |");
         for (SahamCustomer saham : daftarSaham) {
-            System.out.println("-------------------------------------------------");
+            System.out.println("----------------------------------------------------");
             System.out.println("Kode: " + saham.getKode());
             System.out.println("Nama perusahaan: " + saham.getNamaPerusahaan());
             System.out.println("Harga saat beli: " + saham.getHargaBeli());
@@ -133,8 +103,17 @@ public class Customer extends User{
             System.out.println("Lembar: " + saham.getLembar());
             System.out.println("Total pembelian: " + saham.getLembar() * saham.getHargaBeli());
             System.out.println("Nilai pasar saat ini: " + saham.getLembar() * DataSaham.getHargaSaham(saham.getKode()));
-
         }
-        System.out.println("-------------------------------------------------");
+        System.out.println("----------------------------------------------------");
+        System.out.println("----------------------------------------------------");
+        System.out.println("|                        SBN                       |");
+        for (SuratBerhargaNegara sbn : daftarSBN) {
+            System.out.println("----------------------------------------------------");
+            System.out.println("Nama SBN: " + sbn.getNama());
+            System.out.printf("Nominal dimiliki: Rp%,.2f\n", sbn.getKuotaNasional());
+            System.out.println("Bunga tahunan: " + sbn.getBunga());
+            System.out.printf("Bunga per bulan: Rp%,.2f\n", sbn.getKuotaNasional() * (sbn.getBunga()/100) / 12);
+        }
+        System.out.println("----------------------------------------------------");
     }
 }

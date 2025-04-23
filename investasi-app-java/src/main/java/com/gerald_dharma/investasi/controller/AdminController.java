@@ -2,7 +2,6 @@ package com.investasi.controller;
 
 import com.investasi.data.DataSBN;
 import com.investasi.data.DataSaham;
-import com.investasi.validator.DataValidation;
 import com.investasi.validator.InputValidation;
 
 import java.time.LocalDate;
@@ -35,6 +34,5 @@ public class AdminController {
         double kuotaNasional = InputValidation.inputDouble("Masukkan kuota nasional: ");
 
         DataSBN.tambahSBN(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional);
-        DataSBN.getSBN();
     }
 }
