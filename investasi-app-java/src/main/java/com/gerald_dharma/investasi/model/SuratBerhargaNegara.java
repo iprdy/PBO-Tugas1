@@ -3,10 +3,10 @@ package com.investasi.model;
 import java.time.LocalDate;
 
 public class SuratBerhargaNegara {
-    private String nama;
-    private double bunga;
-    private int jangkaWaktu;
-    private LocalDate tanggalJatuhTempo;
+    private final String nama;
+    private final double bunga;
+    private final int jangkaWaktu;
+    private final LocalDate tanggalJatuhTempo;
     private double kuotaNasional;
 
     public SuratBerhargaNegara(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
@@ -17,13 +17,29 @@ public class SuratBerhargaNegara {
         this.kuotaNasional = kuotaNasional;
     }
 
-    public String getNama() { return nama; }
-    public double getBunga() { return bunga; }
-    public int getJangkaWaktu() { return jangkaWaktu; }
-    public LocalDate getTanggalJatuhTempo() { return tanggalJatuhTempo; }
-    public double getKuotaNasional() { return kuotaNasional; }
+    public String getNama() {
+        return nama;
+    }
 
-    public void setKuotaNasional(double kuotaNasional) { this.kuotaNasional = kuotaNasional; }
+    public double getBunga() {
+        return bunga;
+    }
+
+    public int getJangkaWaktu() {
+        return jangkaWaktu;
+    }
+
+    public LocalDate getTanggalJatuhTempo() {
+        return tanggalJatuhTempo;
+    }
+
+    public double getKuotaNasional() {
+        return kuotaNasional;
+    }
+
+    public void setKuotaNasional(double kuotaNasional) {
+        this.kuotaNasional = kuotaNasional;
+    }
 
     @Override
     public String toString() {

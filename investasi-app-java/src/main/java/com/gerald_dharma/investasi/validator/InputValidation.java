@@ -21,8 +21,7 @@ public class InputValidation {
         while (true) {
             try {
                 System.out.print(input);
-                int x = Integer.parseInt(sc.nextLine());
-                return x;
+                return Integer.parseInt(sc.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Input tidak valid, silahkan masukkan angka");
             }
@@ -33,8 +32,7 @@ public class InputValidation {
         while (true) {
             try {
                 System.out.print(input);
-                double x = Double.parseDouble(sc.nextLine());
-                return x;
+                return Double.parseDouble(sc.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Input tidak valid, silahkan masukkan angka");
             }

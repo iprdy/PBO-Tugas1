@@ -1,9 +1,9 @@
 package com.investasi.model;
 
 public class SahamCustomer {
-    private String kode;
-    private String namaPerusahaan;
-    private double hargaBeli;
+    private final String kode;
+    private final String namaPerusahaan;
+    private final double hargaBeli;
     private int lembar;
 
     public SahamCustomer(String kode, String namaPerusahaan, double hargaBeli, int lembar) {
@@ -40,10 +40,12 @@ public class SahamCustomer {
     @Override
     public String toString() {
         return String.format(
-                "Kode              : %s\n" +
-                "Nama Perusahaan   : %s\n" +
-                "Jumlah lembar     : %d\n",
-                kode, namaPerusahaan, lembar
+                """
+                Kode              : %s
+                Nama Perusahaan   : %s
+                Jumlah lembar     : %d
+                """,
+            kode, namaPerusahaan, lembar
         );
     }
 }
