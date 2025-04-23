@@ -65,6 +65,19 @@ public class InputValidation {
         }
     }
 
+    public static String inputStringKodeSahamAdmin(String input) {
+        while (true) {
+            System.out.print(input);
+            String x = sc.nextLine();
+
+            if (x.isEmpty()) {
+                System.out.println("Input tidak boleh kosong!");
+            } else if (DataValidation.kodeSahamAdminCheck(x)){
+                return x;
+            }
+        }
+    }
+
     public static String inputStringNamaSBN(String input) {
         while (true) {
             System.out.print(input);

@@ -36,6 +36,18 @@ public class DataValidation {
         return false;
     }
 
+    public static boolean kodeSahamAdminCheck(String kode) {
+        List<Saham> daftarSaham = DataSaham.getDataSaham();
+
+        for (Saham saham : daftarSaham) {
+            if(kode.equals(saham.getKode())) {
+                System.out.println("Kode saham " + kode + " sudah ada, silahkan coba yang lain");
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static boolean namaSBNCheck(String nama) {
         List<SuratBerhargaNegara> daftarSBN = DataSBN.getDataSBN();
 
