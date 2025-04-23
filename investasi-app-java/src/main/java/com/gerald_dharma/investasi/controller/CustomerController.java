@@ -9,7 +9,7 @@ import com.investasi.validator.InputValidation;
 public class CustomerController {
     static Customer customer = MenuLogin.getCustomerLoggedIn();
     
-    public static void beliSaham() {
+    public static void customerBeliSaham() {
         DataSaham.printDataSaham();
 
         String kode = InputValidation.inputStringKodeSaham("Masukkan kode saham yang ingin dibeli: ");
@@ -18,7 +18,7 @@ public class CustomerController {
         customer.tambahSaham(kode, lembar);
     }
     
-    public static void jualSaham() {
+    public static void customerJualSaham() {
         String kode;
         int lembarSaham, lembar;
 
@@ -44,7 +44,7 @@ public class CustomerController {
     }
 
 
-    public static void beliSBN() {
+    public static void customerBeliSBN() {
         System.out.println("=== Daftar SBN yang Tersedia ===");
         DataSBN.printDataSBN();
 
@@ -63,7 +63,7 @@ public class CustomerController {
     }
     
 
-    public static void simulasiSBN() {
+    public static void customerSimulasiSBN() {
         System.out.println("=== Simulasi Investasi SBN ===");
         DataSBN.printDataSBN();
     
@@ -89,7 +89,7 @@ public class CustomerController {
         }
     }
 
-    public static void getPortofolio() {
+    public static void customerGetPortofolio() {
         customer.portofolio();
     }
 }

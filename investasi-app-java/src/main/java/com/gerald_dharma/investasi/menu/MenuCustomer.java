@@ -14,19 +14,19 @@ public class MenuCustomer {
 
             switch (pilihan) {
                 case 1:
-                    CustomerController.beliSaham();
+                    CustomerController.customerBeliSaham();
                     break;
                 case 2:
-                    CustomerController.jualSaham();
+                    CustomerController.customerJualSaham();
                     break;
                 case 3:
-                    CustomerController.beliSBN();
+                    CustomerController.customerBeliSBN();
                     break;
                 case 4:
-                    CustomerController.simulasiSBN();
+                    CustomerController.customerSimulasiSBN();
                     break;
                 case 5:
-                    CustomerController.getPortofolio();
+                    CustomerController.customerGetPortofolio();
                     break;
                 case 6:
                     break;
