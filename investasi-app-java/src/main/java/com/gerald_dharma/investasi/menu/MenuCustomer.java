@@ -20,10 +20,10 @@ public class MenuCustomer {
                     CustomerController.jualSaham();
                     break;
                 case 3:
-                    //Beli SBN
+                    CustomerController.beliSBN();
                     break;
                 case 4:
-                    //Simulasi SBN
+                    CustomerController.simulasiSBN();
                     break;
                 case 5:
                     CustomerController.getPortofolio();
