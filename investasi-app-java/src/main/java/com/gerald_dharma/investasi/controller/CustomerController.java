@@ -43,4 +43,12 @@ public class CustomerController {
 
         customer.jualSaham(kode, lembar);
     }
+
+    public static void beliSBN() {
+        
+    }
+
+    public static void simulasiSBN() {
+        
+    }
 }
