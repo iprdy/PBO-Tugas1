@@ -67,6 +67,15 @@ public class CustomerController {
     
 
     public static void simulasiSBN() {
+        System.out.println("=== Simulasi Investasi SBN ===");
+        DataSBN.getSBN();
+    
+        String namaSBN = InputValidation.inputString("Masukkan nama SBN yang ingin disimulasikan: ");
+        double jumlahInvestasi = InputValidation.inputDouble("Masukkan jumlah investasi: ");
+    
+        double bunga = DataSBN.getBunga(namaSBN);
+        int tahun = DataSBN.getJangkaWaktu(namaSBN);
+    
         
     }
 }
