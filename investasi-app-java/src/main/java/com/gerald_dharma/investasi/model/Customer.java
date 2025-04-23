@@ -52,7 +52,31 @@ public class Customer extends User{
             return true;
         }
         return false;
-    }    
+    }   
+
+
+    public void simulasiSBN(String namaSBN, double jumlah) {
+        SuratBerhargaNegara sbn = DataSBN.cariSBN(namaSBN);
+
+        if (sbn == null) {
+            System.out.println("SBN dengan nama \"" + namaSBN + "\" tidak ditemukan.");
+            return;
+        }
+
+        double bunga = sbn.getBunga();
+        int tahun = sbn.getJangkaWaktu();
+        double totalBunga = jumlah * (bunga / 100) * tahun;
+        double totalAkhir = jumlah + totalBunga;
+
+        System.out.println("Simulasi Investasi SBN: " + namaSBN);
+        System.out.println("Jumlah Investasi Awal : Rp " + jumlah);
+        System.out.println("Bunga Tahunan         : " + bunga + "%");
+        System.out.println("Jangka Waktu          : " + tahun + " tahun");
+        System.out.println("Total Bunga           : Rp " + String.format("%.2f", totalBunga));
+        System.out.println("Total Nilai Akhir     : Rp " + String.format("%.2f", totalAkhir));
+    }
+
+    
     public List<SahamCustomer> getDataSahamCustomer() {
         return daftarSaham;
     }
