@@ -1,6 +1,7 @@
 package com.investasi.model;
 
 import com.investasi.data.DataSaham;
+import com.investasi.data.DataSBN;
 import com.investasi.menu.MenuCustomer;
 
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ public class Customer extends User{
         super(username, password);
     }
 
+    
     public void tambahSaham(String kode, int lembar) {
         int checkSaham = 0;
         for (SahamCustomer sahamC : daftarSaham) {
@@ -30,14 +32,17 @@ public class Customer extends User{
         }
     }
 
+    
     public void tambahSBN(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
         daftarSBN.add(new SuratBerhargaNegara(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional));
     }
 
+    
     public List<SahamCustomer> getDataSahamCustomer() {
         return daftarSaham;
     }
 
+    
     public void printDataSahamCostumer() {
         if (daftarSaham.isEmpty()) {
             System.out.println("Anda tidak memiliki saham!");
@@ -49,6 +54,7 @@ public class Customer extends User{
         }
     }
 
+    
     public int getLembar(String kode) {
         for (SahamCustomer saham : daftarSaham) {
             if(kode.equals(saham.getKode())) {
@@ -58,6 +64,7 @@ public class Customer extends User{
         return 0;
     }
 
+    
     public void jualSaham(String kode, int jumlahLembar) {
         SahamCustomer sahamYangDihapus = null;
 
@@ -76,6 +83,7 @@ public class Customer extends User{
         }
     }
 
+    
     public void portofolio() {
         for (SahamCustomer saham : daftarSaham) {
             System.out.println("-------------------------------------------------");
