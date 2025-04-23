@@ -76,6 +76,19 @@ public class CustomerController {
         double bunga = DataSBN.getBunga(namaSBN);
         int tahun = DataSBN.getJangkaWaktu(namaSBN);
     
-        
+        if (bunga > 0 && tahun > 0) {
+            double totalKeuntungan = jumlahInvestasi * bunga / 100 * tahun;
+            double totalAkhir = jumlahInvestasi + totalKeuntungan;
+    
+            System.out.println("=== Hasil Simulasi ===");
+            System.out.println("Nama SBN       : " + namaSBN);
+            System.out.printf("Investasi Awal : Rp%,.2f\n", jumlahInvestasi);
+            System.out.println("Bunga Tahunan  : " + bunga + "%");
+            System.out.println("Durasi         : " + tahun + " tahun");
+            System.out.printf("Keuntungan     : Rp%,.2f\n", totalKeuntungan);
+            System.out.printf("Total Akhir    : Rp%,.2f\n", totalAkhir);
+        } else {
+            System.out.println("SBN tidak valid atau data tidak tersedia.");
+        }
     }
 }
