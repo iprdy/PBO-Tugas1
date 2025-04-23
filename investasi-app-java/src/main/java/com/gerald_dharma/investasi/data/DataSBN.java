@@ -46,7 +46,7 @@ public class DataSBN {
         return (sbn != null) ? sbn.getJangkaWaktu() : -1;
     }
 
-    public static boolean prosesPembelian(String nama, double jumlah) {
+    public static boolean prosesPembelianSBN(String nama, double jumlah) {
         SuratBerhargaNegara sbn = getSBN(nama);
 
         if (sbn != null && sbn.getKuotaNasional() >= jumlah) {

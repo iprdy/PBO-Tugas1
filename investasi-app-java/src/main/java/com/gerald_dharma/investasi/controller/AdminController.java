@@ -23,7 +23,7 @@ public class AdminController {
         String kode = InputValidation.inputStringKodeSaham("Masukkan kode perusahaan: ");
         double hargaBaru = InputValidation.inputDouble("Masukkan harga baru: ");
 
-        DataSaham.ubahHarga(kode, hargaBaru);
+        DataSaham.ubahHargaSaham(kode, hargaBaru);
     }
 
     public static void adminTambahSBN() {
