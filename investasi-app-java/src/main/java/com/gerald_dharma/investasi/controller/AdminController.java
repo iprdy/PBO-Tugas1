@@ -11,8 +11,8 @@ public class AdminController {
     static Scanner sc = new Scanner(System.in);
 
     public static void adminTambahSaham() {
-        System.out.print("Masukkan kode perusahaan: "); String kode = sc.nextLine();
-        System.out.print("Masukkan nama perusahaan: "); String namaPerusahaan = sc.nextLine();
+        String kode = InputValidation.inputStringKodeSahamAdmin("Masukkan kode perusahaan: ");
+        String namaPerusahaan = InputValidation.inputString("Masukkan nama perusahaan: ");
         double harga = InputValidation.inputDouble("Masukkan harga saham: ");
 
         DataSaham.tambahSaham(kode, namaPerusahaan, harga);
@@ -20,6 +20,7 @@ public class AdminController {
 
     public static void adminUbahHargaSaham() {
         DataSaham.printDataSaham();
+
         String kode = InputValidation.inputStringKodeSaham("Masukkan kode perusahaan: ");
         double hargaBaru = InputValidation.inputDouble("Masukkan harga baru: ");
 
@@ -27,7 +28,7 @@ public class AdminController {
     }
 
     public static void adminTambahSBN() {
-        System.out.print("Masukkan nama SBN: "); String nama = sc.nextLine();
+        String nama = InputValidation.inputString("Masukkan nama SBN: ");
         double bunga = InputValidation.inputDouble("Masukkan bunga: ");
         int jangkaWaktu = InputValidation.inputInteger("Masukkan jangka waktu: ");
         System.out.print("Masukkan tanggal jatuh tempo (yyyy-mm-dd): "); String temp = sc.nextLine(); LocalDate tanggalJatuhTempo = LocalDate.parse(temp);
