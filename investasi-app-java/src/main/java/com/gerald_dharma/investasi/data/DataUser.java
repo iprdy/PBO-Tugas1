@@ -14,10 +14,10 @@ public class DataUser {
         users.add(new Admin("admin", "admin"));
 
         Customer cust0 = (Customer) users.get(0);
-        cust0.tambahSaham("BBCA", 10);
+        cust0.tambahSahamCustomer("BBCA", 10);
 
         Customer cust1 = (Customer) users.get(1);
-        cust1.tambahSaham("BBNI", 50);
+        cust1.tambahSahamCustomer("BBNI", 50);
     }
 
     public static List<User> getUsers() {

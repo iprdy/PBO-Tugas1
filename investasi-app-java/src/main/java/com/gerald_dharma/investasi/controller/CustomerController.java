@@ -15,7 +15,7 @@ public class CustomerController {
         String kode = InputValidation.inputStringKodeSaham("Masukkan kode saham yang ingin dibeli: ");
         int lembar = InputValidation.inputInteger("Masukkan banyak lembar yang ingin dibeli: ");
 
-        customer.tambahSaham(kode, lembar);
+        customer.tambahSahamCustomer(kode, lembar);
     }
     
     public static void customerJualSaham() {
@@ -30,7 +30,7 @@ public class CustomerController {
             kode = InputValidation.inputStringKodeSahamCustomer("Masukkan kode saham yang ingin dijual: ");
             lembar = InputValidation.inputInteger("Masukkan banyaknya lembar yang ingin dijual: ");
 
-            lembarSaham = customer.getLembar(kode);
+            lembarSaham = customer.getLembarSahamCustomer(kode);
 
             if(lembar > lembarSaham) {
                 System.out.println("Lembar yang anda miliki kurang");
@@ -40,7 +40,7 @@ public class CustomerController {
 
         System.out.println("Berhasil menjual saham dengan kode " + kode + " sebanyak " + lembar + " lembar");
 
-        customer.jualSaham(kode, lembar);
+        customer.jualSahamCustomer(kode, lembar);
     }
 
 
@@ -51,7 +51,7 @@ public class CustomerController {
         String namaSBN = InputValidation.inputStringNamaSBN("Masukkan nama SBN yang ingin dibeli: ");
         double jumlahBeli = InputValidation.inputDouble("Masukkan jumlah pembelian (dalam rupiah): ");
     
-        boolean berhasil = customer.tambahSBN(namaSBN, jumlahBeli);
+        boolean berhasil = customer.tambahSBNCustomer(namaSBN, jumlahBeli);
     
         if (berhasil) {
             System.out.println("Pembelian SBN berhasil!");
@@ -90,6 +90,6 @@ public class CustomerController {
     }
 
     public static void customerGetPortofolio() {
-        customer.portofolio();
+        customer.portofolioCustomer();
     }
 }
