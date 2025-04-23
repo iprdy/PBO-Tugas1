@@ -12,6 +12,7 @@ public class CustomerController {
         customer.portofolio();
     }
 
+    
     public static void beliSaham() {
         DataSaham.printDataSaham();
 
@@ -21,6 +22,7 @@ public class CustomerController {
         customer.tambahSaham(kode, lembar);
     }
 
+    
     public static void jualSaham() {
         String kode = null;
         int lembarSaham = 0, lembar = 0;
@@ -44,9 +46,25 @@ public class CustomerController {
         customer.jualSaham(kode, lembar);
     }
 
+
     public static void beliSBN() {
-        
+        System.out.println("=== Daftar SBN yang Tersedia ===");
+        DataSBN.getSBN();
+    
+        String namaSBN = InputValidation.inputString("Masukkan nama SBN yang ingin dibeli: ");
+        double jumlahBeli = InputValidation.inputDouble("Masukkan jumlah pembelian (dalam rupiah): ");
+    
+        boolean berhasil = customer.beliSBN(namaSBN, jumlahBeli);
+    
+        if (berhasil) {
+            System.out.println("Pembelian SBN berhasil!");
+            System.out.println("SBN: " + namaSBN);
+            System.out.printf("Jumlah: Rp%,.2f\n", jumlahBeli);
+        } else {
+            System.out.println("Pembelian gagal. Pastikan nama SBN valid dan kuota mencukupi.");
+        }
     }
+    
 
     public static void simulasiSBN() {
         
