@@ -20,7 +20,6 @@ public class MenuAdmin {
                     menuSBN();
                     break;
                 case 3:
-                    System.out.println("Logout. . .");
                     break;
                 default:
                     System.out.println("Mohon masukkan pilihan dengan benar!");

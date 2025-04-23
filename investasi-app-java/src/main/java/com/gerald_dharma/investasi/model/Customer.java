@@ -48,7 +48,7 @@ public class Customer extends User{
     public boolean tambahSBN(String namaSBN, double jumlah) {
         SuratBerhargaNegara sbn = DataSBN.getSBN(namaSBN);
 
-        if (sbn != null && DataSBN.prosesPembelian(namaSBN, jumlah)) {
+        if (sbn != null && DataSBN.prosesPembelianSBN(namaSBN, jumlah)) {
             daftarSBN.add(new SuratBerhargaNegara(
                     sbn.getNama(),
                     sbn.getBunga(),

@@ -13,12 +13,27 @@ public class DataSaham {
         daftarSaham.add(new Saham("BBNI", "Bank BNI", 50000));
     }
 
+    public static void tambahSaham(String kode, String namaPerusahaan, double harga) {
+        daftarSaham.add(new Saham(kode, namaPerusahaan, harga));
+    }
+
+    public static void ubahHargaSaham(String kode, double harga) {
+        Saham saham = getSaham(kode);
+        if(saham == null) {
+            System.out.println("Gagal mengubah harga saham dengan kode " + kode);
+            return;
+        }
+        saham.setHarga(harga);
+    }
+
     public static List<Saham> getDataSaham() {
         return daftarSaham;
     }
 
-    public static void tambahSaham(String kode, String namaPerusahaan, double harga) {
-        daftarSaham.add(new Saham(kode, namaPerusahaan, harga));
+    public static void printDataSaham() {
+        for (Saham saham : daftarSaham) {
+            System.out.println(saham);
+        }
     }
 
     private static Saham getSaham(String kode) {
@@ -28,12 +43,6 @@ public class DataSaham {
             }
         }
         return null;
-    }
-
-    public static void printDataSaham() {
-        for (Saham saham : daftarSaham) {
-            System.out.println(saham);
-        }
     }
 
     public static String getNamaPerusahaanSaham(String kode) {
@@ -50,14 +59,5 @@ public class DataSaham {
             return 0;
         }
         return saham.getHarga();
-    }
-
-    public static void ubahHarga(String kode, double harga) {
-        Saham saham = getSaham(kode);
-        if(saham == null) {
-            System.out.println("Gagal mengubah harga saham dengan kode " + kode);
-            return;
-        }
-        saham.setHarga(harga);
     }
 }
