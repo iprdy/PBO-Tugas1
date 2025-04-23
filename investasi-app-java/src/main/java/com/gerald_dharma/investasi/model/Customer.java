@@ -38,6 +38,21 @@ public class Customer extends User{
     }
 
     
+    public boolean beliSBN(String namaSBN, double jumlah) {
+        SuratBerhargaNegara sbn = DataSBN.cariSBN(namaSBN);
+
+        if (sbn != null && DataSBN.prosesPembelian(namaSBN, jumlah)) {
+            this.daftarSBN.add(new SuratBerhargaNegara(
+                    sbn.getNama(),
+                    sbn.getBunga(),
+                    sbn.getJangkaWaktu(),
+                    sbn.getTanggalJatuhTempo(),
+                    jumlah
+            ));
+            return true;
+        }
+        return false;
+    }    
     public List<SahamCustomer> getDataSahamCustomer() {
         return daftarSaham;
     }
