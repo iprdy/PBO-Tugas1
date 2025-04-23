@@ -37,10 +37,10 @@ public class MenuAdmin {
 
             switch (pilihan) {
                 case 1:
-                    AdminController.tambahSaham();
+                    AdminController.adminTambahSaham();
                     break;
                 case 2:
-                    AdminController.ubahHargaSaham();
+                    AdminController.adminUbahHargaSaham();
                     break;
                 case 3:
                     break;
@@ -59,7 +59,7 @@ public class MenuAdmin {
 
             switch (pilihan) {
                 case 1:
-                    AdminController.tambahSBN();
+                    AdminController.adminTambahSBN();
                     break;
                 case 2:
                     break;
