@@ -43,7 +43,6 @@ public class SuratBerhargaNegara {
 
     @Override
     public String toString() {
-        return String.format("%s | Bunga: %.2f%% | Jatuh Tempo: %s | Kuota: Rp %.0f",
-                nama, bunga, tanggalJatuhTempo.toString(), kuotaNasional);
+        return String.format("| Nama SBN: %-40s|\n| Bunga (%%): %-39.2f|\n| Jatuh Tempo: %-37s|\n| Kuota: Rp%,-41.2f|", nama, bunga, tanggalJatuhTempo.toString(), kuotaNasional);
     }
 }

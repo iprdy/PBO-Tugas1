@@ -45,7 +45,6 @@ public class CustomerController {
 
 
     public static void customerBeliSBN() {
-        System.out.println("=== Daftar SBN yang Tersedia ===");
         DataSBN.printDataSBN();
 
         String namaSBN = InputValidation.inputStringNamaSBN("Masukkan nama SBN yang ingin dibeli: ");
