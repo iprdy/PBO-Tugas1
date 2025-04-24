@@ -22,8 +22,12 @@ public class DataSBN {
     }
 
     public static void printDataSBN() {
+        System.out.println("+---------------------------------------------------+");
+        System.out.println("|              Daftar SBN Yang Tersedia             |");
+        System.out.println("+---------------------------------------------------+");
         for (SuratBerhargaNegara sbn : daftarSBN) {
             System.out.println(sbn);
+            System.out.println("+---------------------------------------------------+");
         }
     }
 
