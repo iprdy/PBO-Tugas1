@@ -13,4 +13,19 @@ public class CustomerUI {
         System.out.println("| 6. Logout                     |");
         System.out.println("+-------------------------------+");
     }
+
+    public static void uiSimulasiSBN(String namaSBN, double jumlahInvestasi, double bunga, int tahun, double totalKeuntungan, double totalAkhir) {
+        System.out.printf(
+                "+-------------------------------------------------------------------------+\n" +
+                        "|                             Hasil Simulasi                              |\n" +
+                        "+-------------------------------------------------------------------------+\n" +
+                        "| Nama SBN          : %-52s|\n" +
+                        "| Investasi Awal    : Rp%,-50.2f|\n" +
+                        "| Bunga Tahunan (.) : %-52.2f|\n" +
+                        "| Durasi (tahun)    : %-52d|\n" +
+                        "| Keuntungan        : Rp%,-50.2f|\n" +
+                        "| Total Akhir       : Rp%,-50.2f|\n" +
+                        "+-------------------------------------------------------------------------+\n"
+                , namaSBN, jumlahInvestasi, bunga, tahun, totalKeuntungan, totalAkhir);
+    }
 }
