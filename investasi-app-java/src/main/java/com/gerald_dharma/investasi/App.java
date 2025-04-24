@@ -9,10 +9,6 @@ public class App {
 }
 
 /*
-- Tampilan berhasil membeli saham
-- Mengubah tampilan berhasil menjual saham
-- Revisi tampilan daftar SBN yang tersedia
-- Mengubah tampilan berhasil membeli SBN
-- Press enter to continue saat berhasil membeli saham, menjual saham, membeli sbn, simulasi, portofolio
+- Revisi tampilan daftar SBN yang tersedia1
 - Menambahkan pesan berhasil logout, berhasil login
  */

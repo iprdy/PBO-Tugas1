@@ -2,6 +2,7 @@ package com.investasi.menu;
 
 import com.investasi.controller.AdminController;
 import com.investasi.ui.AdminUI;
+import com.investasi.ui.MenuLoginUI;
 import com.investasi.validator.InputValidation;
 
 public class MenuAdmin {
@@ -20,6 +21,8 @@ public class MenuAdmin {
                     menuSBN();
                     break;
                 case 3:
+                    MenuLoginUI.logout();
+                    InputValidation.pause();
                     break;
                 default:
                     System.out.println("Mohon masukkan pilihan dengan benar!");

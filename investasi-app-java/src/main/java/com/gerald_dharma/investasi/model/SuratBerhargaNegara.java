@@ -1,6 +1,7 @@
 package com.investasi.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class SuratBerhargaNegara {
     private final String nama;
@@ -33,6 +34,12 @@ public class SuratBerhargaNegara {
         return tanggalJatuhTempo;
     }
 
+    public String getTanggalJatuhTempoFormatted() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+        return tanggalJatuhTempo.format(formatter);
+    }
+
     public double getKuotaNasional() {
         return kuotaNasional;
     }
@@ -43,6 +50,14 @@ public class SuratBerhargaNegara {
 
     @Override
     public String toString() {
-        return String.format("| Nama SBN: %-40s|\n| Bunga (%%): %-39.2f|\n| Jatuh Tempo: %-37s|\n| Kuota: Rp%,-41.2f|", nama, bunga, tanggalJatuhTempo.toString(), kuotaNasional);
+        String bungaFormatted = String.format("%.2f%%", bunga);
+
+        return String.format(
+                """
+                        | Nama SBN    : %-36s|
+                        | Bunga       : %-36s|
+                        | Jatuh Tempo : %-36s|
+                        | Kuota       : Rp%,-34.2f|"""
+                , nama, bungaFormatted, getTanggalJatuhTempoFormatted(), kuotaNasional);
     }
 }

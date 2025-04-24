@@ -19,21 +19,27 @@ public class Customer extends User{
     }
 
     public boolean printDataSahamCustomer() {
+        System.out.println("+----------------------------------------------------------------------------------+");
+        System.out.println("|                            Daftar saham yang dimiliki                            |");
         if (daftarSaham.isEmpty()) {
-            System.out.println("+---------------------------------------------------+");
-            System.out.println("|             Anda tidak memiliki saham!            |");
-            System.out.println("+---------------------------------------------------+");
+            System.out.println("+----------------------------------------------------------------------------------+");
+            System.out.println("|          Anda tidak memiliki saham, silahkan beli saham terlebih dahulu          |");
+            System.out.println("+----------------------------------------------------------------------------------+");
             return false;
+        } else {
+            for (SahamCustomer saham : daftarSaham) {
+                System.out.println("+----------------------------------------------------------------------------------+");
+                System.out.printf("| Kode                 : %-58s|\n", saham.getKode());
+                System.out.printf("| Nama perusahaan      : %-58s|\n", saham.getNamaPerusahaan());
+                System.out.printf("| Harga saat beli      : Rp%,-56.2f|\n", saham.getHargaBeli());
+                System.out.printf("| Harga saat ini       : Rp%,-56.2f|\n", DataSaham.getHargaSaham(saham.getKode()));
+                System.out.printf("| Jumlah lembar        : %-58d|\n", saham.getLembar());
+                System.out.printf("| Total pembelian      : Rp%,-56.2f|\n", saham.getLembar() * saham.getHargaBeli());
+                System.out.printf("| Nilai pasar saat ini : Rp%,-56.2f|\n", saham.getLembar() * DataSaham.getHargaSaham(saham.getKode()));
+            }
+            System.out.println("+----------------------------------------------------------------------------------+");
+            return true;
         }
-
-        System.out.println("+---------------------------------------------------+");
-        System.out.println("|            Daftar Saham Yang Anda Miliki          |");
-        System.out.println("+---------------------------------------------------+");
-        for (SahamCustomer saham : daftarSaham) {
-            System.out.println(saham);
-            System.out.println("+---------------------------------------------------+");
-        }
-        return true;
     }
 
     public SahamCustomer getSahamCustomer(String kode) {
@@ -81,25 +87,7 @@ public class Customer extends User{
     }
 
     public void portofolioCustomer() {
-        System.out.println("+----------------------------------------------------------------------------------+");
-        System.out.println("|                            Daftar saham yang dimiliki                            |");
-        if (daftarSaham.isEmpty()) {
-            System.out.println("+----------------------------------------------------------------------------------+");
-            System.out.println("|          Anda tidak memiliki saham, silahkan beli saham terlebih dahulu          |");
-            System.out.println("+----------------------------------------------------------------------------------+");
-        } else {
-            for (SahamCustomer saham : daftarSaham) {
-                System.out.println("+----------------------------------------------------------------------------------+");
-                System.out.printf("| Kode                 : %-58s|\n", saham.getKode());
-                System.out.printf("| Nama perusahaan      : %-58s|\n", saham.getNamaPerusahaan());
-                System.out.printf("| Harga saat beli      : Rp%,-56.2f|\n", saham.getHargaBeli());
-                System.out.printf("| Harga saat ini       : Rp%,-56.2f|\n", DataSaham.getHargaSaham(saham.getKode()));
-                System.out.printf("| Jumlah lembar        : %-58d|\n", saham.getLembar());
-                System.out.printf("| Total pembelian      : Rp%,-56.2f|\n", saham.getLembar() * saham.getHargaBeli());
-                System.out.printf("| Nilai pasar saat ini : Rp%,-56.2f|\n", saham.getLembar() * DataSaham.getHargaSaham(saham.getKode()));
-            }
-            System.out.println("+----------------------------------------------------------------------------------+");
-        }
+        printDataSahamCustomer();
 
         System.out.println();
 
@@ -110,11 +98,14 @@ public class Customer extends User{
             System.out.println("|            Anda tidak memiliki SBN, silahkan beli SBN terlebih dahulu            |");
             System.out.println("+----------------------------------------------------------------------------------+");
         } else {
+
             for (SuratBerhargaNegara sbn : daftarSBN) {
+                String bungaFormatted = String.format("%.2f%%", sbn.getBunga());
+
                 System.out.println("+----------------------------------------------------------------------------------+");
                 System.out.printf("| Nama SBN                      : %-49s|\n", sbn.getNama());
                 System.out.printf("| Nominal dimiliki              : Rp%,-47.2f|\n", sbn.getKuotaNasional());
-                System.out.printf("| Bunga tahunan (.)             : %-49.2f|\n", sbn.getBunga());
+                System.out.printf("| Bunga tahunan                 : %-49s|\n", bungaFormatted);
                 System.out.printf("| Bunga yang diterima per bulan : Rp%,-47.2f|\n", sbn.getKuotaNasional() * (sbn.getBunga()/100) / 12);
             }
             System.out.println("+----------------------------------------------------------------------------------+");
