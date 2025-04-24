@@ -18,17 +18,20 @@ public class Customer extends User{
         return daftarSaham;
     }
 
-//    public List<SuratBerhargaNegara> getDataSBNCustomer() {
-//        return daftarSBN;
-//    }
-
-    public boolean printDataSahamCostumer() {
+    public boolean printDataSahamCustomer() {
         if (daftarSaham.isEmpty()) {
-            System.out.println("Anda tidak memiliki saham!");
+            System.out.println("+---------------------------------------------------+");
+            System.out.println("|             Anda tidak memiliki saham!            |");
+            System.out.println("+---------------------------------------------------+");
             return false;
         }
+
+        System.out.println("+---------------------------------------------------+");
+        System.out.println("|            Daftar Saham Yang Anda Miliki          |");
+        System.out.println("+---------------------------------------------------+");
         for (SahamCustomer saham : daftarSaham) {
             System.out.println(saham);
+            System.out.println("+---------------------------------------------------+");
         }
         return true;
     }

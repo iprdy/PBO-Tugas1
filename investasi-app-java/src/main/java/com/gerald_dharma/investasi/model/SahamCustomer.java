@@ -39,13 +39,6 @@ public class SahamCustomer {
 
     @Override
     public String toString() {
-        return String.format(
-                """
-                Kode              : %s
-                Nama Perusahaan   : %s
-                Jumlah lembar     : %d
-                """,
-            kode, namaPerusahaan, lembar
-        );
+        return String.format("| Kode: %-44s|\n| Nama Perusahaan: %-33s|\n| Jumlah Lembar: %-35d|", kode, namaPerusahaan, lembar);
     }
 }
