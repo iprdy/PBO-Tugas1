@@ -23,7 +23,7 @@ public class CustomerController {
         int lembarSaham, lembar;
 
         do {
-            if(!customer.printDataSahamCostumer()) {
+            if(!customer.printDataSahamCustomer()) {
                 return;
             }
 
