@@ -29,7 +29,6 @@ public class Saham {
 
     @Override
     public String toString() {
-        return String.format("[%s] %s - Rp %.2f", kode, namaPerusahaan, harga);
+        return String.format("| Kode: %-44s|\n| Nama Perusahaan: %-33s|\n| Harga: Rp%,-41.2f|", kode, namaPerusahaan, harga);
     }
 }
-
