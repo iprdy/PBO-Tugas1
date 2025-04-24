@@ -7,8 +7,3 @@ public class App {
         new MainController().start();
     }
 }
-
-/*
-- Revisi tampilan daftar SBN yang tersedia1
-- Menambahkan pesan berhasil logout, berhasil login
- */
