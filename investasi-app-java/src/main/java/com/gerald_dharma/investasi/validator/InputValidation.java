@@ -103,4 +103,15 @@ public class InputValidation {
             }
         }
     }
+
+    public static void pauseAndClear() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("\033[1mTekan enter untuk melanjutkan. . .\033[0m");
+        scanner.nextLine();
+
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
 }
