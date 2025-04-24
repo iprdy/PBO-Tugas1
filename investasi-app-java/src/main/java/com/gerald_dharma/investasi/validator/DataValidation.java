@@ -59,4 +59,16 @@ public class DataValidation {
         System.out.println("SBN dengan nama " + nama + " tidak ditemukan");
         return false;
     }
+    public static boolean namaSBNAdminCheck(String nama) {
+        List<SuratBerhargaNegara> daftarSBN = DataSBN.getDataSBN();
+
+        for (SuratBerhargaNegara sBN : daftarSBN) {
+            if(nama.equalsIgnoreCase(sBN.getNama())) {
+                System.out.println("Nama SBN " + nama + " sudah ada, silahkan coba yang lain");
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

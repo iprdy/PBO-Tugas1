@@ -28,7 +28,7 @@ public class AdminController {
     }
 
     public static void adminTambahSBN() {
-        String nama = InputValidation.inputString("Masukkan nama SBN: ");
+        String nama = InputValidation.inputStringNamaSBNAdmin("Masukkan nama SBN: ");
         double bunga = InputValidation.inputDouble("Masukkan bunga: ");
         int jangkaWaktu = InputValidation.inputInteger("Masukkan jangka waktu: ");
         System.out.print("Masukkan tanggal jatuh tempo (yyyy-mm-dd): "); String temp = sc.nextLine(); LocalDate tanggalJatuhTempo = LocalDate.parse(temp);

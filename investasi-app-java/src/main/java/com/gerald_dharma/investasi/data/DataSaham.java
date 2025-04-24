@@ -9,8 +9,8 @@ public class DataSaham {
     private static final List<Saham> daftarSaham = new ArrayList<>();
 
     static {
-        daftarSaham.add(new Saham("BBCA", "Bank BCA", 100000));
-        daftarSaham.add(new Saham("BBNI", "Bank BNI", 50000));
+        daftarSaham.add(new Saham("BBCA", "Bank BCA", 1000000));
+        daftarSaham.add(new Saham("BBNI", "Bank BNI", 1000000));
     }
 
     public static void tambahSaham(String kode, String namaPerusahaan, double harga) {
@@ -31,8 +31,12 @@ public class DataSaham {
     }
 
     public static void printDataSaham() {
+        System.out.println("+---------------------------------------------------+");
+        System.out.println("|             Daftar Saham Yang Tersedia            |");
+        System.out.println("+---------------------------------------------------+");
         for (Saham saham : daftarSaham) {
             System.out.println(saham);
+            System.out.println("+---------------------------------------------------+");
         }
     }
 

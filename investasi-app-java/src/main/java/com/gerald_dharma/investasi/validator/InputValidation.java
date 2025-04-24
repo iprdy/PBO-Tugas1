@@ -90,4 +90,17 @@ public class InputValidation {
             }
         }
     }
+
+    public static String inputStringNamaSBNAdmin(String input) {
+        while (true) {
+            System.out.print(input);
+            String x = sc.nextLine();
+
+            if (x.isEmpty()) {
+                System.out.println("Input tidak boleh kosong!");
+            } else if (DataValidation.namaSBNAdminCheck(x)){
+                return x;
+            }
+        }
+    }
 }
