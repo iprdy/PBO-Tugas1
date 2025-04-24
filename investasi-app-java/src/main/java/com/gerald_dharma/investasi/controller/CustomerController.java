@@ -17,6 +17,7 @@ public class CustomerController {
         int lembar = InputValidation.inputInteger("Masukkan banyak lembar yang ingin dibeli: ");
 
         customer.tambahSahamCustomer(kode, lembar);
+        InputValidation.pauseAndClear();
     }
     
     public static void customerJualSaham() {
@@ -64,7 +65,6 @@ public class CustomerController {
     
 
     public static void customerSimulasiSBN() {
-        System.out.println("=== Simulasi Investasi SBN ===");
         DataSBN.printDataSBN();
     
         String namaSBN = InputValidation.inputString("Masukkan nama SBN yang ingin disimulasikan: ");

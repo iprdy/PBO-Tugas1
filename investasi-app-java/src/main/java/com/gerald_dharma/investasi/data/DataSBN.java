@@ -53,7 +53,7 @@ public class DataSBN {
     public static boolean prosesPembelianSBN(String nama, double jumlah) {
         SuratBerhargaNegara sbn = getSBN(nama);
 
-        if (sbn != null && sbn.getKuotaNasional() >= jumlah) {
+        if (sbn != null && sbn.getKuotaNasional() >= jumlah && sbn.getKuotaNasional() != 0) {
             sbn.setKuotaNasional(sbn.getKuotaNasional() - jumlah);
             return true;
         }
