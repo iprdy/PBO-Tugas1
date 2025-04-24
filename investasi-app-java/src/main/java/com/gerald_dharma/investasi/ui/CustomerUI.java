@@ -2,12 +2,15 @@ package com.investasi.ui;
 
 public class CustomerUI {
     public static void mainMenu() {
-        System.out.println("Menu Customer");
-        System.out.println("1. Beli Saham");
-        System.out.println("2. Jual Saham");
-        System.out.println("3. Beli SBN");
-        System.out.println("4. Simulasi SBN");
-        System.out.println("5. Portofolio");
-        System.out.println("6. Logout");
+        System.out.println("+-------------------------------+");
+        System.out.println("|         Menu Customer         |");
+        System.out.println("+-------------------------------+");
+        System.out.println("| 1. Beli Saham                 |");
+        System.out.println("| 2. Jual Saham                 |");
+        System.out.println("| 3. Beli SBN                   |");
+        System.out.println("| 4. Simulasi SBN               |");
+        System.out.println("| 5. Portofolio                 |");
+        System.out.println("| 6. Logout                     |");
+        System.out.println("+-------------------------------+");
     }
 }
