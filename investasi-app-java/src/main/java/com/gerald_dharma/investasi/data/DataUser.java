@@ -11,6 +11,7 @@ public class DataUser {
     static {
         users.add(new Customer("user", "user"));
         users.add(new Customer("dhar", "dhar"));
+        users.add(new Customer("user1", "user1"));
         users.add(new Admin("admin", "admin"));
 
         Customer cust0 = (Customer) users.get(0);

@@ -81,28 +81,43 @@ public class Customer extends User{
     }
 
     public void portofolioCustomer() {
-        System.out.println("----------------------------------------------------");
-        System.out.println("|                       Saham                      |");
-        for (SahamCustomer saham : daftarSaham) {
-            System.out.println("----------------------------------------------------");
-            System.out.println("Kode: " + saham.getKode());
-            System.out.println("Nama perusahaan: " + saham.getNamaPerusahaan());
-            System.out.println("Harga saat beli: " + saham.getHargaBeli());
-            System.out.println("Harga saat ini: " + DataSaham.getHargaSaham(saham.getKode()));
-            System.out.println("Lembar: " + saham.getLembar());
-            System.out.println("Total pembelian: " + saham.getLembar() * saham.getHargaBeli());
-            System.out.println("Nilai pasar saat ini: " + saham.getLembar() * DataSaham.getHargaSaham(saham.getKode()));
+        System.out.println("+----------------------------------------------------------------------------------+");
+        System.out.println("|                            Daftar saham yang dimiliki                            |");
+        if (daftarSaham.isEmpty()) {
+            System.out.println("+----------------------------------------------------------------------------------+");
+            System.out.println("|          Anda tidak memiliki saham, silahkan beli saham terlebih dahulu          |");
+            System.out.println("+----------------------------------------------------------------------------------+");
+        } else {
+            for (SahamCustomer saham : daftarSaham) {
+                System.out.println("+----------------------------------------------------------------------------------+");
+                System.out.printf("| Kode                 : %-58s|\n", saham.getKode());
+                System.out.printf("| Nama perusahaan      : %-58s|\n", saham.getNamaPerusahaan());
+                System.out.printf("| Harga saat beli      : Rp%,-56.2f|\n", saham.getHargaBeli());
+                System.out.printf("| Harga saat ini       : Rp%,-56.2f|\n", DataSaham.getHargaSaham(saham.getKode()));
+                System.out.printf("| Jumlah lembar        : %-58d|\n", saham.getLembar());
+                System.out.printf("| Total pembelian      : Rp%,-56.2f|\n", saham.getLembar() * saham.getHargaBeli());
+                System.out.printf("| Nilai pasar saat ini : Rp%,-56.2f|\n", saham.getLembar() * DataSaham.getHargaSaham(saham.getKode()));
+            }
+            System.out.println("+----------------------------------------------------------------------------------+");
         }
-        System.out.println("----------------------------------------------------");
-        System.out.println("----------------------------------------------------");
-        System.out.println("|                        SBN                       |");
-        for (SuratBerhargaNegara sbn : daftarSBN) {
-            System.out.println("----------------------------------------------------");
-            System.out.println("Nama SBN: " + sbn.getNama());
-            System.out.printf("Nominal dimiliki: Rp%,.2f\n", sbn.getKuotaNasional());
-            System.out.println("Bunga tahunan: " + sbn.getBunga());
-            System.out.printf("Bunga per bulan: Rp%,.2f\n", sbn.getKuotaNasional() * (sbn.getBunga()/100) / 12);
+
+        System.out.println();
+
+        System.out.println("+----------------------------------------------------------------------------------+");
+        System.out.println("|                             Daftar SBN yang dimiliki                             |");
+        if (daftarSBN.isEmpty()) {
+            System.out.println("+----------------------------------------------------------------------------------+");
+            System.out.println("|            Anda tidak memiliki SBN, silahkan beli SBN terlebih dahulu            |");
+            System.out.println("+----------------------------------------------------------------------------------+");
+        } else {
+            for (SuratBerhargaNegara sbn : daftarSBN) {
+                System.out.println("+----------------------------------------------------------------------------------+");
+                System.out.printf("| Nama SBN                      : %-49s|\n", sbn.getNama());
+                System.out.printf("| Nominal dimiliki              : Rp%,-47.2f|\n", sbn.getKuotaNasional());
+                System.out.printf("| Bunga tahunan (.)             : %-49.2f|\n", sbn.getBunga());
+                System.out.printf("| Bunga yang diterima per bulan : Rp%,-47.2f|\n", sbn.getKuotaNasional() * (sbn.getBunga()/100) / 12);
+            }
+            System.out.println("+----------------------------------------------------------------------------------+");
         }
-        System.out.println("----------------------------------------------------");
     }
 }

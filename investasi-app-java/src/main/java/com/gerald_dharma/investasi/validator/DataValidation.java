@@ -52,7 +52,7 @@ public class DataValidation {
         List<SuratBerhargaNegara> daftarSBN = DataSBN.getDataSBN();
 
         for (SuratBerhargaNegara sBN : daftarSBN) {
-            if(nama.equalsIgnoreCase(sBN.getNama())) {
+            if(nama.equals(sBN.getNama())) {
                 return true;
             }
         }
@@ -63,7 +63,7 @@ public class DataValidation {
         List<SuratBerhargaNegara> daftarSBN = DataSBN.getDataSBN();
 
         for (SuratBerhargaNegara sBN : daftarSBN) {
-            if(nama.equalsIgnoreCase(sBN.getNama())) {
+            if(nama.equals(sBN.getNama())) {
                 System.out.println("Nama SBN " + nama + " sudah ada, silahkan coba yang lain");
                 return false;
             }
