@@ -33,7 +33,7 @@ public class DataSBN {
 
     public static SuratBerhargaNegara getSBN(String nama) {
         for (SuratBerhargaNegara sbn : daftarSBN) {
-            if (sbn.getNama().equalsIgnoreCase(nama)) {
+            if (sbn.getNama().equals(nama)) {
                 return sbn;
             }
         }

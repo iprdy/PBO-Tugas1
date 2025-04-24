@@ -16,8 +16,15 @@ public class CustomerController {
         String kode = InputValidation.inputStringKodeSaham("Masukkan kode saham yang ingin dibeli: ");
         int lembar = InputValidation.inputInteger("Masukkan banyak lembar yang ingin dibeli: ");
 
+        if(confirmationBeliSahamCustomer(kode, lembar)) {
+            return;
+        }
+
         customer.tambahSahamCustomer(kode, lembar);
-        InputValidation.pauseAndClear();
+
+        CustomerUI.uiCustomerBerhasilBeliSaham(kode, lembar);
+
+        InputValidation.pause();
     }
     
     public static void customerJualSaham() {
@@ -35,14 +42,20 @@ public class CustomerController {
             lembarSaham = customer.getLembarSahamCustomer(kode);
 
             if(lembar > lembarSaham) {
-                System.out.println("Lembar yang anda miliki kurang");
+                CustomerUI.uiGagalMenjualSahamCustomer();
             }
 
         } while(lembar > lembarSaham);
 
-        System.out.println("Berhasil menjual saham dengan kode " + kode + " sebanyak " + lembar + " lembar");
+        if (confirmationJualSahamCustomer(kode, lembar)) {
+            return;
+        }
 
         customer.jualSahamCustomer(kode, lembar);
+
+        CustomerUI.uiCustomerBerhasilJualSaham(kode, lembar);
+
+        InputValidation.pause();
     }
 
 
@@ -51,15 +64,21 @@ public class CustomerController {
 
         String namaSBN = InputValidation.inputStringNamaSBN("Masukkan nama SBN yang ingin dibeli: ");
         double jumlahBeli = InputValidation.inputDouble("Masukkan jumlah pembelian (dalam rupiah): ");
-    
+
         boolean berhasil = customer.tambahSBNCustomer(namaSBN, jumlahBeli);
-    
+
         if (berhasil) {
-            System.out.println("Pembelian SBN berhasil!");
-            System.out.println("SBN: " + namaSBN);
-            System.out.printf("Jumlah: Rp%,.2f\n", jumlahBeli);
+            if(confirmationBeliSBNCustomer(namaSBN, jumlahBeli)) {
+                return;
+            }
+
+            CustomerUI.uiCustomerBerhasilBeliSBN(namaSBN, jumlahBeli);
+
+            InputValidation.pause();
         } else {
-            System.out.println("Pembelian gagal. Kuota tidak mencukupi.");
+            CustomerUI.uiGagalMenjualSBNCustomer();
+
+            InputValidation.pause();
         }
     }
     
@@ -78,12 +97,42 @@ public class CustomerController {
             double totalAkhir = jumlahInvestasi + totalKeuntungan;
 
             CustomerUI.uiSimulasiSBN(namaSBN, jumlahInvestasi, bunga, tahun, totalKeuntungan, totalAkhir);
+
+            InputValidation.pause();
         } else {
-            System.out.println("SBN tidak valid atau data tidak tersedia.");
+            CustomerUI.uiSBNTidakValid();
+
+            InputValidation.pause();
         }
     }
 
     public static void customerGetPortofolio() {
         customer.portofolioCustomer();
+
+        InputValidation.pause();
+    }
+
+    public static boolean confirmationBeliSahamCustomer(String kode, int lembar) {
+        CustomerUI.uiConfirmationBeliSahamCustomer(kode, lembar);
+
+        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
+
+        return confirmation == 2;
+    }
+
+    public static boolean confirmationJualSahamCustomer(String kode, int lembar) {
+        CustomerUI.uiConfirmationJualSahamCustomer(kode, lembar);
+
+        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
+
+        return confirmation == 2;
+    }
+
+    public static boolean confirmationBeliSBNCustomer(String namaSBN, double jumlahBeli) {
+        CustomerUI.uiConfirmationBeliSBNCustomer(namaSBN, jumlahBeli);
+
+        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
+
+        return confirmation == 2;
     }
 }
