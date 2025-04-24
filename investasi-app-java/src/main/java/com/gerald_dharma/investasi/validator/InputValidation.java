@@ -1,5 +1,7 @@
 package com.investasi.validator;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class InputValidation {
@@ -100,6 +102,26 @@ public class InputValidation {
                 System.out.println("Input tidak boleh kosong!");
             } else if (DataValidation.namaSBNAdminCheck(x)){
                 return x;
+            }
+        }
+    }
+
+    public static LocalDate inputLocalDate(String input) {
+        while (true) {
+            try {
+                System.out.print(input);
+                String x = sc.nextLine();
+
+                if (x.isEmpty()) {
+                    System.out.println("Input tidak boleh kosong!");
+                    continue;
+                }
+
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+                return LocalDate.parse(x,formatter);
+            } catch (Exception e) {
+                System.out.println("Format tidak valid, silahkan coba lagi!");
             }
         }
     }

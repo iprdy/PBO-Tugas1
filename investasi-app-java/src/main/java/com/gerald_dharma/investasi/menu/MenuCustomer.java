@@ -2,6 +2,7 @@ package com.investasi.menu;
  
 import com.investasi.controller.CustomerController;
 import com.investasi.ui.CustomerUI;
+import com.investasi.ui.MenuLoginUI;
 import com.investasi.validator.InputValidation;
 
 public class MenuCustomer {
@@ -29,6 +30,8 @@ public class MenuCustomer {
                     CustomerController.customerGetPortofolio();
                     break;
                 case 6:
+                    MenuLoginUI.logout();
+                    InputValidation.pause();
                     break;
                 default:
                     System.out.println("Mohon masukkan pilihan dengan benar!");

@@ -33,6 +33,7 @@ public class CustomerController {
 
         do {
             if(!customer.printDataSahamCustomer()) {
+                InputValidation.pause();
                 return;
             }
 
