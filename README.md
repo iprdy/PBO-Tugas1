@@ -1,6 +1,6 @@
 # Program Investasi Saham dan Surat Berharga Negara (SBN)
 
-Hi! Ini adalah proyek kecil untuk pemesanan makanan online demi menuntaskan Tugas I PBO KAMI.
+Hi! Ini adalah proyek kecil untuk Investasi Saham dan Surat Berharga Negara (SBN) demi menuntaskan Tugas I PBO KAMI.
 
 Di bawah ini adalah deskripsi program, penjelasan dari bagaimana program akan dijalankan, dan UML dari program ini. Untuk deskripsi kode lebih lengkap dapat dilihat pada kode program yang sudah dicommit sebelumnya (sudah disertakan beberapa comment untuk membantu dalam mengerti cara kerja program). Selamat menyimak :>
 
