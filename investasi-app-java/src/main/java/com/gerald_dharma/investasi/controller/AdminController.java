@@ -7,6 +7,8 @@ import com.investasi.validator.InputValidation;
 
 import java.time.LocalDate;
 
+
+
 public class AdminController {
     public static void adminTambahSaham() {
         String kode = InputValidation.inputStringKodeSahamAdmin("Masukkan kode perusahaan: ");
@@ -24,6 +26,8 @@ public class AdminController {
         InputValidation.pause();
     }
 
+
+    
     public static void adminUbahHargaSaham() {
         DataSaham.printDataSaham();
 
@@ -41,6 +45,8 @@ public class AdminController {
         InputValidation.pause();
     }
 
+
+    
     public static void adminTambahSBN() {
         String nama = InputValidation.inputStringNamaSBNAdmin("Masukkan nama SBN: ");
         double bunga = InputValidation.inputDouble("Masukkan bunga: ");
@@ -59,6 +65,8 @@ public class AdminController {
         InputValidation.pause();
     }
 
+
+    
     public static boolean confirmationTambahSahamAdmin(String kode, String namaPerusahaan, double harga) {
         AdminUI.uiConfirmationTambahSahamAdmin(kode, namaPerusahaan, harga);
 
@@ -67,6 +75,8 @@ public class AdminController {
         return confirmation == 2;
     }
 
+
+    
     public static boolean confirmationUbahHargaSahamAdmin(String kode, double hargaBaru) {
         double hargaLama = DataSaham.getHargaSaham(kode);
 
@@ -77,6 +87,8 @@ public class AdminController {
         return confirmation == 2;
     }
 
+
+    
     public static boolean confirmationTambahSBNAdmin(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
         AdminUI.uiConfirmationTambahSBNAdmin(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional);
 
