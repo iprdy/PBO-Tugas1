@@ -21,6 +21,9 @@ public class MenuLogin {
             if (pilihan == 2) {
                 MenuLoginUI.thankYou();
                 break;
+            } else if (pilihan != 1) {
+                System.out.println("Input tidak valid, silahkan masukkan pilihan 1 atau 2!");
+                continue;
             }
 
             user = LoginController.login();

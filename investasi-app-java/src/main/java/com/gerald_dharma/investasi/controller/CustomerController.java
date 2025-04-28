@@ -116,24 +116,32 @@ public class CustomerController {
     public static boolean confirmationBeliSahamCustomer(String kode, int lembar) {
         CustomerUI.uiConfirmationBeliSahamCustomer(kode, lembar);
 
-        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
-
-        return confirmation == 2;
+        return confirmation();
     }
 
     public static boolean confirmationJualSahamCustomer(String kode, int lembar) {
         CustomerUI.uiConfirmationJualSahamCustomer(kode, lembar);
 
-        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
-
-        return confirmation == 2;
+        return confirmation();
     }
 
     public static boolean confirmationBeliSBNCustomer(String namaSBN, double jumlahBeli) {
         CustomerUI.uiConfirmationBeliSBNCustomer(namaSBN, jumlahBeli);
 
-        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
+        return confirmation();
+    }
 
-        return confirmation == 2;
+    public static boolean confirmation() {
+        while (true) {
+            int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
+
+            if (confirmation == 1) {
+                return false;
+            } else if (confirmation == 2) {
+                return true;
+            }
+
+            System.out.println("Input tidak valid, silahkan masukkan pilihan 1 atau 2!");
+        }
     }
 }

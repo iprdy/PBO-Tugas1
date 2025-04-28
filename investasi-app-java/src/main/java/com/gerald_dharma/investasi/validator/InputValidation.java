@@ -131,5 +131,7 @@ public class InputValidation {
 
         System.out.print("\033[1mTekan enter untuk melanjutkan. . .\033[0m");
         scanner.nextLine();
+
+
     }
 }
