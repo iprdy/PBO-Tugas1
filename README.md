@@ -1,114 +1,59 @@
-================================================================================
-||                       APLIKASI INVESTASI SAHAM & SBN                       ||
-================================================================================
+# Program Investasi Saham dan Surat Berharga Negara (SBN)
 
-Sebuah aplikasi berbasis Java yang memungkinkan pengguna melakukan simulasi investasi 
-pada instrumen SAHAM dan SURAT BERHARGA NEGARA (SBN). Proyek ini dirancang dengan 
-struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
+**Deskripsi Proyek**  
+Program ini adalah aplikasi sederhana yang dikembangkan menggunakan bahasa pemrograman Java, yang memungkinkan pengguna untuk melakukan investasi dalam dua produk utama: **Saham** dan **Surat Berharga Negara (SBN)**. Program ini dirancang dengan dua jenis pengguna: **Admin** dan **Customer**, dengan akses dan fungsionalitas yang berbeda. Admin memiliki hak untuk mengelola produk investasi, sementara customer dapat melakukan investasi dan melihat portofolio mereka.
 
+## Fitur Utama:
+- **Admin:**
+  - Melihat daftar saham dan SBN yang tersedia.
+  - Menambah dan menghapus saham.
+  - Mengubah harga saham yang terdaftar.
+  - Menambah produk SBN baru.
+- **Customer:**
+  - Melakukan investasi dalam saham (membeli dan menjual).
+  - Membeli SBN sesuai kuota yang tersedia.
+  - Melihat portofolio investasi mereka (saham dan SBN yang dimiliki).
+  - Melakukan simulasi kupon SBN per bulan.
 
-================================================================================
-||                                FITUR UTAMA                                ||
-================================================================================
+## Alur Program:
+1. **Login Pengguna**  
+   Program akan meminta pengguna untuk login terlebih dahulu. Jika login gagal, akan ditampilkan pesan kegagalan, sedangkan jika berhasil, pengguna akan diarahkan ke menu investasi.
+   
+2. **Menu Investasi**  
+   - Admin memiliki akses untuk mengelola produk investasi (saham dan SBN).
+   - Customer dapat memilih produk yang ingin mereka investasikan, yaitu membeli saham atau SBN, serta melakukan penjualan saham.
+   
+3. **Mekanisme Investasi:**
+   - **Pembelian Saham:** Customer dapat melihat daftar saham yang tersedia dan membeli saham sesuai jumlah yang diinginkan.
+   - **Penjualan Saham:** Customer dapat menjual saham yang dimiliki dengan memilih saham yang tersedia dan memasukkan jumlah lembar yang akan dijual.
+   - **Pembelian SBN:** Customer dapat membeli produk SBN dengan memilih SBN yang tersedia dan memasukkan jumlah nominal yang ingin dibeli. Program akan memastikan bahwa kuota nasional masih tersedia.
+   
+4. **Simulasi Kupon SBN:**  
+   Rumus simulasi kupon per bulan adalah:
+   \[
+   \text{Kupon SBN} = \left( \frac{\text{Bunga}}{12} \right) \times 90\% \times \text{Nominal Investasi}
+   \]
 
-👤 AUTENTIKASI PENGGUNA
-- Login dua jenis pengguna: Admin dan Customer
-- Akun login di-hardcode
+## Deskripsi Kelas:
+- **Kelas Saham:**
+  - **Field:** Kode, Nama Perusahaan, Harga
+- **Kelas SuratBerhargaNegara (SBN):**
+  - **Field:** Nama, Bunga, Jangka Waktu, Tanggal Jatuh Tempo, Kuota Nasional
 
-🔧 FITUR ADMIN
-- Tambah & ubah harga produk Saham
-- Tambah produk SBN
-- (Opsional) Hapus produk investasi
+## Portofolio Customer:
+- Menampilkan daftar saham yang dimiliki lengkap dengan jumlah lembar dan nilai pasar.
+- Menampilkan daftar SBN yang dimiliki, termasuk nominal dan bunga SBN yang diterima setiap bulan dalam Rupiah.
 
-💸 FITUR CUSTOMER
-- Beli & jual Saham
-- Beli SBN dengan kuota nasional
-- Simulasi bunga bulanan SBN
-- Tampilkan portofolio investasi
+## Catatan:
+Seluruh proses dalam program ini tidak memerlukan penyimpanan pada file ataupun database. Semua data disimpan di dalam memori selama program berjalan.
 
+---
 
-================================================================================
-||                           STRUKTUR DIREKTORI                              ||
-================================================================================
+### Identitas Kami
+- **Nama:** Gerald Hizkia Turnip  
+  **NIM:** 2405551081  
+  **Mata Kuliah:** Pemrograman Berorientasi Objek (PBO) D  
 
-📂 investasi-app-java/
-├── App.java                  → Entry point aplikasi
-├── config/                   → Konfigurasi & data awal
-├── controller/               → Logika kontrol dan alur aplikasi
-├── model/                    → Class data (Saham, SBN, User, dll)
-├── repository/               → Penyimpanan data sementara (in-memory)
-├── service/                  → Logika bisnis utama
-├── util/                     → Utility & helper class
-├── view/                     → Tampilan CLI & menu
-
-✅ Kode utama hanya memanggil MainController → bebas logika bisnis langsung
-
-
-================================================================================
-||                        SIMULASI BUNGA SBN PER BULAN                       ||
-================================================================================
-
-💰 Rumus:
-(% bunga / 12 bulan) × 90% × nominal investasi
-
-Simulasi dilakukan secara real-time saat pembelian SBN.
-
-
-================================================================================
-||                             AKUN LOGIN DEMO                               ||
-================================================================================
-
-| Role     | Username | Password |
-|----------|----------|----------|
-| Admin    | admin    | admin123 |
-| Customer | user1    | user123  |
-
-
-================================================================================
-||                         TEKNOLOGI & KONFIGURASI                           ||
-================================================================================
-
-- Bahasa: Java SE 17
-- IDE: Bebas (VS Code / IntelliJ)
-- Penyimpanan: In-memory (tanpa database)
-
-
-================================================================================
-||                            TAMPAKAN CLI MENU                              ||
-================================================================================
-
-=== Selamat Datang di Aplikasi Investasi ===
-1. Login
-2. Keluar
-
-=== Menu Customer ===
-1. Beli Saham
-2. Jual Saham
-3. Beli SBN
-4. Simulasi SBN
-5. Portofolio
-6. Logout
-
-
-================================================================================
-||                         TUJUAN & MANFAAT PROYEK                           ||
-================================================================================
-
-✅ Tugas Mata Kuliah Pemrograman Berorientasi Objek
-✅ Latihan Pemrograman Berorientasi Objek
-✅ Simulasi Investasi Profesional Sederhana
-✅ Clean Code, Modular, & Scalable
-
-
-================================================================================
-||                          KOMITMEN & PENGEMBANGAN                          ||
-================================================================================
-
-- Progress dicatat harian via GitHub commit
-- Siap dikembangkan menjadi aplikasi berbasis web/API
-
-
-================================================================================
-||         📝 DIBUAT OLEH GERALD HIZKIA TURNIP & I PUTU DHARMA YOGA           ||
-================================================================================
-
+- **Nama:** i Putu Raditya Dharma Yoga  
+  **NIM:** 24055510--  
+  **Mata Kuliah:** Pemrograman Berorientasi Objek (PBO) D
