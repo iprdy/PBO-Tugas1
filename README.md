@@ -57,5 +57,5 @@ Seluruh proses dalam program ini tidak memerlukan penyimpanan pada file ataupun 
   **Mata Kuliah:** Pemrograman Berorientasi Objek (PBO) D  
 
 - **Nama:** i Putu Raditya Dharma Yoga  
-  **NIM:** 24055510--  
+  **NIM:** 2405551026  
   **Mata Kuliah:** Pemrograman Berorientasi Objek (PBO) D
