@@ -30,6 +30,7 @@ public class MenuAdmin {
         } while (pilihan != 3);
     }
 
+    
     private static void menuSaham() {
         int pilihan;
 
@@ -52,6 +53,7 @@ public class MenuAdmin {
         } while (pilihan != 3);
     }
 
+    
     private static void menuSBN() {
         int pilihan;
 
