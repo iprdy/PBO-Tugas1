@@ -1,15 +1,13 @@
-================================================================================
 ||                       APLIKASI INVESTASI SAHAM & SBN                       ||
-================================================================================
 
 Sebuah aplikasi berbasis Java yang memungkinkan pengguna melakukan simulasi investasi 
 pada instrumen SAHAM dan SURAT BERHARGA NEGARA (SBN). Proyek ini dirancang dengan 
 struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 
 
-================================================================================
+
 ||                                FITUR UTAMA                                ||
-================================================================================
+
 
 👤 AUTENTIKASI PENGGUNA
 - Login dua jenis pengguna: Admin dan Customer
@@ -27,9 +25,9 @@ struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 - Tampilkan portofolio investasi
 
 
-================================================================================
+
 ||                           STRUKTUR DIREKTORI                              ||
-================================================================================
+
 
 📂 investasi-app-java/
 ├── App.java                  → Entry point aplikasi
@@ -44,9 +42,9 @@ struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 ✅ Kode utama hanya memanggil MainController → bebas logika bisnis langsung
 
 
-================================================================================
+
 ||                        SIMULASI BUNGA SBN PER BULAN                       ||
-================================================================================
+
 
 💰 Rumus:
 (% bunga / 12 bulan) × 90% × nominal investasi
@@ -54,9 +52,9 @@ struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 Simulasi dilakukan secara real-time saat pembelian SBN.
 
 
-================================================================================
+
 ||                             AKUN LOGIN DEMO                               ||
-================================================================================
+
 
 | Role     | Username | Password |
 |----------|----------|----------|
@@ -64,18 +62,18 @@ Simulasi dilakukan secara real-time saat pembelian SBN.
 | Customer | user1    | user123  |
 
 
-================================================================================
+
 ||                         TEKNOLOGI & KONFIGURASI                           ||
-================================================================================
+
 
 - Bahasa: Java SE 17
 - IDE: Bebas (VS Code / IntelliJ)
 - Penyimpanan: In-memory (tanpa database)
 
 
-================================================================================
+
 ||                            TAMPAKAN CLI MENU                              ||
-================================================================================
+
 
 === Selamat Datang di Aplikasi Investasi ===
 1. Login
