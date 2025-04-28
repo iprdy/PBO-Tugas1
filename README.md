@@ -5,8 +5,6 @@ pada instrumen SAHAM dan SURAT BERHARGA NEGARA (SBN). Proyek ini dirancang denga
 struktur modular dan arsitektur bersih sesuai standar industri perangkat lunak.
 
 
-![image](https://github.com/user-attachments/assets/9140ba5e-2dfe-4267-878f-a572d00ddf3d)
-
 
 ||                                FITUR UTAMA                                ||
 
