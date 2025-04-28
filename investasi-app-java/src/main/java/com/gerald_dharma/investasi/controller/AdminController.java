@@ -70,9 +70,7 @@ public class AdminController {
     public static boolean confirmationTambahSahamAdmin(String kode, String namaPerusahaan, double harga) {
         AdminUI.uiConfirmationTambahSahamAdmin(kode, namaPerusahaan, harga);
 
-        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
-
-        return confirmation == 2;
+        return confirmation();
     }
 
 
@@ -82,9 +80,7 @@ public class AdminController {
 
         AdminUI.uiConfirmationUbahHargaSahamAdmin(kode, hargaBaru, hargaLama);
 
-        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
-
-        return confirmation == 2;
+        return confirmation();
     }
 
 
@@ -92,8 +88,20 @@ public class AdminController {
     public static boolean confirmationTambahSBNAdmin(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
         AdminUI.uiConfirmationTambahSBNAdmin(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional);
 
-        int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
+        return confirmation();
+    }
 
-        return confirmation == 2;
+    public static boolean confirmation() {
+        while (true) {
+            int confirmation = InputValidation.inputInteger("Masukkan pilihan: ");
+
+            if (confirmation == 1) {
+                return false;
+            } else if (confirmation == 2) {
+                return true;
+            }
+
+            System.out.println("Input tidak valid, silahkan masukkan pilihan 1 atau 2!");
+        }
     }
 }
