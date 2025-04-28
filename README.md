@@ -1,4 +1,4 @@
-||                       APLIKASI INVESTASI SAHAM & SBN                       ||
+||                       **APLIKASI INVESTASI SAHAM & SBN**                       ||
 
 Sebuah aplikasi berbasis Java yang memungkinkan pengguna melakukan simulasi investasi 
 pada instrumen SAHAM dan SURAT BERHARGA NEGARA (SBN). Proyek ini dirancang dengan 
@@ -53,7 +53,7 @@ Simulasi dilakukan secara real-time saat pembelian SBN.
 
 
 
-||                             AKUN LOGIN DEMO                               ||
+||                             **AKUN LOGIN DEMO**                               ||
 
 
 | Role     | Username | Password |
