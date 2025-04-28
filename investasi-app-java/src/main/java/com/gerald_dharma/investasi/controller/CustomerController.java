@@ -87,7 +87,7 @@ public class CustomerController {
     public static void customerSimulasiSBN() {
         DataSBN.printDataSBN();
     
-        String namaSBN = InputValidation.inputString("Masukkan nama SBN yang ingin disimulasikan: ");
+        String namaSBN = InputValidation.inputStringNamaSBN("Masukkan nama SBN yang ingin disimulasikan: ");
         double jumlahInvestasi = InputValidation.inputDouble("Masukkan jumlah investasi: ");
     
         double bunga = DataSBN.getBunga(namaSBN);
