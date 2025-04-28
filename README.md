@@ -30,9 +30,7 @@ Program ini adalah aplikasi sederhana yang dikembangkan menggunakan bahasa pemro
    
 4. **Simulasi Kupon SBN:**  
    Rumus simulasi kupon per bulan adalah:
-   \[
-   \text{Kupon SBN} = \left( \frac{\text{Bunga}}{12} \right) \times 90\% \times \text{Nominal Investasi}
-   \]
+   **(Persentase bunga tahunan ÷ 12) × 90% × nominal investasi**
 
 ## Deskripsi Kelas:
 - **Kelas Saham:**
