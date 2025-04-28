@@ -1,9 +1,0 @@
-package com.investasi;
-
-import com.investasi.controller.MainController;
-
-public class App {
-    public static void main(String[] args) {
-        new MainController().start();
-    }
-}
