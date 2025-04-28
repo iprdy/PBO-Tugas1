@@ -109,6 +109,6 @@ Simulasi dilakukan secara real-time saat pembelian SBN.
 
 
 ================================================================================
-||         📝 DIBUAT OLEH GERALD HIZKIA TURNIP & I PUTU DHARMA YOGA           ||
+||         📝 DIBUAT OLEH GERALD HIZKIA TURNIP & I PUTU RADITYA DHARMA YOGA           ||
 ================================================================================
 
