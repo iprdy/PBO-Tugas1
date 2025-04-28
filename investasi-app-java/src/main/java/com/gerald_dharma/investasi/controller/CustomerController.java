@@ -7,6 +7,7 @@ import com.investasi.menu.MenuLogin;
 import com.investasi.ui.CustomerUI;
 import com.investasi.validator.InputValidation;
 
+
 public class CustomerController {
     static Customer customer = MenuLogin.getCustomerLoggedIn();
     
@@ -26,6 +27,8 @@ public class CustomerController {
 
         InputValidation.pause();
     }
+
+    
     
     public static void customerJualSaham() {
         String kode;
@@ -59,6 +62,7 @@ public class CustomerController {
         InputValidation.pause();
     }
 
+    
 
     public static void customerBeliSBN() {
         DataSBN.printDataSBN();
@@ -84,6 +88,7 @@ public class CustomerController {
     }
     
 
+    
     public static void customerSimulasiSBN() {
         DataSBN.printDataSBN();
     
@@ -107,24 +112,32 @@ public class CustomerController {
         }
     }
 
+
+    
     public static void customerGetPortofolio() {
         customer.portofolioCustomer();
 
         InputValidation.pause();
     }
 
+
+    
     public static boolean confirmationBeliSahamCustomer(String kode, int lembar) {
         CustomerUI.uiConfirmationBeliSahamCustomer(kode, lembar);
 
         return confirmation();
     }
 
+
+    
     public static boolean confirmationJualSahamCustomer(String kode, int lembar) {
         CustomerUI.uiConfirmationJualSahamCustomer(kode, lembar);
 
         return confirmation();
     }
 
+
+    
     public static boolean confirmationBeliSBNCustomer(String namaSBN, double jumlahBeli) {
         CustomerUI.uiConfirmationBeliSBNCustomer(namaSBN, jumlahBeli);
 
