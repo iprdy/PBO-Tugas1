@@ -15,7 +15,7 @@ public class DataValidation {
         List<Saham> daftarSaham = DataSaham.getDataSaham();
 
         for (Saham saham : daftarSaham) {
-            if(kode.equals(saham.getKode())) {
+            if(kode.equalsIgnoreCase(saham.getKode())) {
                 return true;
             }
         }
@@ -28,7 +28,7 @@ public class DataValidation {
         List<SahamCustomer> daftarSaham = customer.getDataSahamCustomer();
 
         for (SahamCustomer sahamCustomer : daftarSaham) {
-            if(kode.equals(sahamCustomer.getKode())) {
+            if(kode.equalsIgnoreCase(sahamCustomer.getKode())) {
                 return true;
             }
         }
@@ -40,7 +40,7 @@ public class DataValidation {
         List<Saham> daftarSaham = DataSaham.getDataSaham();
 
         for (Saham saham : daftarSaham) {
-            if(kode.equals(saham.getKode())) {
+            if(kode.equalsIgnoreCase(saham.getKode())) {
                 System.out.println("Kode saham " + kode + " sudah ada, silahkan coba yang lain");
                 return false;
             }
@@ -52,7 +52,7 @@ public class DataValidation {
         List<SuratBerhargaNegara> daftarSBN = DataSBN.getDataSBN();
 
         for (SuratBerhargaNegara sBN : daftarSBN) {
-            if(nama.equals(sBN.getNama())) {
+            if(nama.equalsIgnoreCase(sBN.getNama())) {
                 return true;
             }
         }
@@ -63,7 +63,7 @@ public class DataValidation {
         List<SuratBerhargaNegara> daftarSBN = DataSBN.getDataSBN();
 
         for (SuratBerhargaNegara sBN : daftarSBN) {
-            if(nama.equals(sBN.getNama())) {
+            if(nama.equalsIgnoreCase(sBN.getNama())) {
                 System.out.println("Nama SBN " + nama + " sudah ada, silahkan coba yang lain");
                 return false;
             }
