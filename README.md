@@ -68,17 +68,33 @@ Di bawah ini merupakan penggunaan program Investasi Saham dan Surat Berharga Neg
 ### Login Section
 ![WhatsApp Image 2025-04-28 at 23 59 47_18456fb6](https://github.com/user-attachments/assets/05783fb5-5f22-430b-8412-b3a2dea206f4)
 
-**Tampilan pertama yang disediakan pada saat memulai program**
+Tampilan pertama yang disediakan pada saat memulai program, tersedia pilihan untuk melakukan login dan keluar dari program.
 
+----
 ![WhatsApp Image 2025-04-29 at 00 00 18_428f5eee](https://github.com/user-attachments/assets/c6557572-d710-43fc-8ae6-717f5d9f749e)
 
-**Program akan meminta pengguna untuk login terlebih dahulu. Jika login gagal, akan ditampilkan pesan kegagalan, sedangkan jika berhasil, pengguna akan diarahkan ke menu investasi.**
+Di lanjutkan dengan memilih login. sistem akan meminta pengguna untuk login terlebih dahulu. Jika login gagal, akan ditampilkan pesan kegagalan, sedangkan jika berhasil, pengguna akan diarahkan ke menu selanjutnya.
 
+----
+### Login as Customer
 ![WhatsApp Image 2025-04-29 at 00 00 30_dccb4d7b](https://github.com/user-attachments/assets/b8b46370-ac2e-4a9b-a26b-af86042511fe)
 
+Berhasil melakukan login sebagai customer dengan memasukkan username dan password.
+
+----
+
+## Menu Customer
 ![WhatsApp Image 2025-04-29 at 00 00 42_4fef63f1](https://github.com/user-attachments/assets/c43c333b-a030-410f-99c9-1d0ed588a34e)
 
+Sistem menampilkan menu customer dan menawarkan beberapa pilihan yang bisa digunakan oleh customer.
+
+----
+
 ![WhatsApp Image 2025-04-29 at 00 01 10_b62d20e6](https://github.com/user-attachments/assets/67a710f2-ab86-4ab2-adf0-e3856a54123f)
+
+Dari beberapa pilihan sebelumnya, customer memilih menu nomor 1. Beli Saham. Sistem menampilkan dan menawarkan daftar saham yang tersedia dan bisa dibeli oleh seorang customer. 
+
+----
 
 ![WhatsApp Image 2025-04-29 at 00 05 22_c4040758](https://github.com/user-attachments/assets/779380aa-30ae-46a1-a92a-4c96e13b26ce)
 
