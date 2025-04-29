@@ -62,6 +62,11 @@ Seluruh proses dalam program ini tidak memerlukan penyimpanan pada file ataupun 
 
 ---
 
+# UML (Unified Modeling Language )
+![src 1](https://github.com/user-attachments/assets/4681ce08-abb2-4ceb-9a4f-d1153b4d38f6)
+
+Diagram Unified Modeling Language (UML) dari sistem ini menggambarkan relasi antar class utama yang membentuk arsitektur program. Terdapat class User sebagai superclass dengan dua subclass yaitu Admin dan Customer, di mana masing-masing memiliki metode sesuai perannya, seperti tambahProduk() untuk admin dan beliSaham() atau simulasiSBN() untuk customer. Kelas ProdukInvestasi menjadi superclass dari Saham dan SuratBerhargaNegara, yang masing-masing memiliki atribut dan fungsi terkait, seperti harga, bunga, dan kuotaNasional. Hubungan antara Customer dan produk investasi bersifat aggregation, karena portofolio customer terdiri dari daftar saham dan SBN yang dimiliki, yang disimpan selama program berjalan.
+
 # Penggunaan Program
 Di bawah ini merupakan penggunaan program Investasi Saham dan Surat Berharga Negara (SBN) beserta hasil screenshoot. Beberapa penjelasan bagaimana kode berjalan dijelaskan di bawah setiap gambar sebagai keterangan.
 
