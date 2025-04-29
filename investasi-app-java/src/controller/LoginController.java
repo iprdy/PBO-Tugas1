@@ -13,7 +13,6 @@ public class LoginController {
         Scanner sc = new Scanner(System.in);
 
         ClearUI.clearScreen();
-
         MenuLoginUI.loginUI();
 
         while (true) {
@@ -27,9 +26,7 @@ public class LoginController {
             }
 
             MenuLoginUI.gagalLoginUI();
-
             InputValidation.pause();
-
             MenuLoginUI.loginUI();
         }
     }

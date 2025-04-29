@@ -11,6 +11,7 @@ public class MenuCustomer {
 
         do {
             CustomerUI.mainMenu();
+
             pilihan = InputValidation.inputInteger("Masukkan pilihan: ");
 
             switch (pilihan) {

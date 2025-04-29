@@ -15,9 +15,7 @@ public class CustomerController {
 
     public static void customerBeliSaham() {
         ClearUI.clearScreen();
-
         DataSaham.printDataSaham();
-
         CustomerUI.uiBeliSahamCustomer();
 
         String kode = InputValidation.inputStringKodeSaham("Masukkan kode saham yang ingin dibeli: ");
@@ -28,9 +26,7 @@ public class CustomerController {
         }
 
         customer.tambahSahamCustomer(kode, lembar);
-
         CustomerUI.uiCustomerBerhasilBeliSaham(kode, lembar);
-
         InputValidation.pause();
     }
 
@@ -67,9 +63,7 @@ public class CustomerController {
         }
 
         customer.jualSahamCustomer(kode, lembar);
-
         CustomerUI.uiCustomerBerhasilJualSaham(kode, lembar);
-
         InputValidation.pause();
     }
 
@@ -78,47 +72,51 @@ public class CustomerController {
     public static void customerBeliSBN() {
         ClearUI.clearScreen();
 
-        DataSBN.printDataSBN();
+        while (true) {
+            DataSBN.printDataSBN();
+            CustomerUI.uiBeliSBNCustomer();
 
-        CustomerUI.uiBeliSBNCustomer();
+            String namaSBN = InputValidation.inputStringNamaSBN("Masukkan nama SBN yang ingin dibeli: ");
+            double jumlahBeli = InputValidation.inputDouble("Masukkan jumlah pembelian (dalam rupiah): ");
 
-        String namaSBN = InputValidation.inputStringNamaSBN("Masukkan nama SBN yang ingin dibeli: ");
-        double jumlahBeli = InputValidation.inputDouble("Masukkan jumlah pembelian (dalam rupiah): ");
+            SuratBerhargaNegara sbn = DataSBN.getSBN(namaSBN);
 
-        SuratBerhargaNegara sbn = DataSBN.getSBN(namaSBN);
+            if (sbn == null) {
+                CustomerUI.uiGagalMenjualSBNCustomer();
+                InputValidation.pause();
+                continue;
+            } else if (sbn.getKuotaNasional() == 0) {
+                CustomerUI.uiSBNHabisCustomer();
+                InputValidation.pause();
+                if (DataSBN.checkTotalSBN() <= 1) {
+                    break;
+                }
+                continue;
+            } else if (sbn.getKuotaNasional() < jumlahBeli) {
+                CustomerUI.uiGagalMenjualSBNCustomer();
+                InputValidation.pause();
+                continue;
+            }
 
-        if(sbn != null && sbn.getKuotaNasional() == 0) {
-            CustomerUI.uiSBNHabisCustomer();
-
-            InputValidation.pause();
-
-            return;
-        }
-
-        boolean berhasil = customer.tambahSBNCustomer(namaSBN, jumlahBeli);
-
-        if (berhasil) {
-            if(confirmationBeliSBNCustomer(namaSBN, jumlahBeli)) {
+            if (confirmationBeliSBNCustomer(namaSBN, jumlahBeli)) {
                 return;
             }
 
-            CustomerUI.uiCustomerBerhasilBeliSBN(namaSBN, jumlahBeli);
+            boolean berhasil = customer.tambahSBNCustomer(namaSBN, jumlahBeli);
 
+            if (berhasil) {
+                CustomerUI.uiCustomerBerhasilBeliSBN(namaSBN, jumlahBeli);
+            } else {
+                CustomerUI.uiGagalMenjualSBNCustomer();
+            }
             InputValidation.pause();
-        } else {
-            CustomerUI.uiGagalMenjualSBNCustomer();
-
-            InputValidation.pause();
+            break;
         }
     }
 
-
-
     public static void customerSimulasiSBN() {
         ClearUI.clearScreen();
-
         DataSBN.printDataSBN();
-
         CustomerUI.uiSimulasiSBNCustomer();
 
         String namaSBN = InputValidation.inputStringNamaSBN("Masukkan nama SBN yang ingin disimulasikan: ");
@@ -132,11 +130,9 @@ public class CustomerController {
             double totalAkhir = jumlahInvestasi + totalKeuntungan;
 
             CustomerUI.uiSimulasiSBN(namaSBN, jumlahInvestasi, bunga, tahun, totalKeuntungan, totalAkhir);
-
             InputValidation.pause();
         } else {
             CustomerUI.uiSBNTidakValid();
-
             InputValidation.pause();
         }
     }
@@ -145,9 +141,7 @@ public class CustomerController {
 
     public static void customerGetPortofolio() {
         ClearUI.clearScreen();
-
         customer.portofolioCustomer();
-
         InputValidation.pause();
     }
 

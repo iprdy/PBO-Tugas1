@@ -24,32 +24,22 @@ public class MenuLogin {
                 break;
             } else if (pilihan != 1) {
                 System.out.println("Input tidak valid, silahkan masukkan pilihan 1 atau 2!");
-
             }
 
             user = LoginController.login();
 
             if (user instanceof Admin) {
                 ClearUI.clearScreen();
-
                 MenuLoginUI.uiBerhasilLoginAdmin(user.getUsername());
-
                 InputValidation.pause();
-
                 MenuAdmin.show();
-
                 MenuLoginUI.loginMenu();
             } else if (user instanceof Customer) {
                 customerLoggedIn = (Customer) user;
-
                 ClearUI.clearScreen();
-
                 MenuLoginUI.uiBerhasilLoginCustomer(user.getUsername());
-
                 InputValidation.pause();
-
                 MenuCustomer.show();
-
                 MenuLoginUI.loginMenu();
             }
         }

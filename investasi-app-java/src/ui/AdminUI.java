@@ -3,6 +3,8 @@ package ui;
 import data.DataSaham;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class AdminUI {
     public static void mainMenu() {
@@ -110,6 +112,8 @@ public class AdminUI {
     public static void uiConfirmationTambahSBNAdmin(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, double kuotaNasional) {
         String bungaFormatted = String.format("%.2f%%", bunga);
         String jangkaFormatted = String.format("%d tahun", jangkaWaktu);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String tanggalJatuhTempoFormatted = tanggalJatuhTempo.format(formatter);
 
         ClearUI.clearScreen();
         System.out.println("+---------------------------------------------------------------------+");
@@ -118,7 +122,7 @@ public class AdminUI {
         System.out.printf("| Nama SBN            : %-46s|\n", nama);
         System.out.printf("| Bunga               : %-46s|\n", bungaFormatted);
         System.out.printf("| Jangka waktu        : %-46s|\n", jangkaFormatted);
-        System.out.printf("| Tanggal jatuh tempo : %-46s|\n", tanggalJatuhTempo);
+        System.out.printf("| Tanggal jatuh tempo : %-46s|\n", tanggalJatuhTempoFormatted);
         System.out.printf("| Kuota nasional      : Rp%,-44.2f|\n", kuotaNasional);
         System.out.println("+---------------------------------------------------------------------+");
         System.out.println("| 1. Ya, lanjutkan penambahan saham                                   |");

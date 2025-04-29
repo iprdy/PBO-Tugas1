@@ -47,6 +47,10 @@ public class SuratBerhargaNegara {
         return kuotaNasional;
     }
 
+    public void tambahKuotaNasional(double jumlah) {
+        kuotaNasional += jumlah;
+    }
+
     public void setKuotaNasional(double kuotaNasional) {
         this.kuotaNasional = kuotaNasional;
     }

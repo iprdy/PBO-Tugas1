@@ -13,9 +13,7 @@ import java.time.LocalDate;
 public class AdminController {
     public static void adminTampilkanSaham() {
         ClearUI.clearScreen();
-
         DataSaham.printDataSaham();
-
         InputValidation.pause();
     }
 
@@ -31,17 +29,13 @@ public class AdminController {
         }
 
         DataSaham.tambahSaham(kode, namaPerusahaan, harga);
-
         AdminUI.uiBerhasilTambahSahamAdmin(kode);
-
         InputValidation.pause();
     }
 
     public static void adminUbahHargaSaham() {
         ClearUI.clearScreen();
-
         DataSaham.printDataSaham();
-
         AdminUI.ubahHargaSahamUI();
 
         String kode = InputValidation.inputStringKodeSaham("Masukkan kode perusahaan: ");
@@ -52,17 +46,13 @@ public class AdminController {
         }
 
         AdminUI.uiBerhasilUbahHargaSahamAdmin(kode, hargaBaru);
-
         DataSaham.ubahHargaSaham(kode, hargaBaru);
-
         InputValidation.pause();
     }
 
     public static void adminTampilkanSBN() {
         ClearUI.clearScreen();
-
         DataSBN.printDataSBN();
-
         InputValidation.pause();
     }
 
@@ -80,9 +70,7 @@ public class AdminController {
         }
 
         DataSBN.tambahSBN(nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional);
-
         AdminUI.uiBerhasilTambahSBNAdmin(nama);
-
         InputValidation.pause();
     }
 

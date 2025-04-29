@@ -66,7 +66,6 @@ public class MenuAdmin {
 
         do {
             ClearUI.clearScreen();
-
             AdminUI.menuSBN();
 
             pilihan = InputValidation.inputInteger("Masukkan angka: ");
