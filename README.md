@@ -10,7 +10,7 @@ Program ini adalah aplikasi sederhana yang dikembangkan menggunakan bahasa pemro
 ## Fitur Utama:
 - **Admin:**
   - Melihat daftar saham dan SBN yang tersedia.
-  - Menambah dan menghapus saham.
+  - Menambah saham.
   - Mengubah harga saham yang terdaftar.
   - Menambah produk SBN baru.
 - **Customer:**
