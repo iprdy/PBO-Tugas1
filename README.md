@@ -86,7 +86,7 @@ Berhasil melakukan login sebagai customer dengan memasukkan username dan passwor
 ## Menu Customer
 ![WhatsApp Image 2025-04-29 at 00 00 42_4fef63f1](https://github.com/user-attachments/assets/c43c333b-a030-410f-99c9-1d0ed588a34e)
 
-Sistem menampilkan menu customer dan menawarkan beberapa pilihan yang bisa digunakan oleh customer.
+Sistem menampilkan menu customer dan menawarkan beberapa fitur yang bisa digunakan oleh customer.
 
 ----
 ### Beli Saham
@@ -152,20 +152,82 @@ Di awal pada Menu Customer, user ditawarkan beberapa pilihan oleh sistem dan dal
 
 Di atas adalah bagian **Portofolio** yang dimana berisi informasi Daftar saham dan Daftar SBN yang dimiliki.
 
+----------
+----------
+
+# Login as Admin
+
+![WhatsApp Image 2025-04-29 at 13 44 09_255d35b3](https://github.com/user-attachments/assets/f31a858d-1219-431c-b5c0-80ff30ccf414)
+
+Login sebagai Admin, sistem memberikan fitur validasi yaitu apabila user menginputkan username atau password yang salah, maka user akan diperingatkan dan dikembalikan ke menu login terus menerus secara berulang, namun hal itu akan berhenti jika username dan password yang diinputkan adalah benar, dan akan lanjut ke program selanjutnya.
+
+![WhatsApp Image 2025-04-29 at 13 41 33_6a1bacdd](https://github.com/user-attachments/assets/0f30c58c-da10-4859-b680-a802bf7e3c6e)
+
+![WhatsApp Image 2025-04-29 at 13 41 56_a9d56769](https://github.com/user-attachments/assets/7e7119e2-e141-4cf4-86f7-b60be60214da)
+
+Sistem menunjukkan bahwa Admin telah berhasil melakukan login dan siap menggunakan fitur Admin.
+
 ----
+
+# Menu Admin
+
+Sistem menampilkan Menu Admin dan menawarkan beberapa fitur yang bisa digunakan oleh Admin yaitu Saham, SBN, dan Logout.
+
+![WhatsApp Image 2025-04-29 at 13 57 13_11b09276](https://github.com/user-attachments/assets/f3ed01a7-fe99-41a1-8ef7-f06b495a1c5f)
+
+----
+## Saham (Admin)
+Admin memilih fitur Saham pada Menu Admin, lalu sistem menampilkan beberapa fitur pada menu saham seperti di bawah ini. 
+
+### Tampilkan Saham 
+![image](https://github.com/user-attachments/assets/acad2f38-1e46-49aa-a549-c3215c1eaa5c)
+
+![image](https://github.com/user-attachments/assets/a7f05f5a-410e-452e-b8fa-ee76000149f9)
+
+Sistem menampilkan **Daftar Saham Yang Tersedia** pada fitur ini. Lalu setelah itu akan kembali kepada menu Admin untuk memilih fitur kembali yang dapat digunakan oleh Admin.
+
+
+### Tambah Saham
+![image](https://github.com/user-attachments/assets/9e79b58b-9693-49b7-aae7-76ffc5e390dc)
+
+![image](https://github.com/user-attachments/assets/e12ca8c5-fdb3-4925-b505-89ea555d776c)
+
+![image](https://github.com/user-attachments/assets/7052ac69-3e23-4a89-96f2-78e58496ad47)
+
+![image](https://github.com/user-attachments/assets/a955dcd1-1f89-41cd-af8f-016f051fd318)
+
+Admin memilih fitur **Tambah Saham** yang ada pada menu Saham. Sistem meminta Admin untuk menginputkan kode perusahaan, nama perusahaan, dan harga saham. Namun sistem memilki sebuah validasi untuk mengecek apakah data saham yang akan ditambahkan itu sudah ada atau belum, validasi ini dipakai agar mencegah terjadinya duplikat data. Seperti pada contoh, data yang dimasukkan pertama terdeteksi oleh sistem bahwa sudah tercatat di dalam sistem, lalu sistem meminta kembali Admin untuk menginputkan kembali data saham yang berbeda untuk ditambah. Selanjutnya, jika sudah sesuai maka Admin akan lanjut mengkonfirmasi data saham yang akan ditambah lalu saham berhasil ditambahkan oleh Admin.
+
+
+### Ubah Harga Saham 
+![image](https://github.com/user-attachments/assets/d70bf5de-5024-4ea5-ab7c-34605f3f0e3b)
+
+![image](https://github.com/user-attachments/assets/f34130b2-cb24-42c3-9a7d-6640a8a57dc2)
+
+![image](https://github.com/user-attachments/assets/ac5b5c83-97b2-44eb-b552-a39dca66c408)
+
+![image](https://github.com/user-attachments/assets/38000fa0-673a-4e79-ba75-0c7feb8406eb)
+
+Admin memilih fitur **Ubah Harga Saham** yang ada pada menu Saham. Sistem akan menampilkan "Daftar Saham Yang Tersedia" untuk dapat diubah harga saham nya. Lalu Admin akan diminta untuk memasukkan kode perusahaan dan harga baru dengan validasi yang sama seperti sebelumnya. Selanjutnya sistem menampilkan kepada Admin sebuah konfirmasi apakah ingin melanjutkan pengubahan harga saham seperti yang sudah Admin inputkan sebelumnya. Jika Admin memilih "1. Ya, lanjutkan pengubahan harga saham" maka sistem akan mencatat dan memberi tahu kepada Admin bahwa "Berhasil mengubah harga saham dengan kode BBRI" dan Admin telah selesai mengubah harga sahamnya. Jika Admin memilih "2. Kembali ke Menu Saham", maka Admin akan dikembalikan oleh sistem ke Menu Saham dan tidak jadi mengubah harga sahamnya.
+
+----
+
 ### Logout (by Customer)
 
 ![WhatsApp Image 2025-04-29 at 13 11 32_a61a9491](https://github.com/user-attachments/assets/e234a07b-8823-4766-afc6-ec185fb0a7d2)
 
 ![WhatsApp Image 2025-04-29 at 13 11 41_561dfcb5](https://github.com/user-attachments/assets/7507dc73-760c-4083-bc53-3ffdb9688465)
 
-Tampilan apabila user sudah berhasil logout.
+Tampilan apabila Customer sudah berhasil logout.
+
+### Logout (by Admin)
+
+![image](https://github.com/user-attachments/assets/521e01e8-ce7b-43db-bfa3-38fb868f27ef)
+
+![image](https://github.com/user-attachments/assets/3c9fad21-3f67-4e12-95c4-8a997dda0842)
+
+Tampilan apabila Admin sudah berhasil logout.
 
 ![WhatsApp Image 2025-04-29 at 13 11 59_e5234a92](https://github.com/user-attachments/assets/7b2f4cc8-9fce-4127-86e9-ae4ec65966b7)
 
 Sistem menampilkan ucapan terimakasih kepada user karena telah memakai program dengan baik.
-
----
-
-## Login as Admin
-
