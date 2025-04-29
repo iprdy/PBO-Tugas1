@@ -10,7 +10,7 @@ Program ini adalah aplikasi sederhana yang dikembangkan menggunakan bahasa pemro
 ## Fitur Utama:
 - **Admin:**
   - Melihat daftar saham dan SBN yang tersedia.
-  - Menambah dan menghapus saham.
+  - Menambah saham.
   - Mengubah harga saham yang terdaftar.
   - Menambah produk SBN baru.
 - **Customer:**
@@ -63,118 +63,183 @@ Seluruh proses dalam program ini tidak memerlukan penyimpanan pada file ataupun 
 ---
 
 # Penggunaan Program
-Di bawah ini merupakan penggunaan program Investasi Saham dan Surat Berharga Negara (SBN) beserta hasil screenshoot. Beberapa penjelasan bagaimana kode berjalan di jelaskan di bawah.
+Di bawah ini merupakan penggunaan program Investasi Saham dan Surat Berharga Negara (SBN) beserta hasil screenshoot. Beberapa penjelasan bagaimana kode berjalan dijelaskan di bawah setiap gambar sebagai keterangan.
 
 ### Login Section
 ![WhatsApp Image 2025-04-28 at 23 59 47_18456fb6](https://github.com/user-attachments/assets/05783fb5-5f22-430b-8412-b3a2dea206f4)
 
-Tampilan pertama yang disediakan pada saat memulai program, tersedia pilihan untuk melakukan login dan keluar dari program.
+Tampilan ini menunjukkan tampilan awal ketika program dijalankan. Pengguna diberikan dua pilihan: melakukan login atau keluar dari aplikasi.
 
 ----
 ![WhatsApp Image 2025-04-29 at 00 00 18_428f5eee](https://github.com/user-attachments/assets/c6557572-d710-43fc-8ae6-717f5d9f749e)
 
-Di lanjutkan dengan memilih login. sistem akan meminta pengguna untuk login terlebih dahulu. Jika login gagal, akan ditampilkan pesan kegagalan, sedangkan jika berhasil, pengguna akan diarahkan ke menu selanjutnya.
+Setelah memilih login, sistem meminta pengguna memasukkan username dan password. Jika salah, akan ditampilkan pesan error dan diminta mengulang.
 
 ----
-### Login as Customer
+## Login as Customer
 ![WhatsApp Image 2025-04-29 at 00 00 30_dccb4d7b](https://github.com/user-attachments/assets/b8b46370-ac2e-4a9b-a26b-af86042511fe)
 
-Berhasil melakukan login sebagai customer dengan memasukkan username dan password.
+Tampilan ini memperlihatkan login berhasil sebagai customer. Sistem menerima kredensial dan langsung mengarahkan ke menu utama customer.
 
 ----
 
 ## Menu Customer
 ![WhatsApp Image 2025-04-29 at 00 00 42_4fef63f1](https://github.com/user-attachments/assets/c43c333b-a030-410f-99c9-1d0ed588a34e)
 
-Sistem menampilkan menu customer dan menawarkan beberapa pilihan yang bisa digunakan oleh customer.
+Tampilan ini menunjukkan pilihan menu yang dapat digunakan customer, seperti membeli saham, membeli SBN, simulasi, hingga melihat portofolio.
+
+----
+### Beli Saham
+![WhatsApp Image 2025-04-29 at 09 12 27_7513df50](https://github.com/user-attachments/assets/2a6c4145-08d0-4343-9e2d-5ade9e2ba428)
+
+Customer memilih menu Beli Saham. Sistem menampilkan daftar saham yang tersedia lengkap dengan harga. 
+
+![bbca](https://github.com/user-attachments/assets/af39b0ba-54f7-4bad-9305-653182755bd2)
+
+Sistem meminta konfirmasi apakah user ingin melanjutkan pembelian atau membatalkannya dan kembali ke menu utama.
+
+![bbca2](https://github.com/user-attachments/assets/9875c2d0-493f-46ce-bfcb-2bfc5b7d3caf)
+
+Gambar menunjukkan bahwa pembelian saham telah berhasil. Sistem menampilkan jumlah lembar yang dibeli dan kembali ke menu awal.
+
+----
+### Jual Saham
+![WhatsApp Image 2025-04-29 at 11 48 19_f742652a](https://github.com/user-attachments/assets/6a01c48f-c003-4363-822b-acb3f9068056)
+
+Customer melihat daftar saham yang dimiliki, lalu memilih saham yang ingin dijual dengan memasukkan kode dan jumlah lembar.
+
+![WhatsApp Image 2025-04-29 at 11 58 02_d1765b5b](https://github.com/user-attachments/assets/e7203c07-92b5-482b-a023-9928d668ab30)
+
+Sistem meminta konfirmasi penjualan saham dan memberikan opsi untuk kembali ke menu utama jika batal.
+
+![WhatsApp Image 2025-04-29 at 11 58 21_9026597c](https://github.com/user-attachments/assets/7de6f97b-0697-4edd-b1f8-22d1acfe64e3)
+
+Tampilan menunjukkan bahwa penjualan saham telah berhasil dilakukan. Sistem menampilkan info transaksi.
+
+----
+### Beli SBN (Surat Berharga Negara)
+Di awal pada Menu Customer, user ditawarkan beberapa pilihan oleh sistem dan dalam kondisi ini user memilih menu untuk Beli SBN. Lalu sistem akan menampilkan seperti di bawah ini.
+
+![WhatsApp Image 2025-04-29 at 12 07 21_2884de91](https://github.com/user-attachments/assets/5f8139f1-5c66-41df-8092-66f5e3d258dc)
+
+Customer memilih untuk membeli SBN. Sistem menampilkan daftar SBN yang tersedia lengkap dengan bunga dan kuota.
+
+![WhatsApp Image 2025-04-29 at 12 16 42_6e466737](https://github.com/user-attachments/assets/ac435ea2-d1d1-4866-9d07-ac27cc5bc8a2)
+
+Setelah memilih nama SBN dan jumlah pembelian, sistem meminta konfirmasi untuk melanjutkan atau kembali. 
+
+![WhatsApp Image 2025-04-29 at 12 23 36_d7e62de9](https://github.com/user-attachments/assets/b38f2880-df80-4587-b738-65e757511dba)
+
+Sistem menampilkan notifikasi bahwa pembelian SBN telah berhasil dilakukan oleh user.
+
+----
+### Simulasi SBN (Surat Berharga Negara)
+Di awal pada Menu Customer, user ditawarkan beberapa pilihan oleh sistem dan dalam kondisi ini user memilih menu untuk **Simulasi SBN**. Lalu sistem akan menampilkan seperti di bawah ini.
+
+![WhatsApp Image 2025-04-29 at 12 40 36_f3a438b4](https://github.com/user-attachments/assets/4acf8a07-2dc7-4986-bf76-280e627d3ab0)
+
+Customer memilih fitur simulasi kupon SBN. Sistem akan meminta nama SBN dan nominal investasi untuk disimulasikan.
+
+![WhatsApp Image 2025-04-29 at 12 46 47_3488f109](https://github.com/user-attachments/assets/9aa92ae1-c114-4923-901c-b62ea435d46a)
+
+Sistem menghitung dan menampilkan hasil simulasi kupon yang diterima per bulan berdasarkan inputan user.
+
+----
+### Portofolio
+Di awal pada Menu Customer, user ditawarkan beberapa pilihan oleh sistem dan dalam kondisi ini user memilih menu untuk **Portofolio**. Lalu sistem akan menampilkan seperti di bawah ini.
+
+![WhatsApp Image 2025-04-29 at 12 49 18_7349c159](https://github.com/user-attachments/assets/50db3366-68af-4b1c-82f5-e44beab278a1)
+
+Menu ini menampilkan semua saham dan SBN yang dimiliki user lengkap dengan detail jumlah, nilai pasar, dan kupon bulanan.
+
+----------
+----------
+
+# Login as Admin
+
+![WhatsApp Image 2025-04-29 at 13 44 09_255d35b3](https://github.com/user-attachments/assets/f31a858d-1219-431c-b5c0-80ff30ccf414)
+
+Admin mencoba login dan sistem akan terus meminta ulang inputan jika data tidak sesuai, hingga berhasil login.
+
+![WhatsApp Image 2025-04-29 at 13 41 33_6a1bacdd](https://github.com/user-attachments/assets/0f30c58c-da10-4859-b680-a802bf7e3c6e)
+
+![WhatsApp Image 2025-04-29 at 13 41 56_a9d56769](https://github.com/user-attachments/assets/7e7119e2-e141-4cf4-86f7-b60be60214da)
+
+Tampilan ini menunjukkan admin berhasil login. Sistem mengarahkan ke menu utama admin.
 
 ----
 
-![WhatsApp Image 2025-04-29 at 00 01 10_b62d20e6](https://github.com/user-attachments/assets/67a710f2-ab86-4ab2-adf0-e3856a54123f)
+# Menu Admin
 
-Dari beberapa pilihan sebelumnya, customer memilih menu nomor 1. Beli Saham. Sistem menampilkan dan menawarkan daftar saham yang tersedia dan bisa dibeli oleh seorang customer. 
+Sistem menampilkan fitur admin, yaitu pengelolaan saham, pengelolaan SBN, dan logout.
+
+![WhatsApp Image 2025-04-29 at 13 57 13_11b09276](https://github.com/user-attachments/assets/f3ed01a7-fe99-41a1-8ef7-f06b495a1c5f)
+
+----
+## Saham (Admin)
+Admin memilih fitur Saham pada Menu Admin, lalu sistem menampilkan beberapa fitur pada menu saham seperti di bawah ini. 
+
+### Tampilkan Saham 
+![image](https://github.com/user-attachments/assets/acad2f38-1e46-49aa-a549-c3215c1eaa5c)
+
+Fitur ini digunakan untuk melihat daftar saham yang tersedia dalam sistem, lengkap dengan kode dan harga saham.
+
+![image](https://github.com/user-attachments/assets/a7f05f5a-410e-452e-b8fa-ee76000149f9)
+
+Sistem menampilkan **Daftar Saham Yang Tersedia** pada fitur ini. Lalu setelah itu akan kembali kepada menu Admin untuk memilih fitur kembali yang dapat digunakan oleh Admin.
+
+
+### Tambah Saham
+![image](https://github.com/user-attachments/assets/9e79b58b-9693-49b7-aae7-76ffc5e390dc)
+
+Admin memilih opsi untuk menambahkan saham baru.
+
+![image](https://github.com/user-attachments/assets/e12ca8c5-fdb3-4925-b505-89ea555d776c)
+
+Sistem meminta input seperti nama saham, kode saham, harga per lembar, dan jumlah lembar yang tersedia.
+
+![image](https://github.com/user-attachments/assets/7052ac69-3e23-4a89-96f2-78e58496ad47)
+
+![image](https://github.com/user-attachments/assets/a955dcd1-1f89-41cd-af8f-016f051fd318)
+
+Sistem memilki sebuah validasi untuk mengecek apakah data saham yang akan ditambahkan itu sudah ada atau belum, validasi ini dipakai agar mencegah terjadinya duplikat data. Seperti pada contoh, data yang dimasukkan pertama terdeteksi oleh sistem bahwa sudah tercatat di dalam sistem, lalu sistem meminta kembali Admin untuk menginputkan kembali data saham yang berbeda untuk ditambah. Selanjutnya, jika sudah sesuai maka Admin akan lanjut mengkonfirmasi data saham yang akan ditambah lalu saham berhasil ditambahkan oleh Admin.
+
+
+### Ubah Harga Saham 
+![image](https://github.com/user-attachments/assets/d70bf5de-5024-4ea5-ab7c-34605f3f0e3b)
+
+Admin memilih menu ubah harga saham. 
+
+![image](https://github.com/user-attachments/assets/f34130b2-cb24-42c3-9a7d-6640a8a57dc2)
+
+Sistem menampilkan daftar saham yang tersedia lengkap dengan kode dan harga saat ini. 
+
+![image](https://github.com/user-attachments/assets/ac5b5c83-97b2-44eb-b552-a39dca66c408)
+
+Admin kemudian diminta untuk memasukkan kode saham yang ingin diubah harganya, serta harga baru yang diinginkan.
+
+![image](https://github.com/user-attachments/assets/38000fa0-673a-4e79-ba75-0c7feb8406eb)
+
+Setelah dikonfirmasi, sistem memperbarui harga saham tersebut dan menampilkan pesan bahwa harga berhasil diperbarui.
 
 ----
 
-![WhatsApp Image 2025-04-29 at 00 05 22_c4040758](https://github.com/user-attachments/assets/779380aa-30ae-46a1-a92a-4c96e13b26ce)
+### Logout (by Customer)
 
-![WhatsApp Image 2025-04-29 at 00 20 14_3360c7c8](https://github.com/user-attachments/assets/085cf59a-f3d9-404c-97b0-f182bee651cf)
+![WhatsApp Image 2025-04-29 at 13 11 32_a61a9491](https://github.com/user-attachments/assets/e234a07b-8823-4766-afc6-ec185fb0a7d2)
 
-![WhatsApp Image 2025-04-29 at 00 20 41_4633fed0](https://github.com/user-attachments/assets/824d794f-5fe7-41cc-b38b-2254ff9bc17e)
+![WhatsApp Image 2025-04-29 at 13 11 41_561dfcb5](https://github.com/user-attachments/assets/7507dc73-760c-4083-bc53-3ffdb9688465)
 
-![WhatsApp Image 2025-04-29 at 00 21 02_140330ba](https://github.com/user-attachments/assets/c58cbc2b-58bf-4c3a-9b66-ff76a4823731)
+Tampilan apabila Customer sudah berhasil logout.
 
-![WhatsApp Image 2025-04-29 at 00 21 23_4220483d](https://github.com/user-attachments/assets/3adde5ee-c634-4ddb-a732-6ed5cc793878)
+### Logout (by Admin)
 
-![WhatsApp Image 2025-04-29 at 00 21 57_93472ff6](https://github.com/user-attachments/assets/7ea1acce-e5a8-4166-9f09-c1ca95677a39)
+![image](https://github.com/user-attachments/assets/521e01e8-ce7b-43db-bfa3-38fb868f27ef)
 
-![WhatsApp Image 2025-04-29 at 00 22 26_4a75a133](https://github.com/user-attachments/assets/0b931ed6-ef47-467f-a2c3-4e05e14f0d21)
+![image](https://github.com/user-attachments/assets/3c9fad21-3f67-4e12-95c4-8a997dda0842)
 
-![WhatsApp Image 2025-04-29 at 00 22 53_955991d8](https://github.com/user-attachments/assets/9badf121-96c2-478e-82fb-b3028699dc45)
+Tampilan apabila Admin sudah berhasil logout.
 
-![WhatsApp Image 2025-04-29 at 00 23 08_6cfd8788](https://github.com/user-attachments/assets/953c406e-5923-40bc-80e4-21446d0d0c32)
+![WhatsApp Image 2025-04-29 at 13 11 59_e5234a92](https://github.com/user-attachments/assets/7b2f4cc8-9fce-4127-86e9-ae4ec65966b7)
 
-![WhatsApp Image 2025-04-29 at 00 24 12_45754732](https://github.com/user-attachments/assets/bc42765c-4f98-4cd9-bace-3eaaa63e60d7)
-
-![WhatsApp Image 2025-04-29 at 00 24 52_0bdac956](https://github.com/user-attachments/assets/61b21c1d-b6d9-4873-8b95-cacc0fddb9b8)
-
-![WhatsApp Image 2025-04-29 at 00 25 03_2f592f22](https://github.com/user-attachments/assets/d5fe9069-2417-4bd6-b1bb-a0b8164b9fab)
-
-![WhatsApp Image 2025-04-29 at 00 25 23_7990d3a3](https://github.com/user-attachments/assets/7198c5ae-23c7-4a02-beba-12f39d8c8534)
-
-![WhatsApp Image 2025-04-29 at 00 26 08_c628b3d6](https://github.com/user-attachments/assets/f8e3da00-fa13-4be6-96d3-09a46e6078ed)
-
-![WhatsApp Image 2025-04-29 at 00 26 30_80e34166](https://github.com/user-attachments/assets/5f0d90de-760a-48da-bf65-ae20f4cae35f)
-
-![WhatsApp Image 2025-04-29 at 00 26 51_782974e8](https://github.com/user-attachments/assets/5d6747bb-cd13-42d5-b7e4-28144b32646e)
-
-![WhatsApp Image 2025-04-29 at 00 27 05_eecfb6ac](https://github.com/user-attachments/assets/36f4221b-2ce5-4cd3-9be0-ba89c9313934)
-
-![WhatsApp Image 2025-04-29 at 00 27 35_e751f1b8](https://github.com/user-attachments/assets/233aff44-5520-4fa5-a6b7-baad56916850)
-
-![WhatsApp Image 2025-04-29 at 00 28 11_a0436ecf](https://github.com/user-attachments/assets/9ef38d21-4f5f-43c8-a627-8b0962b9304e)
-
-![WhatsApp Image 2025-04-29 at 00 28 51_57d54d0d](https://github.com/user-attachments/assets/1360766e-5b60-4e25-9dd9-078bd5bb2cc9)
-
-![WhatsApp Image 2025-04-29 at 00 29 06_ddcbc6c6](https://github.com/user-attachments/assets/94182bed-2557-471e-8e9f-01a2406b5d76)
-
-![WhatsApp Image 2025-04-29 at 01 09 50_07abe217](https://github.com/user-attachments/assets/498a4161-9c10-4ffc-82e2-fd5cb98880b4)
-
-![WhatsApp Image 2025-04-29 at 01 10 34_e53cd055](https://github.com/user-attachments/assets/6f62b57d-a4b0-43df-a9d0-a94bf95cbd8a)
-
-![WhatsApp Image 2025-04-29 at 01 11 32_25241be7](https://github.com/user-attachments/assets/fda2c70c-d5bf-4538-a842-41f1525f432a)
-
-![WhatsApp Image 2025-04-29 at 01 11 54_e6c88166](https://github.com/user-attachments/assets/beb4e697-efe7-450a-80a9-a5e97fde7a33)
-
-![WhatsApp Image 2025-04-29 at 01 12 37_13a943e6](https://github.com/user-attachments/assets/a58ffb1d-7241-4c09-8e30-afce417dfd94)
-
-![WhatsApp Image 2025-04-29 at 01 12 51_a97e4623](https://github.com/user-attachments/assets/633ee3d0-d161-427d-b412-a6a754776a2b)
-
-![WhatsApp Image 2025-04-29 at 01 13 31_0bc47d32](https://github.com/user-attachments/assets/cb9c1e6a-6cb1-4ae7-99c1-c1a80450e247)
-
-![WhatsApp Image 2025-04-29 at 01 13 44_4798f023](https://github.com/user-attachments/assets/fa4db328-fd23-4a22-a99e-16123ede0311)
-
-![WhatsApp Image 2025-04-29 at 01 14 14_7b52f13c](https://github.com/user-attachments/assets/4e2e219a-e125-4928-b6cc-f0c42d9aa59f)
-
-![WhatsApp Image 2025-04-29 at 01 14 34_f9581d96](https://github.com/user-attachments/assets/4c1b92e5-38af-4010-ae83-3371b1f4d394)
-
-![WhatsApp Image 2025-04-29 at 01 14 48_549f6303](https://github.com/user-attachments/assets/b821c1e1-0c5b-4001-a3c1-01323418acf9)
-
-![WhatsApp Image 2025-04-29 at 01 15 08_61a0b43d](https://github.com/user-attachments/assets/7e7076f5-a9e3-4edb-a83b-ef8d873ac216)
-
-![WhatsApp Image 2025-04-29 at 01 15 26_fe03d040](https://github.com/user-attachments/assets/12af33b6-ce8e-401a-a2a9-20d2cd045aa3)
-
-![WhatsApp Image 2025-04-29 at 01 15 50_c2178767](https://github.com/user-attachments/assets/ec530811-a937-4b59-8b84-c31e5d78bc19)
-
-![WhatsApp Image 2025-04-29 at 01 16 06_716afcd0](https://github.com/user-attachments/assets/fbd3c51c-0650-4983-bb5d-299b3bb0252e)
-
-![WhatsApp Image 2025-04-29 at 01 16 19_48fd2ce0](https://github.com/user-attachments/assets/7cf8a2d2-d613-433f-a614-176253d56170)
-
-![WhatsApp Image 2025-04-29 at 01 16 59_5ceeb53a](https://github.com/user-attachments/assets/bee3818c-9579-4a34-aa93-41308188d15b)
-
-![WhatsApp Image 2025-04-29 at 01 17 11_d4a60474](https://github.com/user-attachments/assets/93cd4376-78e8-497f-8ac3-efd2fab236c6)
-
-![WhatsApp Image 2025-04-29 at 01 17 27_a3ee3027](https://github.com/user-attachments/assets/c386a4f1-67e3-4052-9e5d-0f664968f17a)
-
-![WhatsApp Image 2025-04-29 at 01 17 53_a68ababb](https://github.com/user-attachments/assets/d7d01a3e-05c4-4cd4-8875-51d895570625)
-
+Sistem menampilkan ucapan terimakasih kepada user karena telah memakai program dengan baik.
