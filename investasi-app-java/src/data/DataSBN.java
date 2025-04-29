@@ -59,4 +59,14 @@ public class DataSBN {
         }
         return false;
     }
+
+    public static int checkTotalSBN() {
+        int i = 0;
+
+        for (SuratBerhargaNegara sbn : daftarSBN) {
+            i++;
+        }
+
+        return i;
+    }
 }

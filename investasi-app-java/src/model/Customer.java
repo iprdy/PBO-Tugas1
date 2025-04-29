@@ -18,6 +18,15 @@ public class Customer extends User{
         return daftarSaham;
     }
 
+    public SuratBerhargaNegara dataSBNCustomer (String namaSBN) {
+        for (SuratBerhargaNegara s : daftarSBN) {
+            if(s.getNama().equalsIgnoreCase(namaSBN)) {
+                return s;
+            }
+        }
+        return null;
+    }
+
     public boolean printDataSahamCustomer() {
         System.out.println("+----------------------------------------------------------------------------------+");
         System.out.println("|                            Daftar saham yang dimiliki                            |");
@@ -63,9 +72,14 @@ public class Customer extends User{
 
     public boolean tambahSBNCustomer(String namaSBN, double jumlah) {
         SuratBerhargaNegara sbn = DataSBN.getSBN(namaSBN);
+        SuratBerhargaNegara sbnCust = dataSBNCustomer(namaSBN);
 
         if (sbn != null && DataSBN.prosesPembelianSBN(namaSBN, jumlah)) {
-            daftarSBN.add(new SuratBerhargaNegara(sbn.getNama(), sbn.getBunga(), sbn.getJangkaWaktu(), sbn.getTanggalJatuhTempo(), jumlah));
+            if(sbnCust != null && sbnCust.getNama().equalsIgnoreCase(namaSBN)) {
+                sbnCust.tambahKuotaNasional(jumlah);
+            } else {
+                daftarSBN.add(new SuratBerhargaNegara(sbn.getNama(), sbn.getBunga(), sbn.getJangkaWaktu(), sbn.getTanggalJatuhTempo(), jumlah));
+            }
             return true;
         }
         return false;
@@ -90,7 +104,6 @@ public class Customer extends User{
         printDataSahamCustomer();
 
         System.out.println();
-
         System.out.println("+----------------------------------------------------------------------------------+");
         System.out.println("|                             Daftar SBN yang dimiliki                             |");
         if (daftarSBN.isEmpty()) {
@@ -98,7 +111,6 @@ public class Customer extends User{
             System.out.println("|            Anda tidak memiliki SBN, silahkan beli SBN terlebih dahulu            |");
             System.out.println("+----------------------------------------------------------------------------------+");
         } else {
-
             for (SuratBerhargaNegara sbn : daftarSBN) {
                 String bungaFormatted = String.format("%.2f%%", sbn.getBunga());
 
