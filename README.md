@@ -63,58 +63,58 @@ Seluruh proses dalam program ini tidak memerlukan penyimpanan pada file ataupun 
 ---
 
 # Penggunaan Program
-Di bawah ini merupakan penggunaan program Investasi Saham dan Surat Berharga Negara (SBN) beserta hasil screenshoot. Beberapa penjelasan bagaimana kode berjalan di jelaskan di bawah.
+Di bawah ini merupakan penggunaan program Investasi Saham dan Surat Berharga Negara (SBN) beserta hasil screenshoot. Beberapa penjelasan bagaimana kode berjalan dijelaskan di bawah setiap gambar sebagai keterangan.
 
 ### Login Section
 ![WhatsApp Image 2025-04-28 at 23 59 47_18456fb6](https://github.com/user-attachments/assets/05783fb5-5f22-430b-8412-b3a2dea206f4)
 
-Tampilan pertama yang disediakan pada saat memulai program, tersedia pilihan untuk melakukan login dan tersedia juga untuk keluar dari program.
+Tampilan ini menunjukkan tampilan awal ketika program dijalankan. Pengguna diberikan dua pilihan: melakukan login atau keluar dari aplikasi.
 
 ----
 ![WhatsApp Image 2025-04-29 at 00 00 18_428f5eee](https://github.com/user-attachments/assets/c6557572-d710-43fc-8ae6-717f5d9f749e)
 
-Di lanjutkan dengan memilih login. sistem akan meminta pengguna untuk login terlebih dahulu. Jika login gagal, akan ditampilkan pesan kegagalan, sedangkan jika berhasil, pengguna akan diarahkan ke menu selanjutnya.
+Setelah memilih login, sistem meminta pengguna memasukkan username dan password. Jika salah, akan ditampilkan pesan error dan diminta mengulang.
 
 ----
 ## Login as Customer
 ![WhatsApp Image 2025-04-29 at 00 00 30_dccb4d7b](https://github.com/user-attachments/assets/b8b46370-ac2e-4a9b-a26b-af86042511fe)
 
-Berhasil melakukan login sebagai customer dengan memasukkan username dan password.
+Tampilan ini memperlihatkan login berhasil sebagai customer. Sistem menerima kredensial dan langsung mengarahkan ke menu utama customer.
 
 ----
 
 ## Menu Customer
 ![WhatsApp Image 2025-04-29 at 00 00 42_4fef63f1](https://github.com/user-attachments/assets/c43c333b-a030-410f-99c9-1d0ed588a34e)
 
-Sistem menampilkan menu customer dan menawarkan beberapa fitur yang bisa digunakan oleh customer.
+Tampilan ini menunjukkan pilihan menu yang dapat digunakan customer, seperti membeli saham, membeli SBN, simulasi, hingga melihat portofolio.
 
 ----
 ### Beli Saham
 ![WhatsApp Image 2025-04-29 at 09 12 27_7513df50](https://github.com/user-attachments/assets/2a6c4145-08d0-4343-9e2d-5ade9e2ba428)
 
-Dari beberapa pilihan sebelumnya, customer memilih menu nomor 1. Beli Saham. Sistem menampilkan dan menawarkan daftar saham yang tersedia dan bisa dibeli oleh seorang customer. 
+Customer memilih menu Beli Saham. Sistem menampilkan daftar saham yang tersedia lengkap dengan harga. 
 
 ![bbca](https://github.com/user-attachments/assets/af39b0ba-54f7-4bad-9305-653182755bd2)
 
-Sistem memberikan pilihan untuk melanjutkan pembeliannya atau kembali ke menu awal kepada user customer.
+Sistem meminta konfirmasi apakah user ingin melanjutkan pembelian atau membatalkannya dan kembali ke menu utama.
 
 ![bbca2](https://github.com/user-attachments/assets/9875c2d0-493f-46ce-bfcb-2bfc5b7d3caf)
 
-Sistem menampilkan user berhasil membeli saham dengan kode bbca sebanyak 10 lembar, dan akan diarahkan oleh sistem kembali ke Menu Customer awal.
+Gambar menunjukkan bahwa pembelian saham telah berhasil. Sistem menampilkan jumlah lembar yang dibeli dan kembali ke menu awal.
 
 ----
 ### Jual Saham
 ![WhatsApp Image 2025-04-29 at 11 48 19_f742652a](https://github.com/user-attachments/assets/6a01c48f-c003-4363-822b-acb3f9068056)
 
-Setelah user customer memilih pilihan Beli Saham, Sistem menampilkan daftar saham yang dimiliki. Setelah itu, user diminta untuk menginputkan kode saham dan banyaknya lembar yang ingin dijual.
+Customer melihat daftar saham yang dimiliki, lalu memilih saham yang ingin dijual dengan memasukkan kode dan jumlah lembar.
 
 ![WhatsApp Image 2025-04-29 at 11 58 02_d1765b5b](https://github.com/user-attachments/assets/e7203c07-92b5-482b-a023-9928d668ab30)
 
-Sistem memberikan pilihan untuk melanjutkan penjualannya atau kembali ke menu awal kepada user customer.
+Sistem meminta konfirmasi penjualan saham dan memberikan opsi untuk kembali ke menu utama jika batal.
 
 ![WhatsApp Image 2025-04-29 at 11 58 21_9026597c](https://github.com/user-attachments/assets/7de6f97b-0697-4edd-b1f8-22d1acfe64e3)
 
-Sistem menampilkan user berhasil membeli saham dengan kode bbca sebanyak 10 lembar.
+Tampilan menunjukkan bahwa penjualan saham telah berhasil dilakukan. Sistem menampilkan info transaksi.
 
 ----
 ### Beli SBN (Surat Berharga Negara)
@@ -122,15 +122,15 @@ Di awal pada Menu Customer, user ditawarkan beberapa pilihan oleh sistem dan dal
 
 ![WhatsApp Image 2025-04-29 at 12 07 21_2884de91](https://github.com/user-attachments/assets/5f8139f1-5c66-41df-8092-66f5e3d258dc)
 
-Setelah user customer memilih pilihan Beli SBN, Sistem menampilkan daftar SBN yang tersedia. Setelah itu, user diminta untuk menginputkan nama SBN dan jumlah pembelian (dalam rupiah) yang ingin dijual.
+Customer memilih untuk membeli SBN. Sistem menampilkan daftar SBN yang tersedia lengkap dengan bunga dan kuota.
 
 ![WhatsApp Image 2025-04-29 at 12 16 42_6e466737](https://github.com/user-attachments/assets/ac435ea2-d1d1-4866-9d07-ac27cc5bc8a2)
 
-Sistem memberikan pilihan ingin melanjutkan pembelian SBN dengan nama SBR013 seharga Rp1,000,000.00 atau kembali ke menu awal kepada user customer. 
+Setelah memilih nama SBN dan jumlah pembelian, sistem meminta konfirmasi untuk melanjutkan atau kembali. 
 
 ![WhatsApp Image 2025-04-29 at 12 23 36_d7e62de9](https://github.com/user-attachments/assets/b38f2880-df80-4587-b738-65e757511dba)
 
-Sistem menampilkan kepada user bahwa Pembelian SBN telah berhasil.
+Sistem menampilkan notifikasi bahwa pembelian SBN telah berhasil dilakukan oleh user.
 
 ----
 ### Simulasi SBN (Surat Berharga Negara)
@@ -138,11 +138,11 @@ Di awal pada Menu Customer, user ditawarkan beberapa pilihan oleh sistem dan dal
 
 ![WhatsApp Image 2025-04-29 at 12 40 36_f3a438b4](https://github.com/user-attachments/assets/4acf8a07-2dc7-4986-bf76-280e627d3ab0)
 
-Setelah user customer memilih pilihan Beli SBN, Sistem menampilkan daftar SBN yang tersedia. Setelah itu, user diminta untuk menginputkan **nama SBN dan jumlah investasi** (dalam rupiah) yang ingin disimulasikan.
+Customer memilih fitur simulasi kupon SBN. Sistem akan meminta nama SBN dan nominal investasi untuk disimulasikan.
 
 ![WhatsApp Image 2025-04-29 at 12 46 47_3488f109](https://github.com/user-attachments/assets/9aa92ae1-c114-4923-901c-b62ea435d46a)
 
-Setelah itu sistem menampilkan **Hasil Simulasi** seperti yang ada pada atas.
+Sistem menghitung dan menampilkan hasil simulasi kupon yang diterima per bulan berdasarkan inputan user.
 
 ----
 ### Portofolio
@@ -150,7 +150,7 @@ Di awal pada Menu Customer, user ditawarkan beberapa pilihan oleh sistem dan dal
 
 ![WhatsApp Image 2025-04-29 at 12 49 18_7349c159](https://github.com/user-attachments/assets/50db3366-68af-4b1c-82f5-e44beab278a1)
 
-Di atas adalah bagian **Portofolio** yang dimana berisi informasi Daftar saham dan Daftar SBN yang dimiliki.
+Menu ini menampilkan semua saham dan SBN yang dimiliki user lengkap dengan detail jumlah, nilai pasar, dan kupon bulanan.
 
 ----------
 ----------
@@ -159,19 +159,19 @@ Di atas adalah bagian **Portofolio** yang dimana berisi informasi Daftar saham d
 
 ![WhatsApp Image 2025-04-29 at 13 44 09_255d35b3](https://github.com/user-attachments/assets/f31a858d-1219-431c-b5c0-80ff30ccf414)
 
-Login sebagai Admin, sistem memberikan fitur validasi yaitu apabila user menginputkan username atau password yang salah, maka user akan diperingatkan dan dikembalikan ke menu login terus menerus secara berulang, namun hal itu akan berhenti jika username dan password yang diinputkan adalah benar, dan akan lanjut ke program selanjutnya.
+Admin mencoba login dan sistem akan terus meminta ulang inputan jika data tidak sesuai, hingga berhasil login.
 
 ![WhatsApp Image 2025-04-29 at 13 41 33_6a1bacdd](https://github.com/user-attachments/assets/0f30c58c-da10-4859-b680-a802bf7e3c6e)
 
 ![WhatsApp Image 2025-04-29 at 13 41 56_a9d56769](https://github.com/user-attachments/assets/7e7119e2-e141-4cf4-86f7-b60be60214da)
 
-Sistem menunjukkan bahwa Admin telah berhasil melakukan login dan siap menggunakan fitur Admin.
+Tampilan ini menunjukkan admin berhasil login. Sistem mengarahkan ke menu utama admin.
 
 ----
 
 # Menu Admin
 
-Sistem menampilkan Menu Admin dan menawarkan beberapa fitur yang bisa digunakan oleh Admin yaitu Saham, SBN, dan Logout.
+Sistem menampilkan fitur admin, yaitu pengelolaan saham, pengelolaan SBN, dan logout.
 
 ![WhatsApp Image 2025-04-29 at 13 57 13_11b09276](https://github.com/user-attachments/assets/f3ed01a7-fe99-41a1-8ef7-f06b495a1c5f)
 
@@ -182,6 +182,8 @@ Admin memilih fitur Saham pada Menu Admin, lalu sistem menampilkan beberapa fitu
 ### Tampilkan Saham 
 ![image](https://github.com/user-attachments/assets/acad2f38-1e46-49aa-a549-c3215c1eaa5c)
 
+Fitur ini digunakan untuk melihat daftar saham yang tersedia dalam sistem, lengkap dengan kode dan harga saham.
+
 ![image](https://github.com/user-attachments/assets/a7f05f5a-410e-452e-b8fa-ee76000149f9)
 
 Sistem menampilkan **Daftar Saham Yang Tersedia** pada fitur ini. Lalu setelah itu akan kembali kepada menu Admin untuk memilih fitur kembali yang dapat digunakan oleh Admin.
@@ -190,25 +192,35 @@ Sistem menampilkan **Daftar Saham Yang Tersedia** pada fitur ini. Lalu setelah i
 ### Tambah Saham
 ![image](https://github.com/user-attachments/assets/9e79b58b-9693-49b7-aae7-76ffc5e390dc)
 
+Admin memilih opsi untuk menambahkan saham baru.
+
 ![image](https://github.com/user-attachments/assets/e12ca8c5-fdb3-4925-b505-89ea555d776c)
+
+Sistem meminta input seperti nama saham, kode saham, harga per lembar, dan jumlah lembar yang tersedia.
 
 ![image](https://github.com/user-attachments/assets/7052ac69-3e23-4a89-96f2-78e58496ad47)
 
 ![image](https://github.com/user-attachments/assets/a955dcd1-1f89-41cd-af8f-016f051fd318)
 
-Admin memilih fitur **Tambah Saham** yang ada pada menu Saham. Sistem meminta Admin untuk menginputkan kode perusahaan, nama perusahaan, dan harga saham. Namun sistem memilki sebuah validasi untuk mengecek apakah data saham yang akan ditambahkan itu sudah ada atau belum, validasi ini dipakai agar mencegah terjadinya duplikat data. Seperti pada contoh, data yang dimasukkan pertama terdeteksi oleh sistem bahwa sudah tercatat di dalam sistem, lalu sistem meminta kembali Admin untuk menginputkan kembali data saham yang berbeda untuk ditambah. Selanjutnya, jika sudah sesuai maka Admin akan lanjut mengkonfirmasi data saham yang akan ditambah lalu saham berhasil ditambahkan oleh Admin.
+Sistem memilki sebuah validasi untuk mengecek apakah data saham yang akan ditambahkan itu sudah ada atau belum, validasi ini dipakai agar mencegah terjadinya duplikat data. Seperti pada contoh, data yang dimasukkan pertama terdeteksi oleh sistem bahwa sudah tercatat di dalam sistem, lalu sistem meminta kembali Admin untuk menginputkan kembali data saham yang berbeda untuk ditambah. Selanjutnya, jika sudah sesuai maka Admin akan lanjut mengkonfirmasi data saham yang akan ditambah lalu saham berhasil ditambahkan oleh Admin.
 
 
 ### Ubah Harga Saham 
 ![image](https://github.com/user-attachments/assets/d70bf5de-5024-4ea5-ab7c-34605f3f0e3b)
 
+Admin memilih menu ubah harga saham. 
+
 ![image](https://github.com/user-attachments/assets/f34130b2-cb24-42c3-9a7d-6640a8a57dc2)
+
+Sistem menampilkan daftar saham yang tersedia lengkap dengan kode dan harga saat ini. 
 
 ![image](https://github.com/user-attachments/assets/ac5b5c83-97b2-44eb-b552-a39dca66c408)
 
+Admin kemudian diminta untuk memasukkan kode saham yang ingin diubah harganya, serta harga baru yang diinginkan.
+
 ![image](https://github.com/user-attachments/assets/38000fa0-673a-4e79-ba75-0c7feb8406eb)
 
-Admin memilih fitur **Ubah Harga Saham** yang ada pada menu Saham. Sistem akan menampilkan "Daftar Saham Yang Tersedia" untuk dapat diubah harga saham nya. Lalu Admin akan diminta untuk memasukkan kode perusahaan dan harga baru dengan validasi yang sama seperti sebelumnya. Selanjutnya sistem menampilkan kepada Admin sebuah konfirmasi apakah ingin melanjutkan pengubahan harga saham seperti yang sudah Admin inputkan sebelumnya. Jika Admin memilih "1. Ya, lanjutkan pengubahan harga saham" maka sistem akan mencatat dan memberi tahu kepada Admin bahwa "Berhasil mengubah harga saham dengan kode BBRI" dan Admin telah selesai mengubah harga sahamnya. Jika Admin memilih "2. Kembali ke Menu Saham", maka Admin akan dikembalikan oleh sistem ke Menu Saham dan tidak jadi mengubah harga sahamnya.
+Setelah dikonfirmasi, sistem memperbarui harga saham tersebut dan menampilkan pesan bahwa harga berhasil diperbarui.
 
 ----
 
