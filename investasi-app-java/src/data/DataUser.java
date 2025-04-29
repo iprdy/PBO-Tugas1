@@ -1,6 +1,8 @@
 package data;
 
-import model.*;
+import model.User;
+import model.Customer;
+import model.Admin;
 
 import java.util.ArrayList;
 import java.util.List;

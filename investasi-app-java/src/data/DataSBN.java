@@ -63,7 +63,7 @@ public class DataSBN {
     public static int checkTotalSBN() {
         int i = 0;
 
-        for (SuratBerhargaNegara sbn : daftarSBN) {
+        for (SuratBerhargaNegara _ : daftarSBN) {
             i++;
         }
 

@@ -1,7 +1,6 @@
 package menu;
 
 import controller.AdminController;
-import model.Admin;
 import ui.AdminUI;
 import ui.ClearUI;
 import ui.MenuLoginUI;
