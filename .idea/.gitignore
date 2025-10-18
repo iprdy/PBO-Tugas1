@@ -1,5 +1,6 @@
-/.idea/
-/out/
-*.iml
-investasi-app-java/out/
-untitled/
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+PBO-Tugas1.iml
+investasi-app-java/investasi-app-java.iml.bak
